@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export const Header = () => {
     return (
         <div>
@@ -14,9 +16,9 @@ export const Header = () => {
             </div>
             <div className="col-lg-4 text-center bg-primary border-inner py-3">
                 <div className="d-inline-flex align-items-center justify-content-center">
-                    <a href="index.html" className="navbar-brand">
+                    <Link to="/" className="navbar-brand">
                         <h1 className="m-0 text-uppercase text-white"><i className="fa fa-birthday-cake fs-1 text-dark me-3"></i>CakeZone</h1>
-                    </a>
+                    </Link>
                 </div>
             </div>
             <div className="col-lg-4 text-center bg-secondary py-3">
@@ -35,26 +37,27 @@ export const Header = () => {
 
     
     <nav className="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-        <a href="index.html" className="navbar-brand d-block d-lg-none">
+        <Link to="/" className="navbar-brand d-block d-lg-none">
             <h1 className="m-0 text-uppercase text-white"><i className="fa fa-birthday-cake fs-1 text-primary me-3"></i>CakeZone</h1>
-        </a>
+        </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarCollapse">
             <div className="navbar-nav ms-auto mx-lg-auto py-0">
-                <a href="index.html" className="nav-item nav-link active">Home</a>
-                <a href="about.html" className="nav-item nav-link">About Us</a>
-                <a href="menu.html" className="nav-item nav-link">Menu & Pricing</a>
-                <a href="team.html" className="nav-item nav-link">Master Chefs</a>
+                <Link to="/" className="nav-item nav-link active">Home</Link>
+                <Link to="/about" className="nav-item nav-link">About Us</Link>
+                <Link to="/gallery" className="nav-item nav-link">Gallery</Link>
+                <Link to="/comments" className="nav-item nav-link">Comments</Link>
+                <Link to="/menu" className="nav-item nav-link">Menu & Pricing</Link>
                 <div className="nav-item dropdown">
-                    <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <Link to="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">For you</Link>
                     <div className="dropdown-menu m-0">
-                        <a href="service.html" className="dropdown-item">Our Service</a>
-                        <a href="testimonial.html" className="dropdown-item">Testimonial</a>
+                        <Link to="/login" className="dropdown-item">Login</Link>
+                        <Link to="/register" className="dropdown-item">Register</Link>
                     </div>
                 </div>
-                <a href="contact.html" className="nav-item nav-link">Contact Us</a>
+                <Link to="/contact" className="nav-item nav-link">Contact Us</Link>
             </div>
         </div>
     </nav>
