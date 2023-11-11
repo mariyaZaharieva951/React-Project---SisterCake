@@ -1,4 +1,5 @@
 // import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom';
 import { OurClients } from './components/Clients/OurClients'
 import { Footer } from './components/Footer/Footer'
 import { Header } from './components/Header/Header'
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <Header />
+      {/* <Routes> */}
       <main>
         <Hero/>
         <Welcome/>
@@ -20,6 +22,7 @@ function App() {
         <Offer/>
         <OurClients/>
       </main>
+      {/* </Routes> */}
       <Footer />
     </>
   )
