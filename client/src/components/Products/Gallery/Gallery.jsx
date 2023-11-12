@@ -1,8 +1,24 @@
 import styles from '../Gallery/Gallery.module.css'
 import { Product } from '../Product/Product'
+import { useState, useEffect } from 'react'
+import * as cakeService from '../../../services/cakeService'
 
 export const Gallery = () => {
+    const [cakes, setCakes ] = useState([]);
+
+    useEffect(() => {
+        cakeService.getAll()
+        .then(result => {
+           
+            setCakes(result)
+            })
+        .catch(err => console.log(err))
+    },[])
+    
+    
     return (
+
+       
       
     <div className={styles.lightbox_gallery}>
         <div className="container">
@@ -15,8 +31,19 @@ export const Gallery = () => {
             </div>
             <div className={styles.lightbox_gallery.photos}>
                 <div className="row photos">
-    
-                   <Product/>
+
+                    {cakes.length > 0 
+                        ? (
+                            <>
+                            {cakes.map(cake => (
+                                <Product key={cake._id} cake={cake}/>
+                            ))}
+                            </>
+                        ) :
+                        <div>Error</div>
+                    
+                    }
+                   
                     
                 
                
