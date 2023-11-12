@@ -6,8 +6,9 @@ import { Header } from './components/Header/Header'
 import { Home } from './components/Home/Home';
 import { Welcome } from './components/Welcome/Welcome';
 import { OurClients } from './components/Clients/OurClients';
-import { Products } from './components/Products/Products';
+import { Menu } from './components/Products/Menu/Menu';
 import { Gallery } from './components/Products/Gallery/Gallery';
+import { Contact } from './components/Contact/Contact';
 
 
 function App() {
@@ -23,8 +24,10 @@ function App() {
             <Route path='/about' element={<Welcome/>}/>
             <Route path='/gallery' element={<Gallery/>}/>
             <Route path='/comments' element={<OurClients/>}/>
-            <Route path='/menu' element={<Products/>}/>
-            <Route path='/contact' element={<Home/>}/>
+            <Route path='/menu' element={<Menu/>}/>
+            <Route path='/contact' element={<Contact/>}/>
+
+
 
 
         </Routes>

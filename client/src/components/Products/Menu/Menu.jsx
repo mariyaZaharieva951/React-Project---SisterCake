@@ -1,4 +1,4 @@
-export const Products = () => {
+export const Menu = () => {
     return (
         <div className="container-fluid about py-5">
   <div className="container">

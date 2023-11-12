@@ -36,7 +36,7 @@ export const Gallery = () => {
                         ? (
                             <>
                             {cakes.map(cake => (
-                                <Product key={cake._id} cake={cake}/>
+                                <Product key={cake._id} img={cake.imgUrl} />
                             ))}
                             </>
                         ) :
