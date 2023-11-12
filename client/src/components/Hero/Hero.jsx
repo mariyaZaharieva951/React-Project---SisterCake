@@ -4,9 +4,9 @@ export const Hero = () => {
         <div className="container py-5">
             <div className="row justify-content-start">
                 <div className="col-lg-8 text-center text-lg-start">
-                    <h1 className="font-secondary text-primary mb-4">Super Crispy</h1>
-                    <h1 className="display-1 text-uppercase text-white mb-4">CakeZone</h1>
-                    <h1 className="text-uppercase text-white">The Best Cake In London</h1>
+                    {/* <h1 className="font-secondary text-primary mb-4">Вкусните торти</h1> */}
+                    <h1 className="display-1 text-uppercase text-white mb-4">Sistercake</h1>
+                    <h1 className="text-uppercase text-white">Приготвени с желание и любов</h1>
                     <div className="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
                         <a href="" className="btn btn-primary border-inner py-3 px-5 me-5">Read More</a>
                         {/* <button type="button" className="btn-play" data-bs-toggle="modal"

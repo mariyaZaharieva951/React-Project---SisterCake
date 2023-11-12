@@ -6,8 +6,8 @@ export const Welcome = () => {
       className="section-title position-relative text-center mx-auto mb-5 pb-3"
       style={{ maxWidth: 600 }}
     >
-      <h2 className="text-primary font-secondary">About Us</h2>
-      <h1 className="display-4 text-uppercase">Welcome To CakeZone</h1>
+      <h2 className="text-primary font-secondary">За нас</h2>
+      {/* <h1 className="display-4 text-uppercase">Welcome To CakeZone</h1> */}
     </div>
     <div className="row gx-5">
       <div className="col-lg-5 mb-5 mb-lg-0" style={{ minHeight: 400 }}>

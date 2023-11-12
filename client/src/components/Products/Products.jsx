@@ -6,8 +6,8 @@ export const Products = () => {
       className="section-title position-relative text-center mx-auto mb-5 pb-3"
       style={{ maxWidth: 600 }}
     >
-      <h2 className="text-primary font-secondary">Menu &amp; Pricing</h2>
-      <h1 className="display-4 text-uppercase">Explore Our Cakes</h1>
+      <h2 className="text-primary font-secondary">Меню</h2>
+      <h1 className="display-4 text-uppercase">Разгледайте нашите предложения</h1>
     </div>
     <div className="tab-class text-center">
       <ul className="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase border-inner p-4 mb-5">
@@ -17,7 +17,7 @@ export const Products = () => {
             data-bs-toggle="pill"
             href="#tab-1"
           >
-            Birthday
+            Рожден ден
           </a>
         </li>
         <li className="nav-item">
@@ -26,7 +26,7 @@ export const Products = () => {
             data-bs-toggle="pill"
             href="#tab-2"
           >
-            Wedding
+            Сватба
           </a>
         </li>
         <li className="nav-item">
@@ -35,7 +35,16 @@ export const Products = () => {
             data-bs-toggle="pill"
             href="#tab-3"
           >
-            Custom
+            Детски
+          </a>
+        </li>
+        <li className="nav-item">
+          <a
+            className="nav-link text-white"
+            data-bs-toggle="pill"
+            href="#tab-3"
+          >
+            По желание на клиента
           </a>
         </li>
       </ul>

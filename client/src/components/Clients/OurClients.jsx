@@ -6,8 +6,8 @@ export const OurClients = () => {
                     className="section-title position-relative text-center mx-auto mb-5 pb-3"
                     style={{ maxWidth: 600 }}
                 >
-                    <h2 className="text-primary font-secondary">Testimonial</h2>
-                    <h1 className="display-4 text-uppercase">Our Clients Say!!!</h1>
+                    {/* <h2 className="text-primary font-secondary">Testimonial</h2> */}
+                    <h1 className="display-4 text-uppercase">Клиентите за нас!!!</h1>
                 </div>
                 <div className="owl-carousel testimonial-carousel">
                 <div className="testimonial-item bg-dark text-white border-inner p-4">

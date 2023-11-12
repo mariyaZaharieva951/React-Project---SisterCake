@@ -8,9 +8,9 @@ export const Offer = () => {
           className="section-title position-relative text-center mx-auto mb-4 pb-3"
           style={{ maxWidth: 600 }}
         >
-          <h2 className="text-primary font-secondary">Special Kombo Pack</h2>
+          <h2 className="text-primary font-secondary">Опитайте</h2>
           <h1 className="display-4 text-uppercase text-white">
-            Super Crispy Cakes
+            Изберете вашата торта
           </h1>
         </div>
         <p className="text-white mb-4">
@@ -20,11 +20,11 @@ export const Offer = () => {
           sit. Sea dolore sed et.
         </p>
         <a href="" className="btn btn-primary border-inner py-3 px-5 me-3">
-          Shop Now
+          Заяви
         </a>
-        <a href="" className="btn btn-dark border-inner py-3 px-5">
+        {/* <a href="" className="btn btn-dark border-inner py-3 px-5">
           Read More
-        </a>
+        </a> */}
       </div>
     </div>
   </div>
