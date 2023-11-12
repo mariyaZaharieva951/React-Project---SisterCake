@@ -7,6 +7,7 @@ import { Home } from './components/Home/Home';
 import { Welcome } from './components/Welcome/Welcome';
 import { OurClients } from './components/Clients/OurClients';
 import { Products } from './components/Products/Products';
+import { Gallery } from './components/Products/Gallery/Gallery';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
         <Routes>
 			<Route path='/' element={<Home/>}/>
             <Route path='/about' element={<Welcome/>}/>
-            <Route path='/gallery' element={<Home/>}/>
+            <Route path='/gallery' element={<Gallery/>}/>
             <Route path='/comments' element={<OurClients/>}/>
             <Route path='/menu' element={<Products/>}/>
             <Route path='/contact' element={<Home/>}/>
