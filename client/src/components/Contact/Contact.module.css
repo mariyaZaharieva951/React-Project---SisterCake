@@ -1,0 +1,41 @@
+.contact {
+    width: 100%;
+    position: relative;
+    margin: 150px auto;
+
+}
+
+.card {
+    text-align: center;
+    background-color: #E88F2A;
+    /* border: 1px solid black; */
+    color: white;
+    /* border-radius: 6px; */
+    padding: 40px;
+    
+}
+
+
+
+.h6 {
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+.border {
+    position: relative;
+}
+
+
+.border::before {
+    color: white;
+    position: absolute;
+    content: "";
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    background: none;
+    border: 1px solid var(--light);
+    z-index: 0;
+}
