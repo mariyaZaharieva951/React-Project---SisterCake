@@ -9,6 +9,7 @@ import { Menu } from './components/Products/Menu/Menu';
 import { Gallery } from './components/Products/Gallery/Gallery';
 import { Contact } from './components/Contact/Contact';
 import { ForUs } from './components/ForUs/ForUs';
+import { Details } from './components/Products/Details/Details';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path='/comments' element={<OurClients/>}/>
             <Route path='/menu' element={<Menu/>}/>
             <Route path='/contact' element={<Contact/>}/>
+            <Route path='/menu/:cakeId' element={<Details/>}/>
 
 
 
