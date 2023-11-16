@@ -1,0 +1,18 @@
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+h1 {
+   text-transform: uppercase;
+}
+
+h2 {
+    color: white;
+    text-transform: uppercase;
+}
+
+.button {
+    padding-top: 4rem;
+}
