@@ -30,7 +30,6 @@ export const getOneBdCake = async (cakeId) => {
     try{ 
      const response = await fetch(`${baseUrl}/birthdayCake/${cakeId}`);
      const result = await response.json();
-     console.log(result)
      
      return result
  } catch(err) {

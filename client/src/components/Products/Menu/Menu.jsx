@@ -72,7 +72,7 @@ export const Menu = () => {
             <div id="tab-1" className="tab-pane fade show p-0 active">
               <div className="row g-3">
                 {birthdayCakes?.length > 0 ?
-                birthdayCakes.map(x => <MenuItem key={x._id} cake={x}/>):
+                birthdayCakes.map(cake => <MenuItem key={cake._id} {...cake}/>):
                 <div>Error</div> }
                 
               </div>

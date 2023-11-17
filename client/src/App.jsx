@@ -27,7 +27,7 @@ function App() {
             <Route path='/comments' element={<OurClients/>}/>
             <Route path='/menu' element={<Menu/>}/>
             <Route path='/contact' element={<Contact/>}/>
-            <Route path='/menu/:cakeId' element={<Details/>}/>
+            <Route path='/:cakeId' element={<Details/>}/>
 
 
 
