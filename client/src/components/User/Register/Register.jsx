@@ -1,24 +1,27 @@
-import styles from "../Login/Login.module.css";
+import styles from "../Register/Register.module.css";
 
-export const Login = () => {
+export const Register = () => {
   return (
     <div className="container">
       <div className={styles.row}>
-        
-          <div className={styles.card}>
-            <form className={styles.box}>
-              <h1>Вход</h1>
-              {/* <p className="text-muted">
+        <div className={styles.card}>
+          <form className={styles.box}>
+            <h1>Регистрация</h1>
+            {/* <p className="text-muted">
                 Моля, попълнете вашите име и парола !
               </p> */}
+            <div className={styles.line}>
               <input type="text" name="" placeholder="Име" />
+              <input type="email" name="" placeholder="Ел.поща" />
+            </div>
+            <div className={styles.line}>
               <input type="password" name="" placeholder="Парола" />
-              {/* <a className="forgot text-muted" href="#">
-                Forgot password?
-              </a> */}
-              <input type="submit" name="" defaultValue="Login" href="#" />
-              <div className="col-md-12">
-                <div className={styles.social_network}>
+              <input type="password" name="" placeholder="Повтори парола" />
+            </div>
+
+            <input type="submit" name="" defaultValue="Login" href="#" />
+            <div className="col-md-12">
+              <div className={styles.social_network}>
                 <ul className={styles.social_circle}>
                   <li>
                     <a href="#" className={styles.icoFacebook} title="Facebook">
@@ -36,11 +39,10 @@ export const Login = () => {
                     </a>
                   </li>
                 </ul>
-                </div>
               </div>
-            </form>
-          </div>
-        
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

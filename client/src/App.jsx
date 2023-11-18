@@ -11,6 +11,7 @@ import { Contact } from './components/Contact/Contact';
 import { ForUs } from './components/ForUs/ForUs';
 import { Details } from './components/Products/Details/Details';
 import { Login } from './components/User/Login/Login';
+import { Register } from './components/User/Register/Register';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/:cakeId' element={<Details/>}/>
             <Route path='/login' element={<Login/>}/>
+            <Route path='/register' element={<Register/>}/>
 
 
 
