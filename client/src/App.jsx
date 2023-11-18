@@ -10,6 +10,7 @@ import { Gallery } from './components/Products/Gallery/Gallery';
 import { Contact } from './components/Contact/Contact';
 import { ForUs } from './components/ForUs/ForUs';
 import { Details } from './components/Products/Details/Details';
+import { Login } from './components/User/Login/Login';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route path='/menu' element={<Menu/>}/>
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/:cakeId' element={<Details/>}/>
+            <Route path='/login' element={<Login/>}/>
 
 
 
