@@ -46,6 +46,48 @@ export const register = async (name,email,password) => {
 
 
 
+export const login = async (email,password) => {
+    
+    // const headers = authCheck();
+    try{
+    
+        const authData = localStorage.getItem('auth');
+    let auth = '';
+    if(authData) {
+        auth = JSON.parse(authData);
+    }
+
+    let headers = {};
+    if(auth.accessToken) {
+        return headers['X-Authorization'] = auth.accessToken;
+    }
+    
+    
+    const response = await fetch(`${baseUrl}/login`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({email,password})
+    });
+
+    if(response.ok) {
+        const token = await response.json();
+        console.log('TOKEN', token)
+        return token;
+    }
+    } catch(error) {
+        console.log(error)
+    }
+    
+
+}
+
+
+
+
+
 
 
 export const logout = async(accessToken) => {
