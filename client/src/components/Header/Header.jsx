@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
-import styles from '../Header/Header.module.css'
+import styles from '../Header/Header.module.css';
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/authContex";
+
+
 
 export const Header = () => {
+
+  const { user } = useContext(AuthContext);
+  
   return (
     <div>
       <div className="container-fluid">
@@ -64,16 +71,24 @@ export const Header = () => {
             <Link to="/about" className="nav-item nav-link">
               За нас
             </Link>
-            <Link to="/gallery" className="nav-item nav-link">
+           
+            {(user.email)?
+            <div className={styles.user}>
+              <Link to="/comments" className="nav-item nav-link">
+            Клиенти
+          </Link>
+          <Link to="/menu" className="nav-item nav-link">
+            Меню
+          </Link>
+          <Link to="/menu" className="nav-item nav-link">
+              Изход
+            </Link>
+              </div> :
+            <div className={styles.guest}>
+               <Link to="/gallery" className="nav-item nav-link">
               Галерия
             </Link>
-            <Link to="/comments" className="nav-item nav-link">
-              Клиенти
-            </Link>
-            <Link to="/menu" className="nav-item nav-link">
-              Меню
-            </Link>
-            <div className="nav-item dropdown">
+              <div className="nav-item dropdown">
               <Link
                 to="/"
                 className="nav-link dropdown-toggle"
@@ -90,9 +105,9 @@ export const Header = () => {
                 </Link>
               </div>
             </div>
-            <Link to="/menu" className="nav-item nav-link">
-              Изход
-            </Link>
+            
+            </div>
+            }
             <Link to="/contact" className="nav-item nav-link">
               Контакт
             </Link>

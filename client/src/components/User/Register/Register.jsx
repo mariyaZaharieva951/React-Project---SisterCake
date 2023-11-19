@@ -15,14 +15,13 @@ export const Register = () => {
 
         const formData = new FormData(ev.target);
         const { name, email, password, rePass } = Object.fromEntries(formData);
-        console.log(email,password)
-        debugger
+      
         if(password !== rePass) {
             alert('Passwords don`t match!');
             return
         }
 
-        authService.register(email,password)
+        authService.register(name,email,password)
         .then(authData => {
             console.log(authData)
             login(authData);

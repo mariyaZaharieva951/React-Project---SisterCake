@@ -55,6 +55,10 @@
     color: black;
 }
 
+.guest, .user {
+    display: flex;
+}
+
 .navbar-dark .navbar-nav .nav-link {
     font-family: 'Oswald', sans-serif;
     padding: 30px 15px;
