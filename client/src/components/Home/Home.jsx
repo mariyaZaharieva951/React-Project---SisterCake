@@ -7,7 +7,6 @@ export const Home = () => {
     return (
         <>
         <Hero/>
-        <Menu/>
         <Offer/>
         <OurClients/>
         </>

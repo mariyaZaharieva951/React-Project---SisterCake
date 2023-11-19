@@ -80,7 +80,7 @@ export const Header = () => {
           <Link to="/menu" className="nav-item nav-link">
             Меню
           </Link>
-          <Link to="/menu" className="nav-item nav-link">
+          <Link to="/logout" className="nav-item nav-link">
               Изход
             </Link>
               </div> :

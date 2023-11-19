@@ -15,7 +15,6 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useLocalStorage('auth', authState);
 
     const login = (authData) => {
-        console.log('CONTEXT', authData)
         setUser(authData)
     }
 

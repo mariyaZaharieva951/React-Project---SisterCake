@@ -13,6 +13,7 @@ import { Details } from './components/Products/Details/Details';
 import { Login } from './components/User/Login/Login';
 import { Register } from './components/User/Register/Register';
 import { AuthProvider } from './contexts/authContex';
+import { Logout } from './components/User/Logout/Logout';
 
 
 
@@ -35,6 +36,7 @@ function App() {
             <Route path='/:cakeId' element={<Details/>}/>
             <Route path='/login' element={<Login/>}/>
             <Route path='/register' element={<Register/>}/>
+            <Route path='/logout' element={<Logout/>}/>
 
 
 
