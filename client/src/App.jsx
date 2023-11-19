@@ -12,6 +12,7 @@ import { ForUs } from './components/ForUs/ForUs';
 import { Details } from './components/Products/Details/Details';
 import { Login } from './components/User/Login/Login';
 import { Register } from './components/User/Register/Register';
+import { AuthProvider } from './contexts/authContex';
 
 
 
@@ -20,7 +21,7 @@ function App() {
   // const [count, setCount] = useState(0)
 
   return (
-    <>
+    <AuthProvider>
         <Header />
       
       <main>
@@ -42,7 +43,7 @@ function App() {
       </main>
       
       <Footer />
-    </>
+    </AuthProvider>
   )
 }
 
