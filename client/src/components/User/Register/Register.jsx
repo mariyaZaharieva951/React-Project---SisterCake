@@ -1,6 +1,10 @@
 import styles from "../Register/Register.module.css";
 
 export const Register = () => {
+
+
+
+    
   return (
     <div className="container">
       <div className={styles.row}>
