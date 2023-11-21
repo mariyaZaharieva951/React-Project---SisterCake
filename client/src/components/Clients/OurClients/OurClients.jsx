@@ -1,5 +1,6 @@
 import styles from "../OurClients/OurClients.module.css";
 import { Comments } from "../Comments/Comments";
+import { Link } from "react-router-dom";
 
 export const OurClients = () => {
   return (
@@ -9,6 +10,7 @@ export const OurClients = () => {
         <Comments/>
         
       </div>
+      <button><Link to={'/createComment'}>Остави коментар</Link></button>
     </div>
   );
 };
