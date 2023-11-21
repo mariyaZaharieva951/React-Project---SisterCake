@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Footer } from './components/Footer/Footer'
 import { Header } from './components/Header/Header'
 import { Home } from './components/Home/Home';
-import { OurClients } from './components/Clients/OurClients';
+import { OurClients } from './components/Clients/OurClients/OurClients';
 import { Menu } from './components/Products/Menu/Menu';
 import { Gallery } from './components/Products/Gallery/Gallery';
 import { Contact } from './components/Contact/Contact';

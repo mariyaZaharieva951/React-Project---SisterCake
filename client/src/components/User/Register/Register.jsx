@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"
 
 export const Register = () => {
 
-    const { user, login } = useContext(AuthContext);
+    const { login } = useContext(AuthContext);
     const navigate = useNavigate()
 
 
@@ -23,7 +23,7 @@ export const Register = () => {
 
         authService.register(name,email,password)
         .then(authData => {
-            console.log(authData)
+            
             login(authData);
             navigate('/');
         })

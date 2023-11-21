@@ -74,7 +74,7 @@ export const login = async (email,password) => {
 
     if(response.ok) {
         const token = await response.json();
-        console.log('TOKEN', token)
+        
         return token;
     }
     } catch(error) {
