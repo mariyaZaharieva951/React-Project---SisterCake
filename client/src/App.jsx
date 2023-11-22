@@ -16,6 +16,7 @@ import { AuthProvider } from './contexts/authContex';
 import { Logout } from './components/User/Logout/Logout';
 import { CreateComment } from './components/Clients/CreateComment/CreateComment';
 import { DetailsComment } from './components/Clients/DetailsComment/DetailsComment';
+import { EditComment } from './components/Clients/EditComment/EditComment';
 
 
 
@@ -34,6 +35,7 @@ function App() {
             <Route path='/gallery' element={<Gallery/>}/>
             <Route path='/comments' element={<OurClients/>}/>
             <Route path='/comments/:commentId' element={<DetailsComment/>}/>
+            <Route path='/comment/edit/:commentId' element={<EditComment/>}/>
             <Route path='/menu' element={<Menu/>}/>
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/:cakeId' element={<Details/>}/>

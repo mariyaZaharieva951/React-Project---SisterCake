@@ -16,21 +16,24 @@ export const createComment = async(comment,token) => {
 }
     
 export const getAllComments = async () => {
-    const response = await fetch(baseUrl)
-    const result = await response.json();
-    console.log(result);
-
-    return result;
+    try {
+        const response = await fetch(baseUrl)
+        const result = await response.json();
+    
+        return result;
+    } catch(err) {
+        console.log(err)
+    }
+    
 }
 
 export const getOneComment = async (commentId) => {
    try{
     const response = await fetch(`${baseUrl}/${commentId}`)
-    console.log(response)
     const result = await response.json();
-    console.log(result);
 
     return result;
+
     } catch(err) {
         console.log(err)
     }

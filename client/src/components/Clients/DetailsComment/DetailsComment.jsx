@@ -30,8 +30,8 @@ export const DetailsComment = () => {
                 
               </div>
               <div className="buttons">
-                <Link to={`comment/edit`} className="edit">Редактиране</Link>
-                <button className="delete">Изтриване</button>
+                <Link to={`/comment/edit/${currentComment._id}`} className="edit">Редактиране</Link>
+                {/* <Link to{`comments/delete/${currentComment._id}`} className="delete">Изтриване</Link> */}
               </div>
             </div>
           </div>
