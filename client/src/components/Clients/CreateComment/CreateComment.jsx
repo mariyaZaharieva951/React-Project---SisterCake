@@ -21,9 +21,9 @@ export const CreateComment = () => {
         const { imageUrl, description } = Object.fromEntries(formData);
         console.log(imageUrl,description);
 
-        commentService.createComment({imageUrl,description}, user.accessToken) 
+        commentService.createComment({imageUrl,description,user}, user.accessToken) 
         .then(result => 
-            {setComment(result),
+            {setComment(oldState => ({...oldState,result})),
             console.log(result)},
             navigate('/comments'))
         .catch(error => console.log(error))

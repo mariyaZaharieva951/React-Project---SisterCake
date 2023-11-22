@@ -15,6 +15,7 @@ import { Register } from './components/User/Register/Register';
 import { AuthProvider } from './contexts/authContex';
 import { Logout } from './components/User/Logout/Logout';
 import { CreateComment } from './components/Clients/CreateComment/CreateComment';
+import { DetailsComment } from './components/Clients/DetailsComment/DetailsComment';
 
 
 
@@ -32,6 +33,7 @@ function App() {
             <Route path='/about' element={<ForUs/>}/>
             <Route path='/gallery' element={<Gallery/>}/>
             <Route path='/comments' element={<OurClients/>}/>
+            <Route path='/comments/:commentId' element={<DetailsComment/>}/>
             <Route path='/menu' element={<Menu/>}/>
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/:cakeId' element={<Details/>}/>

@@ -1,26 +1,27 @@
-export const Comments = () => {
+// import { useContext } from "react";
+// import { AuthContext } from "../../../contexts/authContex";
+
+import { Link } from "react-router-dom"
+
+
+export const Comments = ({imageUrl, description, _createdOn, user, _id}) => {
+  // const { user } = useContext(AuthContext)
+   
+
     return (
         <div className="col-md-4">
           <div className="card">
             <div className="card-img-top image-card image-card-1">
-              <img src="https://i.imgur.com/CHquE7o.png" alt="..." />
+              <img src={imageUrl} alt="..." />
             </div>
             <div className="card-body">
-              
-              {/* <h6 className="card-title text-dark mt-2">
-                What you wants to know about hubspot?
-              </h6> */}
               <p className="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua..
+                {description}
               </p>
-              <a href="#" className="text-dark">
-                Read full story...
-              </a>
-              <div className="mt-4 about d-flex justify-content-between align-items-center">
-                <span>By Prabhjot Singh</span> <span>On 12 Oct, 2020</span>
-                {/* <span>5 min read</span> */}
-              </div>
+              <Link to={`${_id}`} className="text-dark">
+                Детайли
+              </Link>
+              
             </div>
           </div>
         </div>
