@@ -1,53 +1,88 @@
 import styles from "../Register/Register.module.css";
-import { useContext } from "react";
-import { AuthContext } from "../../../contexts/authContex";
-import * as authService from '../../../services/authService';
-import { useNavigate } from "react-router-dom"
+import { useForm } from "../../../hooks/useForm";
+// import { useContext } from "react";
+// import { AuthContext } from "../../../contexts/authContex";
+// import * as authService from '../../../services/authService';
+// import { useNavigate } from "react-router-dom"
 
 export const Register = () => {
 
-    const { login } = useContext(AuthContext);
-    const navigate = useNavigate()
+  const { values, onChange, onRegisterSubmit} = useForm({
+    name: '',
+    email: '',
+    password:'',
+    rePass: '',
+  })
+    // const { login } = useContext(AuthContext);
+    // const navigate = useNavigate()
 
 
-    const onSubmit = (ev) => {
-        ev.preventDefault();
+    // const onSubmit = (ev) => {
+    //     ev.preventDefault();
 
-        const formData = new FormData(ev.target);
-        const { name, email, password, rePass } = Object.fromEntries(formData);
+    //     const formData = new FormData(ev.target);
+    //     const { name, email, password, rePass } = Object.fromEntries(formData);
       
-        if(password !== rePass) {
-            alert('Passwords don`t match!');
-            return
-        }
+    //     if(password !== rePass) {
+    //         alert('Passwords don`t match!');
+    //         return
+    //     }
 
-        authService.register(name,email,password)
-        .then(authData => {
+    //     authService.register(name,email,password)
+    //     .then(authData => {
             
-            login(authData);
-            navigate('/');
-        })
-        .catch(() => {
-            navigate('/')
-        })
-    }
+    //         login(authData);
+    //         navigate('/');
+    //     })
+    //     .catch(() => {
+    //         navigate('/')
+    //     })
+    // }
 
   return (
     <div className="container">
       <div className={styles.row}>
         <div className={styles.card}>
-          <form className={styles.box} onSubmit={onSubmit}>
+          <form className={styles.box} onSubmit={onRegisterSubmit}>
             <h1>Регистрация</h1>
             {/* <p className="text-muted">
                 Моля, попълнете вашите име и парола !
               </p> */}
             <div className={styles.line}>
-              <input type="text" name="name" placeholder="Име" />
-              <input type="email" name="email" placeholder="Ел.поща" />
+              <input 
+              type="text" 
+              name="name" 
+              placeholder="Име" 
+              id="name"
+              value={values.name}
+              onChange={onChange}
+              />
+              <input 
+              type="email"
+              name="email" 
+              placeholder="Ел.поща" 
+              id="email"
+              value={values.email}
+              onChange={onChange}
+              />
             </div>
             <div className={styles.line}>
-              <input type="password" name="password" placeholder="Парола" />
-              <input type="password" name="rePass" placeholder="Повтори парола" />
+              <input 
+              type="password" 
+              name="password" 
+              placeholder="Парола" 
+              id="password"
+              value={values.password}
+              onChange={onChange}
+              />
+              <input 
+              type="password" 
+              name="rePass" 
+              placeholder="Повтори парола" 
+              id="rePass"
+              value={values.rePass}
+              onChange={onChange}
+              />
             </div>
 
             <input type="submit" name="" defaultValue="Login" href="#" />

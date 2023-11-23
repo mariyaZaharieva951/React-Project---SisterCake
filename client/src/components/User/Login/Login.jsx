@@ -10,7 +10,7 @@ export const Login = () => {
     // const { login } = useContext(AuthContext);
     // const navigate = useNavigate();
 
-    const { values, onChange, onSubmit} = useForm({
+    const { values, onChange, onLoginSubmit} = useForm({
       email: '',
       password:'',
     })
@@ -42,7 +42,7 @@ export const Login = () => {
       <div className={styles.row}>
         
           <div className={styles.card}>
-            <form className={styles.box} onSubmit={onSubmit}>
+            <form className={styles.box} onSubmit={onLoginSubmit}>
               <h1>Вход</h1>
               {/* <p className="text-muted">
                 Моля, попълнете вашите име и парола !
@@ -51,7 +51,7 @@ export const Login = () => {
               type="text" 
               name="email" 
               placeholder="Имейл" 
-              id="name"
+              id="email"
               value={values.email}
               onChange={onChange}
               />

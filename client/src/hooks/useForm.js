@@ -11,35 +11,55 @@ export const useForm = (initialValues) => {
 
 
     const onChange = (ev) => {
-        console.log(values)
+        
         setValues(oldState => ({
             ...oldState,
             [ev.target.name]: ev.target.value
         }))
     }
 
-    const onSubmit = (ev) => {
+    const onLoginSubmit = (ev) => {
         ev.preventDefault();
             
             const { email, password } = values;
             
             authService.login(email,password)
             .then(authData => {
-                console.log(authData)
+                
                 login(authData);
                 navigate('/');
             })
             .catch(() => {
                 alert('The login is not successful!')
-            })
+            })  
+    }
 
-        
+    const onRegisterSubmit = (ev) => {
+        ev.preventDefault();
+
+        const { name, email, password, rePass } = values;
+      
+        if(password !== rePass) {
+            alert('Passwords don`t match!');
+            return
+        }
+
+        authService.register(name,email,password)
+        .then(authData => {
+            
+            login(authData);
+            navigate('/');
+        })
+        .catch(() => {
+            navigate('/')
+        })
     }
 
     return {
         values,
         onChange,
-        onSubmit
+        onLoginSubmit,
+        onRegisterSubmit
     }
 
 }

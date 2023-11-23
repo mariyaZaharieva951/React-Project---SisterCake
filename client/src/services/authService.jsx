@@ -29,7 +29,7 @@ export const register = async (name,email,password) => {
 
     if(response.ok) {
         const token = await response.json();
-        console.log('TOKEN', token)
+
         return token;
     }
 
