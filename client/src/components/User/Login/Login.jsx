@@ -1,29 +1,40 @@
 import styles from "../Login/Login.module.css";
-import { useContext } from "react";
-import { AuthContext } from "../../../contexts/authContex";
-import * as authService from '../../../services/authService';
-import { useNavigate } from "react-router-dom"
+// import { useContext } from "react";
+// import { AuthContext } from "../../../contexts/authContex";
+// import * as authService from '../../../services/authService';
+// import { useNavigate } from "react-router-dom"
+import { useForm } from "../../../hooks/useForm";
 
 
 export const Login = () => {
-    const { login } = useContext(AuthContext);
-    const navigate = useNavigate();
+    // const { login } = useContext(AuthContext);
+    // const navigate = useNavigate();
 
-    const onSubmit = (ev) => {
-        ev.preventDefault();
+    const { values, onChange, onSubmit} = useForm({
+      email: '',
+      password:'',
+    })
+    
 
-        const formData = new FormData(ev.target);
-        const { email, password } = Object.fromEntries(formData);
+    // const onChange = () => {
 
-        authService.login(email,password)
-        .then(authData => {
-            login(authData);
-            navigate('/');
-        })
-        .catch(() => {
-            alert('The login is not successful!')
-        })
-    }
+    // }
+
+    // const onSubmit = (ev) => {
+    //     ev.preventDefault();
+
+    //     const formData = new FormData(ev.target);
+    //     const { email, password } = Object.fromEntries(formData);
+
+    //     authService.login(email,password)
+    //     .then(authData => {
+    //         login(authData);
+    //         navigate('/');
+    //     })
+    //     .catch(() => {
+    //         alert('The login is not successful!')
+    //     })
+    // }
 
 
   return (
@@ -36,8 +47,22 @@ export const Login = () => {
               {/* <p className="text-muted">
                 Моля, попълнете вашите име и парола !
               </p> */}
-              <input type="text" name="email" placeholder="Имейл" />
-              <input type="password" name="password" placeholder="Парола" />
+              <input 
+              type="text" 
+              name="email" 
+              placeholder="Имейл" 
+              id="name"
+              value={values.email}
+              onChange={onChange}
+              />
+              <input 
+              type="password" 
+              name="password" 
+              placeholder="Парола" 
+              id="password"
+              value={values.password}
+              onChange={onChange}
+              />
               {/* <a className="forgot text-muted" href="#">
                 Forgot password?
               </a> */}
