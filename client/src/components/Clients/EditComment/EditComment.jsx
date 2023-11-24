@@ -13,18 +13,17 @@ export const EditComment = () => {
     useEffect(() => {
       commentService.getOneComment(commentId)
       .then(result => {
-          console.log('RESULT',result);
+          
           setCurrentComment(result)
       })
   },[commentId])
 
-  const { values, onChange, onEditSubmit} = useForm({
-    
+  const { values, onChange, onEditSubmit} = useForm({ 
     imageUrl: currentComment.imageUrl,
     description: currentComment.description,
     commentId: currentComment._id
   })
-  console.log('values', values.imageUrl)
+  
 
     return (
         <div className="container">

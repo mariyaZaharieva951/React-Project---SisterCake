@@ -7,8 +7,9 @@ import { useParams } from "react-router-dom";
 
 
 
+
 export const useForm = (initialValues) => {
-    console.log(initialValues)
+  
     const { login, user } = useContext(AuthContext);
     const { commentId } = useParams();
     const navigate = useNavigate();
@@ -67,10 +68,10 @@ export const useForm = (initialValues) => {
         const { imageUrl, description} = values;
 
         const data = { imageUrl, description}
-        console.log('USEFORM',data,commentId)
+        
         commentService.editComment(commentId, user.accessToken, data)
       .then(result => {
-          console.log('FOR EDIT',result);
+          
           setValues(state => ({...state,result}))
           navigate('/comments')
         .catch((err) => {
@@ -78,12 +79,31 @@ export const useForm = (initialValues) => {
         })
     })
     }
+
+    const onCreateSubmit = (ev) => {
+    ev.preventDefault();
+
+    const { imageUrl, description} = values;
+
+        const data = { imageUrl, description}
+        
+
+    commentService
+      .createComment(data, user.accessToken)
+      .then((result) => {
+        console.log('NEW COMMENT',result)
+        setValues((oldState) => ({ ...oldState, result }))
+      }, navigate("/comments"))
+      .catch((error) => console.log(error));
+  };
+
     return {
         values,
         onChange,
         onLoginSubmit,
         onRegisterSubmit,
-        onEditSubmit
+        onEditSubmit,
+        onCreateSubmit
     }
 
 

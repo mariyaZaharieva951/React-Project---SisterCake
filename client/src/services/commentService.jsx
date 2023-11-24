@@ -50,7 +50,11 @@ export const editComment = async(commentId,token,data) => {
         body: JSON.stringify({...data})
     })
 
+    if(response.status === 403) {
+        alert('You is not a owner!')
+    }
+
     const result = await response.json();
-    console.log(result);
+    
     return result;
 }
