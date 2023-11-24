@@ -1,10 +1,16 @@
 import { useState, useContext } from "react";
 import { AuthContext } from "../contexts/authContex";
 import * as authService from '../services/authService';
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import * as commentService from "../services/commentService";
+import { useParams } from "react-router-dom";
+
+
 
 export const useForm = (initialValues) => {
-    const { login } = useContext(AuthContext);
+    console.log(initialValues)
+    const { login, user } = useContext(AuthContext);
+    const { commentId } = useParams();
     const navigate = useNavigate();
     
     const [values,setValues] = useState(initialValues);
@@ -55,11 +61,30 @@ export const useForm = (initialValues) => {
         })
     }
 
+    const onEditSubmit = (ev) => {
+        ev.preventDefault();
+        
+        const { imageUrl, description} = values;
+
+        const data = { imageUrl, description}
+        console.log('USEFORM',data,commentId)
+        commentService.editComment(commentId, user.accessToken, data)
+      .then(result => {
+          console.log('FOR EDIT',result);
+          setValues(state => ({...state,result}))
+          navigate('/comments')
+        .catch((err) => {
+            console.log(err)
+        })
+    })
+    }
     return {
         values,
         onChange,
         onLoginSubmit,
-        onRegisterSubmit
+        onRegisterSubmit,
+        onEditSubmit
     }
+
 
 }

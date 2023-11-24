@@ -10,7 +10,7 @@ export const DetailsComment = () => {
     useEffect(() => {
         commentService.getOneComment(commentId)
         .then(result => {
-            console.log(result);
+            
             setCurrentComment(result)
         })
     },[commentId])

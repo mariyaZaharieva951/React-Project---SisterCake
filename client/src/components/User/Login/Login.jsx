@@ -1,40 +1,14 @@
 import styles from "../Login/Login.module.css";
-// import { useContext } from "react";
-// import { AuthContext } from "../../../contexts/authContex";
-// import * as authService from '../../../services/authService';
-// import { useNavigate } from "react-router-dom"
 import { useForm } from "../../../hooks/useForm";
 
 
 export const Login = () => {
-    // const { login } = useContext(AuthContext);
-    // const navigate = useNavigate();
 
     const { values, onChange, onLoginSubmit} = useForm({
+      
       email: '',
       password:'',
     })
-    
-
-    // const onChange = () => {
-
-    // }
-
-    // const onSubmit = (ev) => {
-    //     ev.preventDefault();
-
-    //     const formData = new FormData(ev.target);
-    //     const { email, password } = Object.fromEntries(formData);
-
-    //     authService.login(email,password)
-    //     .then(authData => {
-    //         login(authData);
-    //         navigate('/');
-    //     })
-    //     .catch(() => {
-    //         alert('The login is not successful!')
-    //     })
-    // }
 
 
   return (
@@ -67,7 +41,7 @@ export const Login = () => {
                 Forgot password?
               </a> */}
               <input type="submit" name="" defaultValue="Login" href="#" />
-              <div className="col-md-12">
+              {/* <div className="col-md-12">
                 <div className={styles.social_network}>
                 <ul className={styles.social_circle}>
                   <li>
@@ -87,7 +61,7 @@ export const Login = () => {
                   </li>
                 </ul>
                 </div>
-              </div>
+              </div> */}
             </form>
           </div>
         

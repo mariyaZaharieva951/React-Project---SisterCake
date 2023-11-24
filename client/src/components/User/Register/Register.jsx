@@ -13,32 +13,7 @@ export const Register = () => {
     password:'',
     rePass: '',
   })
-    // const { login } = useContext(AuthContext);
-    // const navigate = useNavigate()
-
-
-    // const onSubmit = (ev) => {
-    //     ev.preventDefault();
-
-    //     const formData = new FormData(ev.target);
-    //     const { name, email, password, rePass } = Object.fromEntries(formData);
-      
-    //     if(password !== rePass) {
-    //         alert('Passwords don`t match!');
-    //         return
-    //     }
-
-    //     authService.register(name,email,password)
-    //     .then(authData => {
-            
-    //         login(authData);
-    //         navigate('/');
-    //     })
-    //     .catch(() => {
-    //         navigate('/')
-    //     })
-    // }
-
+  
   return (
     <div className="container">
       <div className={styles.row}>

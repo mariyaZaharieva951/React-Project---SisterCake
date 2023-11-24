@@ -39,3 +39,18 @@ export const getOneComment = async (commentId) => {
     }
 
 }
+
+export const editComment = async(commentId,token,data) => {
+    const response = await fetch(`${baseUrl}/${commentId}`, {
+        method: 'PUT',
+        headers: {
+            "content-type": "application/json",
+            "X-Authorization": token,
+        },
+        body: JSON.stringify({...data})
+    })
+
+    const result = await response.json();
+    console.log(result);
+    return result;
+}
