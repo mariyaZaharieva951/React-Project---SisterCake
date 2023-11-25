@@ -1,9 +1,12 @@
-import { Link, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { useEffect, useState, useContext } from "react";
+import { AuthContext } from "../../../contexts/authContex";
 import * as commentService from "../../../services/commentService";
 
 
 export const DetailsComment = () => {
+    const navigate = useNavigate();
+    const { user } = useContext(AuthContext);
     const { commentId } = useParams();
     const [ currentComment, setCurrentComment ] = useState({});
 
@@ -14,6 +17,16 @@ export const DetailsComment = () => {
             setCurrentComment(result)
         })
     },[commentId])
+
+    const onDelete = (ev) => {
+      ev.preventDefault();
+
+      commentService.delComment(commentId, user.accessToken)
+        .then(result => {
+            navigate('/comments')
+            })
+      
+    }
 
     return (
         <div className="col-md-4">
@@ -31,7 +44,7 @@ export const DetailsComment = () => {
               </div>
               <div className="buttons">
                 <Link to={`/comment/edit/${currentComment._id}`} className="edit">Редактиране</Link>
-                {/* <Link to{`comments/delete/${currentComment._id}`} className="delete">Изтриване</Link> */}
+                <Link to={`/comment/delete/${currentComment._id}`} className="delete" onClick={onDelete}>Изтриване</Link>
               </div>
             </div>
           </div>

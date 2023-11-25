@@ -58,3 +58,18 @@ export const editComment = async(commentId,token,data) => {
     
     return result;
 }
+
+export const delComment = async(commentId,token) => {
+   const response = await fetch(`${baseUrl}/${commentId}`, {
+    method: 'DELETE',
+    headers: {
+        "X-Authorization": token,
+    }
+   }) 
+   if(response.status === 403) {
+    alert('You is not a owner!')
+    }
+   const result = await response.json();
+        
+   return result;
+}

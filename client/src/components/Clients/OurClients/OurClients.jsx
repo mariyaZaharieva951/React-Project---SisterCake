@@ -30,9 +30,7 @@ export const OurClients = () => {
           comments.slice(0,15),
           comments.map(comment => <Comments key={comment._id} {...comment}/>)) :
           <p>No added comments</p>
-        }
-        
-        
+        } 
       </div>
       <button><Link to={'/createComment'}>Остави коментар</Link></button>
     </div>

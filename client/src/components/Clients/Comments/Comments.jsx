@@ -1,12 +1,13 @@
-// import { useContext } from "react";
-// import { AuthContext } from "../../../contexts/authContex";
-
 import { Link } from "react-router-dom"
 
 
-export const Comments = ({imageUrl, description, _createdOn, user, _id}) => {
-  // const { user } = useContext(AuthContext)
-   
+export const Comments = ({
+  imageUrl, 
+  description, 
+  _createdOn, 
+  user, 
+  _id
+}) => {
 
     return (
         <div className="col-md-4">

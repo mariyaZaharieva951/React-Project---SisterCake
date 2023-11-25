@@ -1,35 +1,14 @@
 import { useForm } from "../../../hooks/useForm";
 import styles from "../CreateComment/CreateComment.module.css";
-// import { useState, useContext } from "react";
-// import { useNavigate } from "react-router-dom";
-// import { AuthContext } from "../../../contexts/authContex";
-// import * as commentService from "../../../services/commentService";
+
 
 export const CreateComment = () => {
-  // const navigate = useNavigate();
-  // const { user } = useContext(AuthContext);
-
-  // const [comment, setComment] = useState({});
-
+ 
   const { values, onChange, onCreateSubmit} = useForm({ 
     imageUrl: '',
     description: '',
   })
 
-  // const onCreateSubmit = (ev) => {
-  //   ev.preventDefault();
-
-  //   const formData = new FormData(ev.currentTarget);
-  //   const { imageUrl, description } = Object.fromEntries(formData);
-  
-
-  //   commentService
-  //     .createComment({ imageUrl, description, user }, user.accessToken)
-  //     .then((result) => {
-  //       setComment((oldState) => ({ ...oldState, result }))
-  //     }, navigate("/comments"))
-  //     .catch((error) => console.log(error));
-  // };
 
   return (
     <div className="container">
