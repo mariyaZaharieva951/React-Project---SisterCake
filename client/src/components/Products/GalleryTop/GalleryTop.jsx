@@ -13,7 +13,7 @@ export const GalleryTop = () => {
 
   useEffect(() => {
     cakeService
-      .getAllBirthdayCake()
+      .getAll()
       .then((result) => {
         setCakes(result);
       })
