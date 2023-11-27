@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #E88F2A;
+    --primary: #e82ab280;
     --secondary: #FAF3EB;
     --light: #FFFFFF;
     --dark: #2B2825;
@@ -116,6 +116,8 @@ h6,
         padding: 10px 0;
     }
 }
+
+
 
 .hero-header {
     background: url(../img/hero.jpg) top right no-repeat;

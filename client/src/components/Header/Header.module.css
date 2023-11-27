@@ -12,7 +12,7 @@
 }
 
 .card i {
-    color: #E88F2A;
+    color: #e82ab280;
 }
 
 .text {
@@ -25,7 +25,7 @@
 }
 
 .center {
-    background-color: #E88F2A;
+    background-color: #e82ab280;
     max-width: 100%;
     height: auto;
 }
@@ -78,6 +78,11 @@
 .navbar-dark .navbar-nav .nav-link.active {
     color: var(--primary);
 }
+
+#navbarCollapse {
+    background-color: #6eefcf;
+}
+
 
 @media (max-width: 991.98px) {
     .navbar-dark .navbar-nav .nav-link  {

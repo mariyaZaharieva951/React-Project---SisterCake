@@ -2,7 +2,8 @@ import styles from '../Hero/Hero.module.css'
 
 export const Hero = () => {
     return (
-        <div className="container-fluid bg-primary py-5 mb-5 hero-header">
+        
+    <div className="container-fluid bg-primary py-5 mb-5 hero-header">
         <div className="container py-5">
             <div className={styles.row}>
                 <div className={styles.col}>
