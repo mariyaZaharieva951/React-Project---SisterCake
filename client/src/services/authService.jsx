@@ -70,11 +70,16 @@ export const login = async (email,password) => {
         },
         body: JSON.stringify({email,password})
     });
-
+    
     if(response.ok) {
         const token = await response.json();
         
         return token;
+    }
+
+    if(response.status === 403) {
+        alert('This user is don`t exist!');
+        return;
     }
     } catch(error) {
         console.log(error)
