@@ -16,11 +16,15 @@ export const useForm = (initialValues) => {
 
 
     const onChange = (ev) => {
+        try {
+            setValues(oldState => ({
+                ...oldState,
+                [ev.target.name]: ev.target.value
+            }))
+        } catch(error) {
+            console.log(error)
+        }
         
-        setValues(oldState => ({
-            ...oldState,
-            [ev.target.name]: ev.target.value
-        }))
     }
 
     const onLoginSubmit = (ev) => {
@@ -29,8 +33,7 @@ export const useForm = (initialValues) => {
             const { email, password } = values;
             
             authService.login(email,password)
-            .then(authData => {
-                
+            .then(authData => { 
                 login(authData);
                 navigate('/');
             })
@@ -50,50 +53,49 @@ export const useForm = (initialValues) => {
         }
 
         authService.register(name,email,password)
-        .then(authData => {
-            
+        .then(authData => {   
             login(authData);
             navigate('/');
         })
         .catch(() => {
-            navigate('/')
+            alert('The register is not successful!')
         })
     }
 
     const onEditSubmit = (ev) => {
         ev.preventDefault();
         
-        const { imageUrl, description} = values;
+            const { imageUrl, description} = values;
 
-        const data = { imageUrl, description}
+            const data = { imageUrl, description}
         
-        commentService.editComment(commentId, user.accessToken, data)
-      .then(result => {
+            commentService.editComment(commentId, user.accessToken, data)
+                .then(result => {
           
-          setValues(state => ({...state,result}))
-          navigate('/comments')
-        .catch((err) => {
-            console.log(err)
+                    setValues(state => ({...state,result}))
+                    navigate('/comments')
+                .catch((err) => {
+                    console.log(err)
         })
     })
     }
 
     const onCreateSubmit = (ev) => {
-    ev.preventDefault();
+        ev.preventDefault();
 
-    const { imageUrl, description} = values;
+            const { imageUrl, description} = values;
 
-        const data = { imageUrl, description}
+            const data = { imageUrl, description}
         
-
-    commentService
-      .createComment(data, user.accessToken)
-      .then((result) => {
-        console.log('NEW COMMENT',result)
-        setValues((oldState) => ({ ...oldState, result }))
-      }, navigate("/comments"))
-      .catch((error) => console.log(error));
-  };
+            commentService.createComment(data, user.accessToken)
+                .then((result) => {
+        
+                    setValues((state) => ({ ...state, result }))
+                    }, navigate("/comments"))
+            .catch((error) =>{ 
+            console.log(error)
+            })
+  }
 
     return {
         values,

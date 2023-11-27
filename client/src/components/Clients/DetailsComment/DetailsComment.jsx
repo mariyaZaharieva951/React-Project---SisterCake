@@ -8,14 +8,15 @@ export const DetailsComment = () => {
     const navigate = useNavigate();
     const { user } = useContext(AuthContext);
     const { commentId } = useParams();
+
     const [ currentComment, setCurrentComment ] = useState({});
 
     useEffect(() => {
         commentService.getOneComment(commentId)
         .then(result => {
-            
             setCurrentComment(result)
         })
+        .catch((err) => console.log(err))
     },[commentId])
 
     const onDelete = (ev) => {
@@ -25,7 +26,7 @@ export const DetailsComment = () => {
         .then(result => {
             navigate('/comments')
             })
-      
+        .catch((err) => console.log(err))
     }
 
     return (

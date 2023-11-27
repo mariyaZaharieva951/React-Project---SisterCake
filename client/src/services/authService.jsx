@@ -3,7 +3,6 @@ const baseUrl = 'http://localhost:3030/users';
 
 export const register = async (name,email,password) => {
     
-    // const headers = authCheck();
     try{
     
         const authData = localStorage.getItem('auth');
@@ -33,7 +32,7 @@ export const register = async (name,email,password) => {
         return token;
     }
 
-    if(response.status === 409) {
+    if(response.status === 403) {
         alert('This user is already exist!');
         return;
     }

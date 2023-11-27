@@ -14,7 +14,7 @@ export const OurClients = () => {
       .then(result => {
           console.log(result);
           setComments(result);
-          console.log('COMMENTS',comments)
+    
       })
       .catch(error => {
           console.log(error)

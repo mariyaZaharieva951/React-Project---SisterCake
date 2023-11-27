@@ -10,6 +10,20 @@ export const Login = () => {
       password:'',
     })
 
+    const emailValidator = (email) => {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const validEmail = emailRegex.test(email);
+
+      if(!validEmail) {
+        console.log('email  is not valid')
+        return
+      }
+    }
+
+    const passwordValidator = () => {
+
+    }
+
 
   return (
     <div className="container">
@@ -28,6 +42,7 @@ export const Login = () => {
               id="email"
               value={values.email}
               onChange={onChange}
+              onBlur={emailValidator}
               />
               <input 
               type="password" 
@@ -36,6 +51,7 @@ export const Login = () => {
               id="password"
               value={values.password}
               onChange={onChange}
+              onBlur={passwordValidator}
               />
               {/* <a className="forgot text-muted" href="#">
                 Forgot password?
