@@ -11,7 +11,7 @@ export const ForUs = () => {
         <div className={styles.row}>
           <div className={styles.colImg}>
             <div className={styles.img}>
-              <img src="img/about.jpg"/>
+              <img src="img/about3.jpg"/>
             </div>
           </div>
           <div className={styles.colText}>
@@ -31,34 +31,19 @@ export const ForUs = () => {
               lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore
               erat amet magna
             </p>
-            {/* <div className="row g-5">
-              <div className="col-sm-6">
-                <div
-                  className="d-flex align-items-center justify-content-center bg-primary border-inner mb-4"
-                  style={{ width: 90, height: 90 }}
-                >
-                  <i className="fa fa-heartbeat fa-2x text-white" />
-                </div>
-                <h4 className="text-uppercase">100% Healthy</h4>
-                <p className="mb-0">
-                  Labore justo vero ipsum sit clita erat lorem magna clita
-                  nonumy dolor magna dolor vero
-                </p>
-              </div>
-              <div className="col-sm-6">
-                <div
-                  className="d-flex align-items-center justify-content-center bg-primary border-inner mb-4"
-                  style={{ width: 90, height: 90 }}
-                >
-                  <i className="fa fa-award fa-2x text-white" />
-                </div>
-                <h4 className="text-uppercase">Award Winning</h4>
-                <p className="mb-0">
-                  Labore justo vero ipsum sit clita erat lorem magna clita
-                  nonumy dolor magna dolor vero
-                </p>
-              </div>
-            </div> */}
+            <p>
+              Tempor erat elitr at rebum at at clita. Diam dolor diam ipsum et
+              tempor sit. Clita erat ipsum et lorem et sit, sed stet no labore
+              lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore
+              erat amet magna
+            </p>
+            <p>
+              Tempor erat elitr at rebum at at clita. Diam dolor diam ipsum et
+              tempor sit. Clita erat ipsum et lorem et sit, sed stet no labore
+              lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore
+              erat amet magna
+            </p>
+            
           </div>
         </div>
       </div>
