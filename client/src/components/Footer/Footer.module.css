@@ -15,8 +15,12 @@ h1 {
 }
 
 .leftCard {
-    background-color: #E88F2A;
+    background-color: #E59DA6;
 
+}
+
+.text {
+    color: white;
 }
 
 .box {
@@ -67,7 +71,7 @@ h1 {
 }
 
 .line i, .info i {
-    color: #E88F2A;;
+    color: #E59DA6;
 }
 
 .icons i {

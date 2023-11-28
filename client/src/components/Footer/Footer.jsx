@@ -19,7 +19,7 @@ export const Footer = () => {
                         Sistercake
                       </h1>
                     </a>
-                    <p>
+                    <p className={styles.text}>
                       Lorem diam sit erat dolor elitr et, diam lorem justo
                       labore amet clita labore stet eos magna sit. Elitr dolor
                       eirmod duo tempor lorem, elitr clita ipsum sea. Nonumy
