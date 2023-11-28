@@ -26,7 +26,7 @@ export const Login = () => {
 
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <div className={styles.row}>
         
           <div className={styles.card}>

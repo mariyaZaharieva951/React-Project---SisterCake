@@ -1,9 +1,6 @@
 import styles from "../Register/Register.module.css";
 import { useForm } from "../../../hooks/useForm";
-// import { useContext } from "react";
-// import { AuthContext } from "../../../contexts/authContex";
-// import * as authService from '../../../services/authService';
-// import { useNavigate } from "react-router-dom"
+
 
 export const Register = () => {
 
@@ -15,7 +12,7 @@ export const Register = () => {
   })
   
   return (
-    <div className="container">
+    <div className={styles.container}>
       <div className={styles.row}>
         <div className={styles.card}>
           <form className={styles.box} onSubmit={onRegisterSubmit}>

@@ -1,6 +1,12 @@
-
+.container {
+    background-image: linear-gradient(rgba(43, 40, 37, 0.514), rgba(43, 40, 37, .514)),url('img/register.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
 .card{
-    margin: 2rem;
+    padding: 4rem;
     border:none;
     display: flex;
     justify-content: center;
