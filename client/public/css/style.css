@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #e82ab280;
+    --primary: #E59DA6;
     --secondary: #FAF3EB;
     --light: #FFFFFF;
     --dark: #2B2825;
@@ -120,8 +120,11 @@ h6,
 
 
 .hero-header {
-    background: url(../img/hero.jpg) top right no-repeat;
-    background-size: cover;
+    background: url(../img/hero6.jpg) no-repeat;
+    background-size:100%;
+    background-position: top;
+
+    
 }
 
 .btn-play {
