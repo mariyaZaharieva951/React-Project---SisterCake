@@ -1,33 +1,35 @@
+import { Link } from "react-router-dom";
+import styles from '../Shop/Offer.module.css'
+
 export const Offer = () => {
-    return (
-        <div className="container-fluid bg-offer my-5 py-5">
-  <div className="container py-5">
-    <div className="row gx-5 justify-content-center">
-      <div className="col-lg-7 text-center">
-        <div
-          className="section-title position-relative text-center mx-auto mb-4 pb-3"
-          style={{ maxWidth: 600 }}
-        >
-          <h2 className="text-primary font-secondary">Опитайте</h2>
-          <h1 className="display-4 text-uppercase text-white">
-            Изберете вашата торта
-          </h1>
+  return (
+    <div className="container-fluid bg-offer my-5 py-5">
+      <div className="container">
+        <div className={styles.offerRow}>
+          <div className={styles.offerCard}>
+            <div
+              className="section-title position-relative text-center mx-auto mb-4 pb-3"
+              style={{ maxWidth: 600 }}
+            >
+              <h2 className="text-primary font-secondary">Опитайте</h2>
+              <h1 className="display-4 text-uppercase text-white">
+                Изберете вашата торта
+              </h1>
+            </div>
+            <p className={styles.offerText}>
+              Предлагаме Ви да разгледате нашите предложения. Не се притеснявайте, ако не видите Вашата торта, свържете се с нас и ние ще направим всичко възможно, за да изпълним желанията Ви
+            </p>
+            <div className={styles.button}>
+              <Link
+                to={"/menu"}
+                className="btn btn-primary border-inner py-3 px-5 me-3"
+              >
+                Меню
+              </Link>
+            </div>
+          </div>
         </div>
-        <p className="text-white mb-4">
-          Eirmod sed tempor lorem ut dolores sit kasd ipsum. Dolor ea et dolore
-          et at sea ea at dolor justo ipsum duo rebum sea. Eos vero eos vero ea
-          et dolore eirmod et. Dolores diam duo lorem. Elitr ut dolores magna
-          sit. Sea dolore sed et.
-        </p>
-        <a href="" className="btn btn-primary border-inner py-3 px-5 me-3">
-          Заяви
-        </a>
-        {/* <a href="" className="btn btn-dark border-inner py-3 px-5">
-          Read More
-        </a> */}
       </div>
     </div>
-  </div>
-</div>
-    )
-}
+  );
+};
