@@ -8,7 +8,7 @@ export const Contact = () => {
           <div className="col-lg-4 col-md-6">
             <div className={styles.border}>
               <div className={styles.card}>
-                <i className="bi bi-geo-alt fs-1" />
+                <i className="bi bi-geo-alt fs-1 text-white top" />
                 <h6 className={styles.h6}>Адрес</h6>
                 <span>гр. Ямбол, ул. Атанас Кратунов №5</span>
               </div>

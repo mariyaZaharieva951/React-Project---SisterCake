@@ -17,3 +17,7 @@ h2 {
     padding-top: 4rem;
 }
 
+.button>a:hover {
+    background-color: white;
+    color: #E59DA6;;
+}

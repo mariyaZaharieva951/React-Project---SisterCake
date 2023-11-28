@@ -60,7 +60,7 @@
 }
 
 .box input[type="submit"]:hover {
-    background: #E88F2A
+    background: #E59DA6
 }
 
 .forgot {
@@ -88,7 +88,7 @@
 
 a.socialIcon:hover,
 .socialHoverClass {
-    color: #E88F2A
+    color: #E59DA6
 }
 
 .social_circle li a {
