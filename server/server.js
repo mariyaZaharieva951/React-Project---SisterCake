@@ -1339,7 +1339,142 @@
     	sessions: {
     	}
     };
-    var seedData = {};
+    var seedData = {
+        birthdayCakes: {
+            "3149d1f2-213c-4a9c-bf22-d68276011062": {
+                "_id": "3149d1f2-213c-4a9c-bf22-d68276011062",
+                "imgUrl": "img/birthday/bd1.png" 
+              },
+              "883b9fef-83f9-4ed9-9aa7-a560f3be2b40": {
+                "_id": "883b9fef-83f9-4ed9-9aa7-a560f3be2b40",
+                "imgUrl": "img/birthday/bd2.png"  
+              },
+              "e45f25dd-3a1f-4fc9-b946-5136e862e206": {
+                "_id": "e45f25dd-3a1f-4fc9-b946-5136e862e206",
+                "imgUrl": "img/birthday/bd3.png" 
+              },
+              "a27bec14-407b-49ff-bc4c-a74a1e694520": {
+                "_id": "a27bec14-407b-49ff-bc4c-a74a1e694520",
+                "imgUrl": "img/birthday/bd16.png" 
+              },
+              "2173eaec-d7af-40f4-9c97-b6793733713d": {
+                "_id": "2173eaec-d7af-40f4-9c97-b6793733713d",
+                "imgUrl": "img/birthday/bd5.png"  
+              },
+              "40701aa1-8a89-419b-a72e-ab640b08afe4": {
+                "_id": "40701aa1-8a89-419b-a72e-ab640b08afe4",
+                "imgUrl": "img/birthday/bd6.png"  
+              },
+              "cba36e6f-7700-40a4-bfc4-05e704f2bdf7": {
+                "_id": "cba36e6f-7700-40a4-bfc4-05e704f2bdf7",
+                "imgUrl": "img/birthday/bd7.png"  
+              },
+              "8794ac00-466c-4365-a356-95ddf828a790": {
+                "_id": "8794ac00-466c-4365-a356-95ddf828a790",
+                "imgUrl": "img/birthday/bd8.png"  
+              },
+              "05d1668e-a998-448b-b726-91d9854f1d93": {
+                "_id": "05d1668e-a998-448b-b726-91d9854f1d93",
+                "imgUrl": "img/birthday/bd9.png"  
+              },
+              "b073b443-a00a-491b-9114-e3680e76a2cf": {
+                "_id": "b073b443-a00a-491b-9114-e3680e76a2cf",
+                "imgUrl": "img/birthday/bd4.png"  
+              },
+              "def3b89d-ca77-4d13-a504-816fd81a287f": {
+                "_id": "def3b89d-ca77-4d13-a504-816fd81a287f",
+                "imgUrl": "img/birthday/bd11.png"  
+              },
+              "6329946e-5973-4fbb-8284-71b785555678": {
+                "_id": "6329946e-5973-4fbb-8284-71b785555678",
+                "imgUrl": "img/birthday/bd12.png"  
+              },
+              "23d3781f-4112-4a1a-9f45-a50371b3e399": {
+                "_id": "23d3781f-4112-4a1a-9f45-a50371b3e399",
+                "imgUrl": "img/birthday/bd13.png"  
+              },
+              "9deb84df-1036-41c1-b512-c5c260ed904d": {
+                "_id": "9deb84df-1036-41c1-b512-c5c260ed904d",
+                "imgUrl": "img/birthday/bd14.png"  
+              },
+              "b49088de-5606-477c-b173-5189d0039a87": {
+                "_id": "b49088de-5606-477c-b173-5189d0039a87",
+                "imgUrl": "img/birthday/bd15.png"  
+              },
+              "77ce2354-d30b-42e3-8080-c7699c022924": {
+                "_id": "77ce2354-d30b-42e3-8080-c7699c022924",
+                "imgUrl": "img/birthday/bd1.png"  
+              }
+              
+        },
+        cakes: {
+            "6939edc2-cd75-4000-8671-771f49defb9a": {
+                "_id": "6939edc2-cd75-4000-8671-771f49defb9a",
+                "imgUrl": "img/gallery/cake1.png" 
+              },
+              "95bb0b89-5f7b-446c-beff-947b6bdea63f": {
+                "_id": "95bb0b89-5f7b-446c-beff-947b6bdea63f",
+                "imgUrl": "img/gallery/cake2.png" 
+              },
+              "aff75630-d953-4786-81cf-f50e7932a7fa": {
+                "_id": "aff75630-d953-4786-81cf-f50e7932a7fa",
+                "imgUrl": "img/gallery/cake3.png"
+              },
+              "d57491eb-e43a-48b4-8bdc-d2c8b3eea40d": {
+                "_id": "d57491eb-e43a-48b4-8bdc-d2c8b3eea40d",
+                "imgUrl": "img/gallery/cake4.png"
+              },
+              "309e5267-487a-43b4-a299-c25224a2c593": {
+                "_id": "309e5267-487a-43b4-a299-c25224a2c593",
+                "imgUrl": "img/gallery/cake5.png" 
+              },
+              "cb7eb2cb-f244-4c44-b9a6-b151c42a93c2": {
+                "_id": "cb7eb2cb-f244-4c44-b9a6-b151c42a93c2",
+                "imgUrl": "img/gallery/cake6.png" 
+              },
+              "a94f0524-8aaf-4220-b7b2-4064b5cc3ff8": {
+                "_id": "a94f0524-8aaf-4220-b7b2-4064b5cc3ff8",
+                "imgUrl": "img/gallery/cake7.png" 
+              },
+              "6657f68c-42e3-428e-a54b-d13422deafa6": {
+                "_id": "6657f68c-42e3-428e-a54b-d13422deafa6",
+                "imgUrl": "img/gallery/cake8.png" 
+              },
+              "75b6f426-9ecb-4290-ac09-f0f617d2a3c8": {
+                "_id": "75b6f426-9ecb-4290-ac09-f0f617d2a3c8",
+                "imgUrl": "img/gallery/cake9.png" 
+              },
+              "a94f0524-8aaf-4220-b7b2-4064b5cc3ff8": {
+                "_id": "a94f0524-8aaf-4220-b7b2-4064b5cc3ff8",
+                "imgUrl": "img/gallery/cake10.png" 
+              },
+              "cab4e70c-98a1-4fe7-a426-553e8f1898be": {
+                "_id": "cab4e70c-98a1-4fe7-a426-553e8f1898be",
+                "imgUrl": "img/gallery/cake11.png" 
+              },
+              "9bd6ad4d-1d49-4acf-83d6-04da11199df5": {
+                "_id": "9bd6ad4d-1d49-4acf-83d6-04da11199df5",
+                "imgUrl": "img/gallery/cake12.png" 
+              },
+              "48146b5d-faa8-4517-8288-d1ca1f34979a": {
+                "_id": "48146b5d-faa8-4517-8288-d1ca1f34979a",
+                "imgUrl": "img/gallery/cake13.png" 
+              },
+              "020a6d9c-37fe-42a4-9f1d-2c559bba1906": {
+                "_id": "020a6d9c-37fe-42a4-9f1d-2c559bba1906",
+                "imgUrl": "img/gallery/cake14.png" 
+              },
+              "d4b1f055-d96e-4347-8a70-dfafb52056f1": {
+                "_id": "d4b1f055-d96e-4347-8a70-dfafb52056f1",
+                "imgUrl": "img/gallery/cake15.png" 
+              },
+              "a4048a79-c2e0-4e98-bee9-1068d3816fcf": {
+                "_id": "a4048a79-c2e0-4e98-bee9-1068d3816fcf",
+                "imgUrl": "img/gallery/cake16.png" 
+              },
+              
+        }
+    };
     var rules$1 = {
     	users: {
     		".create": false,

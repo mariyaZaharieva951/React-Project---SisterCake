@@ -1,9 +1,9 @@
-const baseUrl = 'http://localhost:3030/jsonstore';
+const baseUrl = 'http://localhost:3030/data';
 
 
 export const getAll = async () => {
    try{ 
-    const response = await fetch(`${baseUrl}/products`);
+    const response = await fetch(`${baseUrl}/cakes`);
     const result = await response.json();
     const data = Object.values(result);
     
@@ -14,7 +14,7 @@ export const getAll = async () => {
 }
 export const getAllBirthdayCake = async () => {
     try{ 
-     const response = await fetch(`${baseUrl}/birthdayCake`);
+     const response = await fetch(`${baseUrl}/birthdayCakes`);
      const result = await response.json();
      const data = Object.values(result);
      
@@ -28,7 +28,7 @@ export const getAllBirthdayCake = async () => {
 
 export const getOneBdCake = async (cakeId) => {
     try{ 
-     const response = await fetch(`${baseUrl}/birthdayCake/${cakeId}`);
+     const response = await fetch(`${baseUrl}/birthdayCakes/${cakeId}`);
      const result = await response.json();
      
      return result

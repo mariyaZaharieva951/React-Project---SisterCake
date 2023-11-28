@@ -1,7 +1,7 @@
 import styles from '../Product/Product.module.css'
 
 export const Product = ({img}) => {
-    console.log(img)
+    
     return (
     <div className="col-sm-6 col-md-3 col-lg-3_item">
         <div className={styles.item}>
