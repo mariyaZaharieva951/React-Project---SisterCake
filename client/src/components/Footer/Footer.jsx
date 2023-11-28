@@ -5,7 +5,7 @@ export const Footer = () => {
     <div>
       <div
         className="container-fluid bg-img text-secondary"
-        style={{ marginTop: 90 }}
+        // style={{ marginTop: 90 }}
       >
         <div className="container">
           <div className="row gx-5">

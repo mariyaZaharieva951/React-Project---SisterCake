@@ -23,7 +23,7 @@ export const GalleryTop = () => {
  
   return (
 
-    <div className="container">
+    <div className={styles.container}>
       <div className="row blog">
         <div className="col-md-12">
           <div

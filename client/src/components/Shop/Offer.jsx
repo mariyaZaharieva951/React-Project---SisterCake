@@ -3,7 +3,7 @@ import styles from '../Shop/Offer.module.css'
 
 export const Offer = () => {
   return (
-    <div className="container-fluid bg-offer my-5 py-5">
+    <div className="container-fluid bg-offer ">
       <div className="container">
         <div className={styles.offerRow}>
           <div className={styles.offerCard}>

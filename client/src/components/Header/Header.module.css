@@ -32,10 +32,12 @@
 
 .name {
     padding: 2rem 4rem;
+    font-size: 3rem;
 }
 
 .border {
-    position: relative;    
+    position: relative;  
+    padding: 0 2rem;  
 }
 
 .border::before {

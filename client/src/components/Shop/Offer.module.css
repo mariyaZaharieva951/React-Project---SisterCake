@@ -4,7 +4,7 @@
 }
 
 .offerRow h2 {
-    padding-bottom: 2em;
+    padding: 2rem 0 1rem;
 }
 .offerCard {
     display: flex;
@@ -17,6 +17,10 @@
     max-width: 90ch;
     color: white;
     padding: 2em 0;
+}
+
+.button {
+    padding-bottom: 2em;
 }
 
 .button>a:hover {

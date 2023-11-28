@@ -1,3 +1,8 @@
+.container {
+    margin: 2rem;
+}
+
+
 .blog .carousel-indicators {
 	left: 0;
 	top: auto;
