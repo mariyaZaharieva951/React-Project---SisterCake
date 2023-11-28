@@ -12,7 +12,7 @@ export const Hero = () => {
                     <h1 className="display-1">Sistercake</h1>
                     <h2>Приготвени с желание и любов</h2>
                     <div className={styles.button}>
-                        <Link to="" className="btn btn-primary border-inner py-3 px-5 me-5">Read More</Link>
+                        <Link to={'/about'} className="btn btn-primary border-inner py-3 px-5 me-5">Read More</Link>
                     </div>
                 </div>
             </div>
