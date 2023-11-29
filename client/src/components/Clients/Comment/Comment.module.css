@@ -1,0 +1,42 @@
+
+.cardComment {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    
+}
+
+.btnLike a {
+    align-items: center;
+}
+
+.btnComment a:hover {
+    background-color: white;
+    color: #E59DA6;
+}
+
+.btnLike i {
+    color:#E59DA6;
+    text-align: center;
+    padding: 0;
+}
+
+.btnLike i:hover {
+    /* color:#E59DA6; */
+    fill: #E59DA6;
+    
+    
+}
+
+.imgComment {
+    display: block;
+    width: 100%;
+    height: 18rem;
+    object-fit:cover;
+}
+
+.btnComment {
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+}

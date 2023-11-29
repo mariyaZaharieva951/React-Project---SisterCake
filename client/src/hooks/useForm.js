@@ -72,7 +72,7 @@ export const useForm = (initialValues) => {
             commentService.editComment(commentId, user.accessToken, data)
                 .then(result => {
           
-                    setValues(state => ({...state,result}))
+                    setValues(state => ({...state,result})) //Проверка
                     navigate('/comments')
                 .catch((err) => {
                     console.log(err)

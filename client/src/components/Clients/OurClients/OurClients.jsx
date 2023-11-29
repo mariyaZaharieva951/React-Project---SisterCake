@@ -1,5 +1,5 @@
 import styles from "../OurClients/OurClients.module.css";
-import { Comments } from "../Comments/Comments";
+import { Comment } from "../Comment/Comment";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import * as commentService from '../../../services/commentService';
@@ -23,16 +23,26 @@ export const OurClients = () => {
 
 
   return (
+    
     <div className="container">
-      <h4 className="mb-5 font-weight-bold">Клиентите за нас</h4>
-      <div className="row g-3 mt-5 mb-5">
+      <div className="section-title position-relative text-center mx-auto mb-5 pb-3"
+          style={{ maxWidth: 600 }}>
+          <h2 className="text-primary font-secondary">Клиентите за нас</h2>
+      </div>
+
+
+    
+      <div className="row">
         {comments.length > 0 ? (
           comments.slice(0,15),
-          comments.map(comment => <Comments key={comment._id} {...comment}/>)) :
+          comments.map(comment => <Comment key={comment._id} {...comment}/>)) :
           <p>No added comments</p>
         } 
       </div>
-      <button><Link to={'/createComment'}>Остави коментар</Link></button>
+      <div className={styles.btnCreate}>
+        <Link to={'/createComment'} className="btn btn-primary border-inner py-3 px-5 me-5">Остави коментар</Link>
+        </div>
+    
     </div>
   );
 };
