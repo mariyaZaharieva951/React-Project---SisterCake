@@ -4,6 +4,7 @@ import styles from "../CreateComment/CreateComment.module.css";
 export const CreateComment = () => {
   const { values, onChange, onCreateSubmit } = useForm({
     imageUrl: "",
+    cream: "",
     description: "",
   });
 

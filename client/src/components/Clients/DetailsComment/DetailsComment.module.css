@@ -1,0 +1,40 @@
+.detailsBox{
+    margin: 2rem;
+    padding: 2rem;
+    border:none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #F1E3E6;
+    border-radius: 6px;
+}
+
+.btnDetail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.btnDetail a:hover {
+    background-color: white;
+    color: #E59DA6;
+}
+
+.btnLike {
+    display: flex;
+    justify-content: flex-end;
+}
+.btnLike i {
+    color:#E59DA6;
+    padding: 0;
+}
+
+.btnLike i:hover {
+    /* color:#E59DA6; */
+    fill: #E59DA6;
+    
+    
+}
+
