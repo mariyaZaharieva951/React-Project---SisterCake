@@ -14,3 +14,13 @@
     
 }
 
+.btnItem {
+    display: flex;
+    gap: 1rem;
+}
+
+.btnItem button:hover {
+    color:white;
+    background-color: #c4737c;;
+}
+

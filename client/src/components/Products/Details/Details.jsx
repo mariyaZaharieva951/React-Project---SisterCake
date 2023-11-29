@@ -36,10 +36,12 @@ export const Details = () => {
                 <h3>4.50лв.</h3>
               </div>
               <div className="px-2 mt-3">
-                <button className="btn btn-primary px-3">Buy Now</button>
-                <button className="btn btn-outline-primary px-3">
-                  Add to cart
-                </button>
+                <div className={styles.btnItem}>
+                  <button className="btn btn-primary px-3">Купи</button>
+                  <button className="btn btn-outline-primary px-3">
+                    Отказ
+                  </button>
+                </div>
               </div>
             </div>
           </div>
