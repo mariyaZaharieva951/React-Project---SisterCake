@@ -20,34 +20,46 @@ export const EditComment = () => {
 
   const { values, onChange, onEditSubmit} = useForm({ 
     imageUrl: currentComment.imageUrl,
+    cream: currentComment.cream,
     description: currentComment.description,
     commentId: currentComment._id
   })
   
 
     return (
-        <div className="container">
+      <div className={styles.editPage}>  
+    <div className="container">
       <div className={styles.row}>
         <div className={styles.card}>
           <form className={styles.box} onSubmit={onEditSubmit}>
             <h1>Редактирай Коментар</h1>
             <div className={styles.line}>
-              {/* <label htmlFor="game-img">Image:</label> */}
+              <label htmlFor="game-img">Снимка:</label>
               <input
                 type="text"
                 id="imageUrl"
                 name="imageUrl"
-                placeholder="Качи снимка..."
+                placeholder={currentComment.imageUrl}
                 value={values.imageUrl}
                 onChange={onChange}
               />
             </div>
             <div className={styles.line}>
+              <label htmlFor="game-img">Вкус:</label>
+              <input
+                type="text"
+                name="cream"
+                placeholder={currentComment.cream}
+                value={values.cream}
+                onChange={onChange}
+              />
+            </div>
+            <div className={styles.line}>
+              <label htmlFor="game-img">Описание:</label>
               <textarea
                 name="description"
-                placeholder="Коментар..."
+                placeholder={currentComment.description}
                 style={{ height: "100px" }}
-                id="description"
                 value={values.description}
                 onChange={onChange}
               ></textarea>
@@ -57,6 +69,7 @@ export const EditComment = () => {
           </form>
         </div>
       </div>
+    </div>
     </div>
     )
 }

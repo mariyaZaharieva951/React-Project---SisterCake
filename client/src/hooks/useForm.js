@@ -65,9 +65,9 @@ export const useForm = (initialValues) => {
     const onEditSubmit = (ev) => {
         ev.preventDefault();
         
-            const { imageUrl, description} = values;
+            const { imageUrl, cream, description} = values;
 
-            const data = { imageUrl, description}
+            const data = { imageUrl, cream, description}
         
             commentService.editComment(commentId, user.accessToken, data)
                 .then(result => {
