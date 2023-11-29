@@ -1,33 +1,43 @@
-
+.container {
+    background-image: linear-gradient(rgba(43, 40, 37, 0.514), rgba(43, 40, 37, .514)),url('img/comment.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
 .card{
-    margin-bottom:20px;
+    padding: 4rem;
     border:none;
     display: flex;
-    justify-content: center;
+    justify-content: center;   
+    
 }
 
 .box {
-    display: flex;
-    flex-direction: column;
-    width: 600px;
-    padding: 40px;
-    background: #191919;;
+    width: 500px;
+    padding: 2rem 4rem;
+    background: #E59DA6;
     text-align: center;
     align-items: center;
-    margin-top: 100px
+    border-radius: 6px;
 }
 
 .line {
     display: flex;
+    align-items: center;
     gap: 1rem;
+    justify-content: space-between;
+    padding-bottom: 1rem;
 }
+
 
 .box input[type="text"], .box textarea  {
     border: 0;
     background: none;
     display: block;
-    margin: 20px auto;
-    border: 2px solid;
+    /* margin: 20px auto; */
+    /* border: 2px solid; */
+    border-radius: 10px;
     padding: 10px 10px;
     width: 250px;
     outline: none;

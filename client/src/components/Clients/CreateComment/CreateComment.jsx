@@ -1,23 +1,20 @@
 import { useForm } from "../../../hooks/useForm";
 import styles from "../CreateComment/CreateComment.module.css";
 
-
 export const CreateComment = () => {
- 
-  const { values, onChange, onCreateSubmit} = useForm({ 
-    imageUrl: '',
-    description: '',
-  })
-
+  const { values, onChange, onCreateSubmit } = useForm({
+    imageUrl: "",
+    description: "",
+  });
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <div className={styles.row}>
         <div className={styles.card}>
           <form className={styles.box} onSubmit={onCreateSubmit}>
             <h1>Създай Коментар</h1>
             <div className={styles.line}>
-              {/* <label htmlFor="game-img">Image:</label> */}
+              <label htmlFor="game-img">Снимка:</label>
               <input
                 type="text"
                 id="imageUrl"
@@ -28,6 +25,17 @@ export const CreateComment = () => {
               />
             </div>
             <div className={styles.line}>
+              <label htmlFor="game-img">Вкус:</label>
+              <input
+                type="text"
+                name="cream"
+                placeholder="Крем..."
+                value={values.cream}
+                onChange={onChange}
+              />
+            </div>
+            <div className={styles.line}>
+              <label htmlFor="game-img">Описание:</label>
               <textarea
                 name="description"
                 placeholder="Коментар..."
