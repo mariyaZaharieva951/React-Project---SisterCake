@@ -3,13 +3,16 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import * as commentService from "../../../services/commentService";
 import { useForm } from '../../../hooks/useForm';
+import { useNavigate } from 'react-router-dom';
 
 
 export const EditComment = () => {
-
+    const navigate = useNavigate();
+    
     const { commentId } = useParams();
     const [ currentComment, setCurrentComment ] = useState({});
     
+
     useEffect(() => {
       commentService.getOneComment(commentId)
       .then(result => {
@@ -39,7 +42,7 @@ export const EditComment = () => {
                 type="text"
                 id="imageUrl"
                 name="imageUrl"
-                placeholder={currentComment.imageUrl}
+                defaultValue={currentComment.imageUrl}
                 value={values.imageUrl}
                 onChange={onChange}
               />
@@ -49,7 +52,7 @@ export const EditComment = () => {
               <input
                 type="text"
                 name="cream"
-                placeholder={currentComment.cream}
+                defaultValue={currentComment.cream}
                 value={values.cream}
                 onChange={onChange}
               />
@@ -58,14 +61,15 @@ export const EditComment = () => {
               <label htmlFor="game-img">Описание:</label>
               <textarea
                 name="description"
-                placeholder={currentComment.description}
+                defaultValue={currentComment.description}
                 style={{ height: "100px" }}
                 value={values.description}
                 onChange={onChange}
               ></textarea>
             </div>
 
-            <input type="submit" name="" defaultValue="Create" href="#" />
+            <input className={styles.btnEdit} type="submit" name=""  />
+    
           </form>
         </div>
       </div>

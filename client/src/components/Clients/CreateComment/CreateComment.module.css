@@ -73,11 +73,14 @@
 }
 
 .box input[type="submit"]:hover {
-    background: #E59DA6;
+    background-color: white;
+    color: #E59DA6;
 }
 
-.forgot {
+
+
+/* .forgot {
     text-decoration: underline
-}
+} */
 
 

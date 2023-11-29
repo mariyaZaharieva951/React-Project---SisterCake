@@ -47,7 +47,7 @@ export const CreateComment = () => {
                 ></textarea>
               </div>
 
-              <input type="submit" name="" defaultValue="Create" href="#" />
+              <input className={styles.btnComment} type="submit" name="" defaultValue="Create" />
             </form>
           </div>
         </div>
