@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/authContex";
@@ -11,16 +11,23 @@ export const useForm = (initialValues) => {
     const { login, user } = useContext(AuthContext);
     const { commentId } = useParams();
     const navigate = useNavigate();
-    
+   
+   
     const [values,setValues] = useState(initialValues);
-
+    
+   
+    useEffect(() => {
+        setValues(initialValues)
+    },[initialValues])
 
     const onChange = (ev) => {
         try {
-            setValues(oldState => ({
-                ...oldState,
+    
+            setValues(state => ({
+                ...state,
                 [ev.target.name]: ev.target.value
             }))
+            
         } catch(error) {
             console.log(error)
         }
@@ -68,11 +75,11 @@ export const useForm = (initialValues) => {
             const { imageUrl, cream, description} = values;
 
             const data = { imageUrl, cream, description}
-        
+            
             commentService.editComment(commentId, user.accessToken, data)
                 .then(result => {
-          
-                    setValues(state => ({...state,result})) //Проверка
+                    
+                    setValues(state => ({...state, result})) //Проверка
                     navigate('/comments')
                 .catch((err) => {
                     console.log(err)

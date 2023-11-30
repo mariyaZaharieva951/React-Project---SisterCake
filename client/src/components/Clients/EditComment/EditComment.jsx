@@ -12,21 +12,18 @@ export const EditComment = () => {
     const { commentId } = useParams();
     const [ currentComment, setCurrentComment ] = useState({});
     
-
     useEffect(() => {
+      
       commentService.getOneComment(commentId)
       .then(result => {
-          
           setCurrentComment(result)
       })
+      .catch(err => console.log(err))
+
   },[commentId])
 
-  const { values, onChange, onEditSubmit} = useForm({ 
-    imageUrl: currentComment.imageUrl,
-    cream: currentComment.cream,
-    description: currentComment.description,
-    commentId: currentComment._id
-  })
+  
+  const { values, onChange, onEditSubmit} = useForm(currentComment)
   
 
     return (
@@ -42,7 +39,6 @@ export const EditComment = () => {
                 type="text"
                 id="imageUrl"
                 name="imageUrl"
-                defaultValue={currentComment.imageUrl}
                 value={values.imageUrl}
                 onChange={onChange}
               />
@@ -52,7 +48,6 @@ export const EditComment = () => {
               <input
                 type="text"
                 name="cream"
-                defaultValue={currentComment.cream}
                 value={values.cream}
                 onChange={onChange}
               />
@@ -61,7 +56,6 @@ export const EditComment = () => {
               <label htmlFor="game-img">Описание:</label>
               <textarea
                 name="description"
-                defaultValue={currentComment.description}
                 style={{ height: "100px" }}
                 value={values.description}
                 onChange={onChange}

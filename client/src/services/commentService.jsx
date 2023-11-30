@@ -11,7 +11,7 @@ export const createComment = async(comment,token) => {
     })
 
     const result = await response.json();
-    console.log(result);
+    
     return result;
 }
     
@@ -31,7 +31,7 @@ export const getOneComment = async (commentId) => {
    try{
     const response = await fetch(`${baseUrl}/${commentId}`)
     const result = await response.json();
-
+   
     return result;
 
     } catch(err) {
@@ -55,7 +55,7 @@ export const editComment = async(commentId,token,data) => {
     }
 
     const result = await response.json();
-    
+
     return result;
 }
 

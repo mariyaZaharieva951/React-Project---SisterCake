@@ -33,7 +33,6 @@ export const DetailsComment = () => {
 
   const isOwner = currentComment._ownerId === user._id;
 
-  console.log(currentComment);
 
   return (
     <div className="container">
