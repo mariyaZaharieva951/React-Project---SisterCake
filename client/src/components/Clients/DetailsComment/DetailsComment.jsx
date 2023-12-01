@@ -18,6 +18,13 @@ export const DetailsComment = () => {
         setCurrentComment(result);
       })
       .catch((err) => console.log(err));
+
+
+      commentService.getAllLikes(currentComment._id)
+      .then(result => {
+        
+        setCurrentComment(state => ({...state,likes:result}))
+      })
   }, [commentId]);
 
   const onDelete = (ev) => {
@@ -31,7 +38,24 @@ export const DetailsComment = () => {
       .catch((err) => console.log(err));
   };
 
+  const onLike = () => {
+
+    if (isLiker) {
+      return alert(`${user.email} already likes this comment`);
+  }
+  
+    commentService.addLike(user._id,currentComment._id,user.accessToken)
+    
+    .then((result) => {
+    
+      setCurrentComment(state => ({...state, likes: result}))
+    })
+  }
+
   const isOwner = currentComment._ownerId === user._id;
+ 
+  const isLiker = currentComment.likes?.includes(user._id);
+  
 
 
   return (
@@ -71,8 +95,13 @@ export const DetailsComment = () => {
                 </div>
               ) : (
                 <div className={styles.btnLike}>
-                  <Link href="" className="btn btn-outline-primary py-3">
+                  <Link href="" className="btn btn-outline-primary py-3"
+                  onClick={onLike}
+                  isLiker={isLiker}
+                  likes={currentComment.likes?.length}
+                  >
                     <i className="far fa-heart"></i>
+                    
                   </Link>
                 </div>
               )}

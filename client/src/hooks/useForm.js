@@ -16,9 +16,9 @@ export const useForm = (initialValues) => {
     const [values,setValues] = useState(initialValues);
     
    
-    useEffect(() => {
-        setValues(initialValues)
-    },[initialValues])
+    // useEffect(() => {
+    //     setValues(initialValues)
+    // },[initialValues])
 
     const onChange = (ev) => {
         try {

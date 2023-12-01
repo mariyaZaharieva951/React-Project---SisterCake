@@ -31,9 +31,9 @@
     padding: 0;
 }
 
-.btnLike i:hover {
-    /* color:#E59DA6; */
-    fill: #E59DA6;
+.icon:hover {
+    color:white;
+    /* fill: #E59DA6; */
     
     
 }
