@@ -1,21 +1,49 @@
-import styles from "../Register/Register.module.css";
+import { useState, useContext} from "react";
 import { useForm } from "../../../hooks/useForm";
+import { AuthContext } from "../../../contexts/authContex";
+import { useNavigate } from "react-router-dom";
 
+import * as authService from '../../../services/authService';
+import styles from "../Register/Register.module.css";
 
 export const Register = () => {
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [formValues, setFormValues] = useState({username: "",email: "",password: "", rePass: ""});
 
-  const { values, onChange, onRegisterSubmit} = useForm({
-    name: '',
-    email: '',
-    password:'',
-    rePass: '',
-  })
+
+  const resetFormHandler = () => {
+    setFormValues({username: "",email: "",password: "", rePass: ""});
+    };
+
+  const submitHandler = (values) => {
+
+        const { username, email, password, rePass } = values;
+      
+        if(password !== rePass) {
+            alert('Passwords don`t match!');
+            return
+        }
+
+        authService.register(username,email,password)
+        .then(authData => {   
+            login(authData);
+            navigate('/');
+        })
+        .catch(() => {
+            alert('The register is not successful!')
+        })
+
+        resetFormHandler();
+    }
+
+  const { values, onChange, onSubmit} = useForm(submitHandler,formValues)
   
   return (
     <div className={styles.container}>
       <div className={styles.row}>
         <div className={styles.card}>
-          <form className={styles.box} onSubmit={onRegisterSubmit}>
+          <form className={styles.box} onSubmit={onSubmit}>
             <h1>Регистрация</h1>
             {/* <p className="text-muted">
                 Моля, попълнете вашите име и парола !
@@ -23,10 +51,10 @@ export const Register = () => {
             <div className={styles.line}>
               <input 
               type="text" 
-              name="name" 
+              name="username" 
               placeholder="Име" 
-              id="name"
-              value={values.name}
+              id="username"
+              value={values.username}
               onChange={onChange}
               />
               <input 

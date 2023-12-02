@@ -3,6 +3,7 @@ import { useForm } from "../../../hooks/useForm";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/authContex";
 
+
 // import * as authService from '../services/authService';
 import * as commentService from "../../../services/commentService";
 import styles from "../CreateComment/CreateComment.module.css";
@@ -20,8 +21,7 @@ export const CreateComment = () => {
   setFormValues({imageUrl: "",
   cream: "",
   description: "",});
-    
-};
+  };
 
   useEffect(() => {
     commentService.getAllComments()

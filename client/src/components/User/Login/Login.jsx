@@ -1,14 +1,39 @@
-import styles from "../Login/Login.module.css";
+import { useState, useContext} from "react";
 import { useForm } from "../../../hooks/useForm";
+import { AuthContext } from "../../../contexts/authContex";
+import { useNavigate } from "react-router-dom";
 
+import * as authService from '../../../services/authService';
+import styles from "../Login/Login.module.css";
 
 export const Login = () => {
 
-    const { values, onChange, onLoginSubmit} = useForm({
-      
-      email: '',
-      password:'',
-    })
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [formValues, setFormValues] = useState({email: "",password: ""});
+
+  const resetFormHandler = () => {
+    setFormValues({email: "",
+    password: "",
+    });
+    };
+
+      const submitHandler = (values) => {
+            
+            const { email, password } = values;
+            
+            authService.login(email,password)
+            .then(authData => { 
+                login(authData);
+                navigate('/');
+            })
+            .catch(() => {
+                alert('The login is not successful!')
+            })  
+            resetFormHandler();
+    }
+
+    const { values, onChange, onSubmit} = useForm(submitHandler,formValues)
 
     // const emailValidator = (email) => {
     //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -30,7 +55,7 @@ export const Login = () => {
       <div className={styles.row}>
         
           <div className={styles.card}>
-            <form className={styles.box} onSubmit={onLoginSubmit}>
+            <form className={styles.box} onSubmit={onSubmit}>
               <h1>Вход</h1>
               {/* <p className="text-muted">
                 Моля, попълнете вашите име и парола !
