@@ -22,19 +22,25 @@
     color: #E59DA6;
 }
 
-.btnLike {
+
+.detailsBox .inactiveLike, .detailsBox .activeLike {
     display: flex;
     justify-content: flex-end;
 }
-.btnLike i {
-    color:#E59DA6;
-    padding: 0;
+
+
+.detailsBox .inactiveLike a{
+    align-items: center;
+    color: white;
+    background-color:#E59DA6;
 }
 
-.icon:hover {
-    color:white;
-    /* fill: #E59DA6; */
-    
-    
+ .detailsBox.inactiveLike i:hover,.detailsBox .inactiveLike a:hover, .detailsBox .inactiveLike:hover, .detailsBox .activeLike a{
+    background-color: white;
+    color: #E59DA6;
 }
+
+
+
+
 

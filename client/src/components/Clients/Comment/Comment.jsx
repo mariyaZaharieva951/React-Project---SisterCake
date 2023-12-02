@@ -22,11 +22,11 @@ export const Comment = ({ imageUrl, description, _createdOn, user, _id }) => {
                 Детайли
               </Link>
             </div>
-            <div className={styles.btnLike}>
+            {/* <div className={styles.btnLike}>
               <Link href="" className="btn btn-outline-primary py-3">
-                <i className="far fa-heart"></i>
+                <i className="fa fa-heart"></i>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

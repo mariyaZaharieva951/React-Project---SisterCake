@@ -39,7 +39,6 @@ export const DetailsComment = () => {
   };
 
   const onLike = () => {
-
     if (isLiker) {
       return alert(`${user.email} already likes this comment`);
   }
@@ -56,7 +55,11 @@ export const DetailsComment = () => {
  
   const isLiker = currentComment.likes?.includes(user._id);
   
-
+  let btnLike = styles.inactiveLike;
+  if(isLiker) { 
+    btnLike = `${styles.activeLike}`}
+    else { btnLike = `${styles.inactiveLike}`}
+  console.log(btnLike)
 
   return (
     <div className="container">
@@ -94,13 +97,13 @@ export const DetailsComment = () => {
                   </div>
                 </div>
               ) : (
-                <div className={styles.btnLike}>
+                <div className={btnLike}>
                   <Link href="" className="btn btn-outline-primary py-3"
                   onClick={onLike}
                   // isliker={isLiker}
                   likes={currentComment.likes?.length}
                   >
-                    <i className="far fa-heart"></i>
+                    <i className="fa fa-heart"></i>
                     
                   </Link>
                 </div>

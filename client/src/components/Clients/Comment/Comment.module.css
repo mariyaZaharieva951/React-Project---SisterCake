@@ -8,24 +8,18 @@
 
 .btnLike a {
     align-items: center;
+    background-color: #E59DA6;
 }
 
-.btnComment a:hover {
+.btnLike i:hover,.btnLike a:hover, .btnLike:hover, .btnComment a:hover {
     background-color: white;
     color: #E59DA6;
 }
 
 .btnLike i {
-    color:#E59DA6;
+    color: white;
     text-align: center;
     padding: 0;
-}
-
-.btnLike i:hover {
-    /* color:#E59DA6; */
-    fill: #E59DA6;
-    
-    
 }
 
 .imgComment {
