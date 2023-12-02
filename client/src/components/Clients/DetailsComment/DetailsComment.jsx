@@ -97,7 +97,7 @@ export const DetailsComment = () => {
                 <div className={styles.btnLike}>
                   <Link href="" className="btn btn-outline-primary py-3"
                   onClick={onLike}
-                  isLiker={isLiker}
+                  // isliker={isLiker}
                   likes={currentComment.likes?.length}
                   >
                     <i className="far fa-heart"></i>
