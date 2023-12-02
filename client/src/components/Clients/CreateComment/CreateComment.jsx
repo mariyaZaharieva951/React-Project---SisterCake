@@ -16,7 +16,7 @@ export const CreateComment = () => {
   const [comments,setComments] = useState([]);
   const [formValues, setFormValues] = useState({imageUrl: "",cream: "",description: "",});
  
-  
+
   const resetFormHandler = () => {
   setFormValues({imageUrl: "",
   cream: "",

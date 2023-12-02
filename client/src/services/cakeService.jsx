@@ -36,3 +36,25 @@ export const getOneBdCake = async (cakeId) => {
      console.log(err)
  }
 }
+
+export const buyOneCake = async (cakeData, token) => {
+    const response = await fetch(`${baseUrl}/purchase`, {
+        method: 'POST',
+        headers: {
+            "content-type": "application/json",
+            "X-Authorization": token,
+        },
+        body: JSON.stringify({...cakeData})
+    })
+
+    const result = await response.json();
+    return result;
+}
+
+export const getAllBuys = async () => {
+    
+    const response = await fetch(`${baseUrl}/purchase`)
+    const result = await response.json();
+    
+    return result;
+}
