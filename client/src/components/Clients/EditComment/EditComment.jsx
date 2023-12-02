@@ -1,37 +1,61 @@
 import styles from '../EditComment/EditComment.module.css'
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext } from "react";
 import * as commentService from "../../../services/commentService";
 import { useForm } from '../../../hooks/useForm';
 import { useNavigate } from 'react-router-dom';
-
-
+import { AuthContext } from "../../../contexts/authContex";
+ 
 export const EditComment = () => {
     const navigate = useNavigate();
     
+    const { user } = useContext(AuthContext);
     const { commentId } = useParams();
-    const [ currentComment, setCurrentComment ] = useState({});
-    
-    useEffect(() => {
-      
-      commentService.getOneComment(commentId)
-      .then(result => {
-          setCurrentComment(result)
-      })
-      .catch(err => console.log(err))
+    const [ currentComment, setCurrentComment ] = useState({imageUrl: "",cream: "",description: "",});
+    const [comments,setComments] = useState([])
+  
 
+  useEffect(() => {
+
+    commentService.getOneComment(commentId)
+    .then(result => {
+      setCurrentComment(result)
+      })
+      .catch(err => console.log())
+
+
+
+    commentService.getAllComments()
+    .then(result => {
+      setComments(result)
+    })
   },[commentId])
 
+
+
+   const submitHandler = (values) => {
+            
+            commentService.editComment(commentId, user.accessToken, values)
+                .then(result => {
+                    
+                    setComments(state => state.map(comment => comment._id === commentId ? result : comment))
+                    setCurrentComment(state => ({...state, result}))
+                    navigate('/comments')
+                .catch((err) => {
+                    console.log(err)
+        })
+    })
+    }
+
   
-  const { values, onChange, onEditSubmit} = useForm(currentComment)
-  
+  const { values, onChange, onSubmit} = useForm(submitHandler,currentComment)
 
     return (
       <div className={styles.editPage}>  
     <div className="container">
       <div className={styles.row}>
         <div className={styles.card}>
-          <form className={styles.box} onSubmit={onEditSubmit}>
+          <form className={styles.box} onSubmit={onSubmit}>
             <h1>Редактирай Коментар</h1>
             <div className={styles.line}>
               <label htmlFor="game-img">Снимка:</label>

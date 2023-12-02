@@ -1,5 +1,4 @@
-import { useState, useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 // import { useNavigate } from "react-router-dom";
 // import { AuthContext } from "../contexts/authContex";
 
@@ -16,9 +15,9 @@ export const useForm = (submitHandler,initialValues) => {
     const [values,setValues] = useState(initialValues);
     
    
-    // useEffect(() => {
-    //     setValues(initialValues)
-    // },[initialValues])
+    useEffect(() => {
+        setValues(initialValues)
+    },[initialValues])
 
     const onChange = (ev) => {
         try {

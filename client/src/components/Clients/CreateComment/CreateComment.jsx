@@ -12,24 +12,28 @@ export const CreateComment = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
  
-  const [comments,setComments] = useState([])
+  const [comments,setComments] = useState([]);
+  const [formValues, setFormValues] = useState({imageUrl: "",cream: "",description: "",});
  
+  
+  const resetFormHandler = () => {
+  setFormValues({imageUrl: "",
+  cream: "",
+  description: "",});
+    
+};
 
   useEffect(() => {
     commentService.getAllComments()
     .then(result => {
       setComments(result)
     })
-  })
+  },[])
   
 
-  const submitHandler = (ev) => {
-
-        const { imageUrl, cream,description} = values;
-
-        const data = { imageUrl, cream, description}
+  const submitHandler = (values) => {
     
-        commentService.createComment(data, user.accessToken)
+        commentService.createComment(values, user.accessToken)
             .then((result) => {
     
                 setComments((state) => ([ ...state, result ]))
@@ -38,13 +42,11 @@ export const CreateComment = () => {
         .catch((error) =>{ 
         console.log(error)
         })
+
+        resetFormHandler();
 }
 
-const { values, onChange, onSubmit } = useForm(submitHandler,{
-  imageUrl: "",
-  cream: "",
-  description: "",
-});
+const { values, onChange, onSubmit } = useForm(submitHandler,formValues);
 
   return (
     <div className={styles.createPage}>
