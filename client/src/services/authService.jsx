@@ -1,22 +1,20 @@
 const baseUrl = 'http://localhost:3030/users';
 
+        const authData = localStorage.getItem('auth');
+        let auth = '';
+        if(authData) {
+            auth = JSON.parse(authData);
+        }
+
+        let headers = {};
+        if(auth.accessToken) {
+             headers['X-Authorization'] = auth.accessToken;
+        }
+
 
 export const register = async (name,email,password) => {
     
     try{
-    
-        const authData = localStorage.getItem('auth');
-    let auth = '';
-    if(authData) {
-        auth = JSON.parse(authData);
-    }
-
-    let headers = {};
-    if(auth.accessToken) {
-        return headers['X-Authorization'] = auth.accessToken;
-    }
-    
-    
     const response = await fetch(`${baseUrl}/register`, {
         method: 'POST',
         headers: {
@@ -26,20 +24,27 @@ export const register = async (name,email,password) => {
         body: JSON.stringify({name,email,password})
     });
 
-    if(response.ok) {
-        const token = await response.json();
-
-        return token;
+    if(response.status === 204) {
+        return {};
     }
 
-    if(response.status === 403) {
-        alert('This user is already exist!');
-        return;
+    const result = await response.json();
+    
+    if(!response.ok) {
+        
+        if(response.status === 403) {
+            localStorage.removeItem('auth')
+        }
+
+        throw result;
     }
+
+        return result;
+
     } catch(error) {
         console.log(error)
+        throw new Error(error.message)
     }
-    
 
 }
 
@@ -47,20 +52,7 @@ export const register = async (name,email,password) => {
 
 export const login = async (email,password) => {
     
-    // const headers = authCheck();
     try{
-    
-        const authData = localStorage.getItem('auth');
-    let auth = '';
-    if(authData) {
-        auth = JSON.parse(authData);
-    }
-
-    let headers = {};
-    if(auth.accessToken) {
-        return headers['X-Authorization'] = auth.accessToken;
-    }
-    
     
     const response = await fetch(`${baseUrl}/login`, {
         method: 'POST',
@@ -77,20 +69,12 @@ export const login = async (email,password) => {
         return token;
     }
 
-    if(response.status === 403) {
-        alert('This user is don`t exist!');
-        return;
-    }
     } catch(error) {
         console.log(error)
     }
     
 
 }
-
-
-
-
 
 
 

@@ -8,9 +8,15 @@ export const useLocalStorage = (key,defaultValue) => {
     })
 
     const setLocacStorageValue = (newValue) => {
-        localStorage.setItem(key,JSON.stringify(newValue));
 
-        setValue(newValue)
+        if(newValue) {
+            localStorage.setItem(key,JSON.stringify(newValue));
+            setValue(newValue)
+        } else {
+            localStorage.removeItem(key);
+            setValue(null)
+        }
+        
     }
 
     return [

@@ -1,7 +1,7 @@
 import { useState, useContext} from "react";
 import { useForm } from "../../../hooks/useForm";
 import { AuthContext } from "../../../contexts/authContex";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import * as authService from '../../../services/authService';
 import styles from "../Register/Register.module.css";
@@ -10,7 +10,8 @@ export const Register = () => {
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
   const [formValues, setFormValues] = useState({username: "",email: "",password: "", rePass: ""});
-
+  const [errors,setErrors] = useState({});
+  const [serverError,setServerError] = useState({});
 
   const resetFormHandler = () => {
     setFormValues({username: "",email: "",password: "", rePass: ""});
@@ -20,22 +21,35 @@ export const Register = () => {
 
         const { username, email, password, rePass } = values;
       
-        if(password !== rePass) {
-            alert('Passwords don`t match!');
-            return
-        }
-
         authService.register(username,email,password)
+        
         .then(authData => {   
             login(authData);
             navigate('/');
         })
-        .catch(() => {
-            alert('The register is not successful!')
+        .catch(error => {
+          setServerError(error.message)
+          alert(error.message),
+          navigate('/register')
+            
         })
 
         resetFormHandler();
     }
+
+  const usernameValidator = () => {
+
+  }  
+
+  const passwordValidator = () => {
+
+  }
+
+  const rePassValidator = () => {
+    
+  }
+
+    
 
   const { values, onChange, onSubmit} = useForm(submitHandler,formValues)
   
@@ -56,6 +70,7 @@ export const Register = () => {
               id="username"
               value={values.username}
               onChange={onChange}
+              required
               />
               <input 
               type="email"
@@ -64,6 +79,7 @@ export const Register = () => {
               id="email"
               value={values.email}
               onChange={onChange}
+              required
               />
             </div>
             <div className={styles.line}>
@@ -74,6 +90,7 @@ export const Register = () => {
               id="password"
               value={values.password}
               onChange={onChange}
+              required
               />
               <input 
               type="password" 
@@ -82,6 +99,7 @@ export const Register = () => {
               id="rePass"
               value={values.rePass}
               onChange={onChange}
+              required
               />
             </div>
 
@@ -90,19 +108,19 @@ export const Register = () => {
               <div className={styles.social_network}>
                 <ul className={styles.social_circle}>
                   <li>
-                    <a href="#" className={styles.icoFacebook} title="Facebook">
+                    <Link href="#" className={styles.icoFacebook} title="Facebook">
                       <i className="fab fa-facebook-f" />
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className={styles.icoTwitter} title="Twitter">
+                    <Link href="#" className={styles.icoTwitter} title="Twitter">
                       <i className="fab fa-twitter" />
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className={styles.icoGoogle} title="Google +">
+                    <Link href="#" className={styles.icoGoogle} title="Google +">
                       <i className="fab fa-google-plus" />
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
