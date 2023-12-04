@@ -11,16 +11,17 @@ export const Register = () => {
   const navigate = useNavigate();
   const [formValues, setFormValues] = useState({username: "",email: "",password: "", rePass: ""});
   const [errors,setErrors] = useState({});
-  const [serverError,setServerError] = useState({});
+  const [hasError,setHasError] = useState(false);
 
   const resetFormHandler = () => {
     setFormValues({username: "",email: "",password: "", rePass: ""});
-    };
+    setErrors({})
+  };
+
 
   const submitHandler = (values) => {
 
         const { username, email, password, rePass } = values;
-      
         authService.register(username,email,password)
         
         .then(authData => {   
@@ -28,9 +29,10 @@ export const Register = () => {
             navigate('/');
         })
         .catch(error => {
-          setServerError(error.message)
-          alert(error.message),
-          navigate('/register')
+          debugger
+          setErrors(error.message);
+          setHasError(true)
+          // navigate('/register')
             
         })
 
@@ -50,8 +52,21 @@ export const Register = () => {
         }
       }
   } 
+
+  function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
   
   const emailValidator = () => {
+
+    if(!validateEmail(values.email)) {
+      setErrors(state => ({
+        ...state,
+        email: 'Въведете валиден формат на ел. поща'
+      }))
+    }
+
     if(values.email.length < 5) {
       setErrors(state => ({
         ...state, email: 'Ел. поща име трябва да съдържа минимум 5 символа'
@@ -117,6 +132,7 @@ export const Register = () => {
               onBlur={usernameValidator}
               />
               {errors.username && (<p className={styles.error}>{errors.username}</p>)}
+              
               </div>
 
               <div className={styles.columnn}>
@@ -131,6 +147,7 @@ export const Register = () => {
               onBlur={emailValidator}
               />
               {errors.email && (<p className={styles.error}>{errors.email}</p>)}
+              
             </div>
             </div>
             
@@ -165,6 +182,9 @@ export const Register = () => {
               </div>
             </div>
 
+            <div>
+            {hasError && (<p className={styles.error}>{Object.values(errors)}</p>)}
+            </div>
             <input type="submit" name="" defaultValue="Login" href="#" />
             <div className="col-md-12">
               <div className={styles.social_network}>
