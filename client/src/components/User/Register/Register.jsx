@@ -11,6 +11,7 @@ export const Register = () => {
   const navigate = useNavigate();
   const [formValues, setFormValues] = useState({username: "",email: "",password: "", rePass: ""});
   const [errors,setErrors] = useState({});
+  const [serverErrors,setServerErrors] = useState({})
   const [hasError,setHasError] = useState(false);
 
   const resetFormHandler = () => {
@@ -29,10 +30,9 @@ export const Register = () => {
             navigate('/');
         })
         .catch(error => {
-          debugger
-          setErrors(error.message);
+          setServerErrors(error.message);
           setHasError(true)
-          // navigate('/register')
+          navigate('/register')
             
         })
 
@@ -83,7 +83,7 @@ export const Register = () => {
   const passwordValidator = () => {
     if(values.password.length < 5) {
       setErrors(state => ({
-        ...state, password: 'Паролата име трябва да съдържа минимум 5 символа'
+        ...state, password: 'Паролата трябва да съдържа минимум 5 символа'
       })) 
     } else {
       if(errors.password) {
@@ -183,7 +183,7 @@ export const Register = () => {
             </div>
 
             <div>
-            {hasError && (<p className={styles.error}>{Object.values(errors)}</p>)}
+            {hasError && (<p className={styles.error}>{Object.values(serverErrors).map(err => err)}</p>)}
             </div>
             <input type="submit" name="" defaultValue="Login" href="#" />
             <div className="col-md-12">
