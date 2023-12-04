@@ -38,15 +38,59 @@ export const Register = () => {
     }
 
   const usernameValidator = () => {
-
-  }  
+      if(values.username.length < 5) {
+        setErrors(state => ({
+          ...state, username: 'Потребителското име трябва да съдържа минимум 5 символа'
+        })) 
+      } else {
+        if(errors.username) {
+          setErrors(state => ({
+            ...state, username: ''
+          }))
+        }
+      }
+  } 
+  
+  const emailValidator = () => {
+    if(values.email.length < 5) {
+      setErrors(state => ({
+        ...state, email: 'Ел. поща име трябва да съдържа минимум 5 символа'
+      })) 
+    } else {
+      if(errors.email) {
+        setErrors(state => ({
+          ...state, email: ''
+        }))
+      }
+    }
+}
 
   const passwordValidator = () => {
-
+    if(values.password.length < 5) {
+      setErrors(state => ({
+        ...state, password: 'Паролата име трябва да съдържа минимум 5 символа'
+      })) 
+    } else {
+      if(errors.password) {
+        setErrors(state => ({
+          ...state, password: ''
+        }))
+      }
+    }
   }
 
   const rePassValidator = () => {
-    
+    if(values.rePass !== values.password) {
+      setErrors(state => ({
+        ...state, rePass: 'Паролите трябва да съвпадат'
+      })) 
+    } else {
+      if(errors.rePass) {
+        setErrors(state => ({
+          ...state, rePass: ''
+        }))
+      }
+    }
   }
 
     
@@ -59,19 +103,23 @@ export const Register = () => {
         <div className={styles.card}>
           <form className={styles.box} onSubmit={onSubmit}>
             <h1>Регистрация</h1>
-            {/* <p className="text-muted">
-                Моля, попълнете вашите име и парола !
-              </p> */}
             <div className={styles.line}>
+
+              <div className={styles.columnn}>
               <input 
               type="text" 
               name="username" 
-              placeholder="Име" 
+              placeholder="Потребителско име" 
               id="username"
               value={values.username}
               onChange={onChange}
               required
+              onBlur={usernameValidator}
               />
+              {errors.username && (<p className={styles.error}>{errors.username}</p>)}
+              </div>
+
+              <div className={styles.columnn}>
               <input 
               type="email"
               name="email" 
@@ -80,9 +128,15 @@ export const Register = () => {
               value={values.email}
               onChange={onChange}
               required
+              onBlur={emailValidator}
               />
+              {errors.email && (<p className={styles.error}>{errors.email}</p>)}
             </div>
+            </div>
+            
             <div className={styles.line}>
+
+            <div className={styles.columnn}>
               <input 
               type="password" 
               name="password" 
@@ -91,7 +145,12 @@ export const Register = () => {
               value={values.password}
               onChange={onChange}
               required
-              />
+              onBlur={passwordValidator}   
+               />
+              {errors.password && (<p className={styles.error}>{errors.password}</p>)}
+              </div>
+
+              <div className={styles.columnn}>
               <input 
               type="password" 
               name="rePass" 
@@ -100,7 +159,10 @@ export const Register = () => {
               value={values.rePass}
               onChange={onChange}
               required
+              onBlur={rePassValidator}
               />
+              {errors.rePass && (<p className={styles.error}>{errors.rePass}</p>)}
+              </div>
             </div>
 
             <input type="submit" name="" defaultValue="Login" href="#" />

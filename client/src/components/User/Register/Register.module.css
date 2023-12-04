@@ -17,7 +17,7 @@
 .box {
     display: flex;
     flex-direction: column;
-    width: 600px;
+    width: 750px;
     padding: 2rem;
     background: #E59DA6;
     text-align: center;
@@ -82,6 +82,12 @@
 
 .forgot {
     text-decoration: underline
+}
+
+.error {
+    color: red;
+    font-size: 0.8rem;
+    margin: 0 0 20px 0;
 }
 
 .social_network {
