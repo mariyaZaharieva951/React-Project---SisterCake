@@ -63,14 +63,26 @@ export const login = async (email,password) => {
         body: JSON.stringify({email,password})
     });
     
-    if(response.ok) {
-        const token = await response.json();
-        
-        return token;
+    if(response.status === 204) {
+        return {};
     }
+
+    const result = await response.json();
+    
+    if(!response.ok) {
+        
+        if(response.status === 403) {
+            localStorage.removeItem('auth')
+        }
+
+        throw result;
+    }
+
+        return result;
 
     } catch(error) {
         console.log(error)
+        throw new Error(error.message)
     }
     
 

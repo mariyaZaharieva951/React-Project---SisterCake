@@ -10,12 +10,15 @@ export const Login = () => {
 
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
-  const [formValues, setFormValues] = useState({email: "",password: ""});
+  const [formValues, setFormValues] = useState({email: "",password: ""}); 
+  const [errors,setErrors] = useState({});
+  const [serverErrors,setServerErrors] = useState({})
+  const [hasError,setHasError] = useState(false);
+
 
   const resetFormHandler = () => {
-    setFormValues({email: "",
-    password: "",
-    });
+    setFormValues({email: "", password: ""}),
+    setErrors({});
     };
 
       const submitHandler = (values) => {
@@ -27,27 +30,42 @@ export const Login = () => {
                 login(authData);
                 navigate('/');
             })
-            .catch(() => {
-                alert('The login is not successful!')
+            .catch((error) => {
+              setServerErrors(error.message);
+              setHasError(true)
+              navigate('/login')
             })  
             resetFormHandler();
     }
 
+    function validateEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+    
+    const emailValidator = () => {
+  
+      if(!validateEmail(values.email)) {
+        setErrors(state => ({
+          ...state,
+          email: 'Въведете валиден формат на ел. поща'
+        }))
+      }
+  
+      if(values.email.length < 5) {
+        setErrors(state => ({
+          ...state, email: 'Ел. поща име трябва да съдържа минимум 5 символа'
+        })) 
+      } else {
+        if(errors.email) {
+          setErrors(state => ({
+            ...state, email: ''
+          }))
+        }
+      }
+  }
+  
     const { values, onChange, onSubmit} = useForm(submitHandler,formValues)
-
-    // const emailValidator = (email) => {
-    //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    //   const validEmail = emailRegex.test(email);
-
-    //   if(!validEmail) {
-    //     console.log('email  is not valid')
-    //     return
-    //   }
-    // }
-
-    // const passwordValidator = () => {
-
-    // }
 
 
   return (
@@ -57,9 +75,8 @@ export const Login = () => {
           <div className={styles.card}>
             <form className={styles.box} onSubmit={onSubmit}>
               <h1>Вход</h1>
-              {/* <p className="text-muted">
-                Моля, попълнете вашите име и парола !
-              </p> */}
+
+              <div className={styles.columnn}>
               <input 
               type="text" 
               name="email" 
@@ -67,8 +84,12 @@ export const Login = () => {
               id="email"
               value={values.email}
               onChange={onChange}
-              // onBlur={emailValidator}
+              onBlur={emailValidator}
               />
+              {errors.email && (<p className={styles.error}>{errors.email}</p>)}
+              </div>
+
+              <div className={styles.columnn}>
               <input 
               type="password" 
               name="password" 
@@ -76,11 +97,14 @@ export const Login = () => {
               id="password"
               value={values.password}
               onChange={onChange}
-              // onBlur={passwordValidator}
+              
               />
-              {/* <a className="forgot text-muted" href="#">
-                Forgot password?
-              </a> */}
+              </div>
+
+              <div>
+              {hasError && (<p className={styles.error}>{Object.values(serverErrors).map(err => err)}</p>)}
+              </div>
+
               <input type="submit" name="" defaultValue="Login" href="#" />
               {/* <div className="col-md-12">
                 <div className={styles.social_network}>

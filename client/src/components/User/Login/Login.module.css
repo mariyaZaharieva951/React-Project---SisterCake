@@ -75,6 +75,12 @@
     text-decoration: underline
 }
 
+.error {
+    color: red;
+    font-size: 0.8rem;
+    margin: 0 0 20px 0;
+}
+
 .social_network {
     list-style: none;
     display: inline;
