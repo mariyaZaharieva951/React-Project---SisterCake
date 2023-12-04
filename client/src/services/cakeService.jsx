@@ -12,6 +12,7 @@ export const getAll = async () => {
     console.log(err)
 }
 }
+
 export const getAllBirthdayCake = async () => {
     try{ 
      const response = await fetch(`${baseUrl}/birthdayCakes`);

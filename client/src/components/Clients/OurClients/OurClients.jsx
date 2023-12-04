@@ -10,9 +10,8 @@ export const OurClients = () => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-      commentService.getAllComments()
+      commentService.getLatesComments()
       .then(result => {
-          console.log(result);
           setComments(result);
     
       })
@@ -31,7 +30,7 @@ export const OurClients = () => {
       </div>
 
 
-    
+     
       <div className="row">
         {comments.length > 0 ? (
           comments.slice(0,15),
