@@ -64,6 +64,7 @@ const { values, onChange, onSubmit } = useForm(submitHandler,formValues);
                   placeholder="Качи снимка..."
                   value={values.imageUrl}
                   onChange={onChange}
+                  required
                 />
               </div>
               <div className={styles.line}>
@@ -74,6 +75,7 @@ const { values, onChange, onSubmit } = useForm(submitHandler,formValues);
                   placeholder="Крем..."
                   value={values.cream}
                   onChange={onChange}
+                  required
                 />
               </div>
               <div className={styles.line}>
@@ -84,6 +86,7 @@ const { values, onChange, onSubmit } = useForm(submitHandler,formValues);
                   style={{ height: "100px" }}
                   value={values.description}
                   onChange={onChange}
+                  required
                 ></textarea>
               </div>
 

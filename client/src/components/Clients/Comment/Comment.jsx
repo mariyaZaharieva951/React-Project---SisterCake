@@ -14,19 +14,14 @@ export const Comment = ({ imageUrl, description, _createdOn, user, _id }) => {
                 Детайли
               </Link> */}
           <div className={styles.btnComment}>
-            <div className={styles.btnDetails}>
+            
               <Link
                 to={`${_id}`}
-                className="btn btn-primary border-inner py-3 px-5 me-5"
+                className="btn btn-primary border-inner py-3 px-5"
               >
                 Детайли
               </Link>
-            </div>
-            {/* <div className={styles.btnLike}>
-              <Link href="" className="btn btn-outline-primary py-3">
-                <i className="fa fa-heart"></i>
-              </Link>
-            </div> */}
+           
           </div>
         </div>
       </div>

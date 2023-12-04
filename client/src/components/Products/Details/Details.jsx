@@ -61,6 +61,7 @@ export const Details = () => {
       setPieces(ev.target.value)
       setSelectedOptions(state => ({...state, pieces:ev.target.value}))
     }
+
  }
 
   const { values, onChange, onSubmit } = useForm(submitHandler,
@@ -96,8 +97,8 @@ export const Details = () => {
                 {/* <h3 value ={values.price}>4.50лв.</h3>  */}
                 {/* Цената да идва от базата!!!!! */}
               </div>
-              <div className="px-2">
-                <div>
+              <div className={styles.inputs}>
+                <div className={styles.select}>
                 <p>крем 1</p>
                 <select name="typeCream1" id="type" onChange={(ev) => {onChange(ev); onSelect(ev)}} value={cream1}>
                   <option value={values.Избор}></option>
@@ -110,7 +111,8 @@ export const Details = () => {
                   <option value={values.Банан}>Банан</option>                  
                 </select>
                 </div>
-                <div>
+
+                <div className={styles.select}>
                 <p>крем 2</p>
                 <select name="typeCream2" id="type" onChange={(ev) => {onChange(ev); onSelect(ev)}} value={cream2}>
                   <option value={values.Избор}></option>
@@ -123,7 +125,8 @@ export const Details = () => {
                   <option value={values.Банан}>Банан</option>                 
                 </select>
                 </div>
-                <div>
+
+                <div className={styles.select}>
                 <p>Брой парчета</p>
                 <select name="pieces" id="type" onChange={(ev) => {onChange(ev); onSelect(ev)}} value={pieces}>
                   <option value={values.Избор}></option>

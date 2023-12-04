@@ -2,6 +2,7 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../../../contexts/authContex";
 import * as commentService from "../../../services/commentService";
+import * as likeService from "../../../services/likeService";
 import styles from "../DetailsComment/DetailsComment.module.css";
 
 export const DetailsComment = () => {
@@ -19,12 +20,9 @@ export const DetailsComment = () => {
       })
       .catch((err) => console.log(err));
 
-
-      commentService.getAllLikes(currentComment._id)
-      .then(result => {
-        
-        setCurrentComment(state => ({...state,likes:result}))
-      })
+    likeService.getAllLikes(commentId).then((result) => {
+      setCurrentComment((state) => ({ ...state, likes: result }));
+    });
   }, [commentId]);
 
   const onDelete = (ev) => {
@@ -41,25 +39,26 @@ export const DetailsComment = () => {
   const onLike = () => {
     if (isLiker) {
       return alert(`${user.email} already likes this comment`);
-  }
-  
-    commentService.addLike(user._id,currentComment._id,user.accessToken)
-    
-    .then((result) => {
-    
-      setCurrentComment(state => ({...state, likes: result}))
-    })
-  }
+    }
+
+    likeService
+      .addLike(user._id, currentComment._id, user.accessToken)
+
+      .then((result) => {
+        setCurrentComment((state) => ({ ...state, likes: result }));
+      });
+  };
 
   const isOwner = currentComment._ownerId === user._id;
- 
+
   const isLiker = currentComment.likes?.includes(user._id);
-  
+
   let btnLike = styles.inactiveLike;
-  if(isLiker) { 
-    btnLike = `${styles.activeLike}`}
-    else { btnLike = `${styles.inactiveLike}`}
-  console.log(btnLike)
+  if (isLiker) {
+    btnLike = `${styles.activeLike}`;
+  } else {
+    btnLike = `${styles.inactiveLike}`;
+  }
 
   return (
     <div className="container">
@@ -76,7 +75,8 @@ export const DetailsComment = () => {
                 <span>{currentComment.user?.email}</span>
                 {/* <span>{currentComment._createdOn}</span> */}
               </div>
-              {isOwner ? (
+              {isOwner 
+              ? (
                 <div className={styles.btnDetail}>
                   <div className={styles.btnEdit}>
                     <Link
@@ -96,15 +96,16 @@ export const DetailsComment = () => {
                     </Link>
                   </div>
                 </div>
-              ) : (
+              ) 
+              : (
                 <div className={btnLike}>
-                  <Link href="" className="btn btn-outline-primary py-3"
-                  onClick={onLike}
-                  // isliker={isLiker}
-                  likes={currentComment.likes?.length}
+                  <Link
+                    href=""
+                    className="btn btn-outline-primary py-3"
+                    onClick={onLike}
+                    likes={currentComment.likes?.length}
                   >
                     <i className="fa fa-heart"></i>
-                    
                   </Link>
                 </div>
               )}

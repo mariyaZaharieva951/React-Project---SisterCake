@@ -6,10 +6,10 @@
     
 }
 
-.btnLike a {
+/* .btnLike a {
     align-items: center;
     background-color: #E59DA6;
-}
+} */
 
 .btnLike i:hover,.btnLike a:hover, .btnLike:hover, .btnComment a:hover {
     background-color: white;
@@ -31,6 +31,5 @@
 
 .btnComment {
     display: flex;
-    justify-content: space-between;
-    gap: 0;
+    justify-content: center;
 }
