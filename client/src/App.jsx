@@ -18,12 +18,12 @@ import { CreateComment } from './components/Clients/CreateComment/CreateComment'
 import { DetailsComment } from './components/Clients/DetailsComment/DetailsComment';
 import { EditComment } from './components/Clients/EditComment/EditComment';
 import { NotFound } from './components/NotFound/NotFound';
+import { AuthGuard } from './components/Guards/AuthGuard';
 
 
 
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
     <AuthProvider>
@@ -34,16 +34,25 @@ function App() {
 			      <Route path='/' element={<Home/>}/>
             <Route path='/about' element={<ForUs/>}/>
             <Route path='/gallery' element={<Gallery/>}/>
-            <Route path='/comments' element={<OurClients/>}/>
-            <Route path='/comments/:commentId' element={<DetailsComment/>}/>
-            <Route path='/comment/edit/:commentId' element={<EditComment/>}/>
             <Route path='/menu' element={<Menu/>}/>
+            <Route path='/comments' element={<OurClients/>}/>
+            <Route path='/logout' element={<Logout/>}/>
+
+            <Route element={<AuthGuard/>}>
+                <Route path='/createComment' element={<CreateComment/>}/>
+                <Route path='/comments/:commentId' element={<DetailsComment/>}/>
+                <Route path='/comment/edit/:commentId' element={<EditComment/>}/>
+                <Route path='/:cakeId' element={<Details/>}/>
+            </Route>
+            
+            
+            
             <Route path='/contact' element={<Contact/>}/>
-            <Route path='/:cakeId' element={<Details/>}/>
+            
             <Route path='/login' element={<Login/>}/>
             <Route path='/register' element={<Register/>}/>
-            <Route path='/logout' element={<Logout/>}/>
-            <Route path='/createComment' element={<CreateComment/>}/>
+            
+            
             <Route path='*' element={<NotFound/>}/>
         </Routes>
       </main>

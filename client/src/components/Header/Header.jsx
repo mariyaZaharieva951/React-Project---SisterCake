@@ -75,15 +75,17 @@ export const Header = () => {
             <Link to="/about" className="nav-item nav-link">
               За нас
             </Link>
-           
-            {(user.email)?
-            <div className={styles.user}>
-              <Link to="/comments" className="nav-item nav-link">
+            <Link to="/comments" className="nav-item nav-link">
             Клиенти
           </Link>
           <Link to="/menu" className="nav-item nav-link">
             Меню
           </Link>
+           
+            {(user.email)?
+            <div className={styles.user}>
+              
+          
           <Link to="/logout" className="nav-item nav-link">
               Изход
             </Link>

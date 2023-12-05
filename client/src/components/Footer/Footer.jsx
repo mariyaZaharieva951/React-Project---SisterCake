@@ -1,4 +1,5 @@
 import styles from "../Footer/Footer.module.css";
+import { Link } from "react-router-dom"
 
 export const Footer = () => {
   return (
@@ -13,12 +14,12 @@ export const Footer = () => {
               <div className={styles.border}>
                 <div className={styles.leftCard}>
                   <div className={styles.box}>
-                    <a href="index.html">
+                    <Link href="index.html">
                       <h1>
                         <i className="fa fa-birthday-cake fs-1" />
                         Sistercake
                       </h1>
-                    </a>
+                    </Link>
                     <p className={styles.text}>
                       Lorem diam sit erat dolor elitr et, diam lorem justo
                       labore amet clita labore stet eos magna sit. Elitr dolor
@@ -48,24 +49,24 @@ export const Footer = () => {
                       <p className={styles.text}>+359 895678978</p>
                     </div>
                     <div className={styles.icons}>
-                      <a
+                      <Link
                         className="btn btn-lg btn-custom btn-lg-square border-inner rounded-0 me-2"
                         href="#"
                       >
                         <i className="fab fa-twitter fw-normal" />
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         className="btn btn-lg btn-custom btn-lg-square border-inner rounded-0 me-2"
                         href="#"
                       >
                         <i className="fab fa-facebook-f fw-normal" />
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         className="btn btn-lg btn-custom btn-lg-square border-inner rounded-0 me-2"
                         href="#"
                       >
                         <i className="fab fa-linkedin-in fw-normal" />
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className={styles.info}>
@@ -73,26 +74,26 @@ export const Footer = () => {
                       Информация
                     </h4>
                     <div className={styles.infoCard}>
-                      <a className={styles.link} href="#">
+                      <Link className={styles.link} to={"/"}>
                         <i className="bi bi-arrow-right" />
                         Начало
-                      </a>
-                      <a className={styles.link} href="#">
+                      </Link>
+                      <Link className={styles.link} to={"/about"}>
                         <i className="bi bi-arrow-right" />
                         За нас
-                      </a>
-                      <a className={styles.link} href="#">
+                      </Link>
+                      <Link className={styles.link} to={"/gallery"}>
                         <i className="bi bi-arrow-right" />
                         Галерия
-                      </a>
-                      <a className={styles.link} href="#">
+                      </Link>
+                      <Link className={styles.link} to={"/comments"}>
                         <i className="bi bi-arrow-right" />
                         Клиенти
-                      </a>
-                      <a className={styles.link} href="#">
+                      </Link>
+                      <Link className={styles.link} to={"/menu"}>
                         <i className="bi bi-arrow-right" />
                         Меню
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   {/* <div className="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
@@ -122,16 +123,16 @@ export const Footer = () => {
         <div className="container text-center">
           <p className="mb-0">
             ©{" "}
-            <a className="text-white border-bottom" href="#">
+            <Link className="text-white border-bottom" href="#">
               sistercake.com
-            </a>
+            </Link>
             . All Rights Reserved. Designed by{" "}
-            <a
+            <Link
               className="text-white border-bottom"
               href="https://htmlcodex.com"
             >
               HTML Codex
-            </a>
+            </Link>
           </p>
         </div>
       </div>
