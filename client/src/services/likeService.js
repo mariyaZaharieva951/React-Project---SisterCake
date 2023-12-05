@@ -1,8 +1,9 @@
-const baseUrl = 'http://localhost:3030/data/comments/likes';
+const baseUrl = 'http://localhost:3030/data/likes';
 
 export const addLike = async(userId, commentId,token) => {
 
     const response = await fetch(baseUrl, {
+        
         method: 'POST',
         headers: {
             "content-type": "application/json",
