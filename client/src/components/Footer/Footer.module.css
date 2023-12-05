@@ -72,10 +72,10 @@ h1 {
 
 .line i, .info i {
     color: #E59DA6;
+    margin-right: 0.5rem;
 }
 
 .icons i {
-    padding-left: 1rem;
     font-size: 0.9rem;;
 }
 
@@ -92,6 +92,8 @@ h1 {
 .link:hover {
     color:#E59DA6
 }
+
+
 
 
 

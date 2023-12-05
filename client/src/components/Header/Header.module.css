@@ -13,6 +13,25 @@
 
 .card i {
     color: #E59DA6;
+    margin-right: 1rem;
+}
+
+
+.cardTop i {
+    color: #E59DA6;
+    margin-left: 3rem;
+    margin-right: 0;
+    
+}
+
+.cardTop {
+    display: flex;
+    align-items: center;
+}
+
+.cardTop h1{
+    margin: 0;
+    padding-left: 3.5rem;
 }
 
 .text {

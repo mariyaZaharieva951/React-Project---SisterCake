@@ -27,10 +27,13 @@ export const Header = () => {
             <div className={styles.border}>
                 <div className={styles.card}>
                     <Link to="/">
-                    <h1 className={styles.name}>
+                      <div className={styles.cardTop}>
                     <i className="fa fa-birthday-cake fs-1"></i>
+                    <h1 className={styles.name}>
+                    
                   Sistercake
                     </h1>
+                    </div>
                     </Link>
                 </div>
             </div>
@@ -50,8 +53,9 @@ export const Header = () => {
 
       <nav className="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
         <Link to="/" className="navbar-brand d-block d-lg-none">
+        <i className="fa fa-birthday-cake fs-1 text-primary me-3"></i>
           <h1 className="m-0 text-uppercase text-white">
-            <i className="fa fa-birthday-cake fs-1 text-primary me-3"></i>
+            
             Sistercake
           </h1>
         </Link>
