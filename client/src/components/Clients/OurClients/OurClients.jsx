@@ -35,7 +35,7 @@ export const OurClients = () => {
       <div className={styles.btnCreate}>
         <Link
           to={"/createComment"}
-          className="btn btn-primary border-inner py-3 px-5 me-5"
+          className="btn btn-custom border-inner py-3 px-5 me-5"
         >
           Остави коментар
         </Link>

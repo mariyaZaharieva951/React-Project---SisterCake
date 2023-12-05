@@ -141,8 +141,8 @@ export const Details = () => {
               </div>
               <div className="px-2 mt-3">
                 <div className={styles.btnItem}>
-                  <button className="btn btn-primary px-3">Купи</button>
-                  <button className="btn btn-outline-primary px-3" onClick={onNavigate}>Отказ</button>
+                  <button className="btn btn-custom px-3">Купи</button>
+                  <button className="btn btn-custom px-3" onClick={onNavigate}>Отказ</button>
                 </div>
               </div>
             </div>

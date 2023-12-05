@@ -81,7 +81,7 @@ export const DetailsComment = () => {
                   <div className={styles.btnEdit}>
                     <Link
                       to={`/comment/edit/${currentComment._id}`}
-                      className="btn btn-primary border-inner py-3 px-5"
+                      className="btn btn-custom border-inner py-3 px-5"
                     >
                       Редактиране
                     </Link>
@@ -89,7 +89,7 @@ export const DetailsComment = () => {
                   <div className={styles.btnDelete}>
                     <Link
                       to={`/comment/delete/${currentComment._id}`}
-                      className="btn btn-primary border-inner py-3 px-5"
+                      className="btn btn-custom border-inner py-3 px-5"
                       onClick={onDelete}
                     >
                       Изтриване
@@ -101,7 +101,7 @@ export const DetailsComment = () => {
                 <div className={btnLike}>
                   <Link
                     href=""
-                    className="btn btn-outline-primary py-3"
+                    className="btn btn-outline-custom py-3"
                     onClick={onLike}
                     likes={currentComment.likes?.length}
                   >

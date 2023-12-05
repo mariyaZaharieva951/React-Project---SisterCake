@@ -22,7 +22,7 @@ export const Offer = () => {
             <div className={styles.button}>
               <Link
                 to={"/menu"}
-                className="btn btn-primary border-inner py-3 px-5 me-3"
+                className="btn btn-custom border-inner py-3 px-5 me-3"
               >
                 Меню
               </Link>

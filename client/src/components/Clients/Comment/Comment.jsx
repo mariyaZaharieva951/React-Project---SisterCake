@@ -17,7 +17,7 @@ export const Comment = ({ imageUrl, description, _createdOn, user, _id }) => {
             
               <Link
                 to={`${_id}`}
-                className="btn btn-primary border-inner py-3 px-5"
+                className="btn btn-custom border-inner py-3 px-5"
               >
                 Детайли
               </Link>

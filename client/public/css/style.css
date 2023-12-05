@@ -38,6 +38,19 @@ h6,
     color: #FFFFFF;
 }
 
+.btn-custom {
+    color: #FFFFFF;
+    background-color: #E59DA6;
+    border-color: #E59DA6;
+}
+
+
+.btn-custom:hover, .btn-custom:focus,.btn-custom:checked, .btn-custom:active {
+    background-color: #E59DA6;
+    border-color: #E59DA6;
+}
+
+
 .border-inner {
     position: relative;
 }

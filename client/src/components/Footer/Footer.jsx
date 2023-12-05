@@ -49,19 +49,19 @@ export const Footer = () => {
                     </div>
                     <div className={styles.icons}>
                       <a
-                        className="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2"
+                        className="btn btn-lg btn-custom btn-lg-square border-inner rounded-0 me-2"
                         href="#"
                       >
                         <i className="fab fa-twitter fw-normal" />
                       </a>
                       <a
-                        className="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2"
+                        className="btn btn-lg btn-custom btn-lg-square border-inner rounded-0 me-2"
                         href="#"
                       >
                         <i className="fab fa-facebook-f fw-normal" />
                       </a>
                       <a
-                        className="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2"
+                        className="btn btn-lg btn-custom btn-lg-square border-inner rounded-0 me-2"
                         href="#"
                       >
                         <i className="fab fa-linkedin-in fw-normal" />

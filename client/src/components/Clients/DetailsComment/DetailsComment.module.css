@@ -40,6 +40,12 @@
     color: #E59DA6;
 }
 
+.inactiveLike a, .activeLike a {
+
+    border:1px solid #E59DA6;
+    
+}
+
 
 
 

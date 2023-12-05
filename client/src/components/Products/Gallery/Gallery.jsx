@@ -1,7 +1,7 @@
 import styles from '../Gallery/Gallery.module.css'
-import { Product } from '../Product/Product'
 import { useState, useEffect } from 'react'
 import * as cakeService from '../../../services/cakeService'
+import { GalleryItem } from '../GalleryItem/GalleryItem'
 
 export const Gallery = () => {
     const [cakes, setCakes ] = useState([]);
@@ -36,7 +36,7 @@ export const Gallery = () => {
                         ? (
                             <>
                             {cakes.map(cake => (
-                                <Product key={cake._id} img={cake.imgUrl} />
+                                <GalleryItem key={cake._id} img={cake.imgUrl} />
                             ))}
                             </>
                         ) :
