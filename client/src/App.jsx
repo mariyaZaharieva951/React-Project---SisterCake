@@ -19,6 +19,7 @@ import { DetailsComment } from './components/Clients/DetailsComment/DetailsComme
 import { EditComment } from './components/Clients/EditComment/EditComment';
 import { NotFound } from './components/NotFound/NotFound';
 import { AuthGuard } from './components/Guards/AuthGuard';
+import { GuestGuard } from './components/Guards/GuestGuard';
 
 
 
@@ -37,6 +38,7 @@ function App() {
             <Route path='/menu' element={<Menu/>}/>
             <Route path='/comments' element={<OurClients/>}/>
             <Route path='/logout' element={<Logout/>}/>
+            <Route path='/contact' element={<Contact/>}/>
 
             <Route element={<AuthGuard/>}>
                 <Route path='/createComment' element={<CreateComment/>}/>
@@ -44,14 +46,11 @@ function App() {
                 <Route path='/comment/edit/:commentId' element={<EditComment/>}/>
                 <Route path='/:cakeId' element={<Details/>}/>
             </Route>
-            
-            
-            
-            <Route path='/contact' element={<Contact/>}/>
-            
-            <Route path='/login' element={<Login/>}/>
-            <Route path='/register' element={<Register/>}/>
-            
+
+            <Route element={<GuestGuard/>}>
+                <Route path='/login' element={<Login/>}/>
+                <Route path='/register' element={<Register/>}/>
+            </Route>
             
             <Route path='*' element={<NotFound/>}/>
         </Routes>
