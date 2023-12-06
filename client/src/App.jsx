@@ -20,6 +20,7 @@ import { EditComment } from './components/Clients/EditComment/EditComment';
 import { NotFound } from './components/NotFound/NotFound';
 import { AuthGuard } from './components/Guards/AuthGuard';
 import { GuestGuard } from './components/Guards/GuestGuard';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
 
 
@@ -27,6 +28,7 @@ import { GuestGuard } from './components/Guards/GuestGuard';
 function App() {
 
   return (
+    <ErrorBoundary>
     <AuthProvider>
         <Header />
       
@@ -58,6 +60,7 @@ function App() {
       
       <Footer />
     </AuthProvider>
+    </ErrorBoundary>
   )
 }
 

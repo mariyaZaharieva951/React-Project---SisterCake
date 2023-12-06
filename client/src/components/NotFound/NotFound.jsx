@@ -5,7 +5,7 @@ import styles from '../NotFound/NotFound.module.css'
 export const NotFound = () => {
     return (
         <div className={styles.notFound}>
-            <p>Търсената страница не съществува</p>
+            <p className={styles}>Търсената страница не съществува</p>
             <button>
                 <Link to={'/'}>Начало</Link>
             </button>
