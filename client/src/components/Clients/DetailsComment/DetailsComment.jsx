@@ -19,6 +19,7 @@ export const DetailsComment = () => {
         setCurrentComment(result);
       })
       .catch((err) => console.log(err));
+    
 
     likeService.getAllLikes(commentId).then((result) => {
       setCurrentComment((state) => ({ ...state, likes: result }));
@@ -107,7 +108,9 @@ export const DetailsComment = () => {
                   >
                     <i className="fa fa-heart"></i>
                   </Link>
+                  
                 </div>
+                
               )}
             </div>
           </div>

@@ -20,15 +20,16 @@ export const CreateComment = () => {
   const resetFormHandler = () => {
   setFormValues({imageUrl: "",
   cream: "",
-  description: "",});
+  description: "",
+});
   };
 
-  useEffect(() => {
-    commentService.getAllComments()
-    .then(result => {
-      setComments(result)
-    })
-  },[])
+  // useEffect(() => {
+  //   commentService.getAllComments()
+  //   .then(result => {
+  //     setComments(result)
+  //   })
+  // },[])
   
 
   const submitHandler = (values) => {

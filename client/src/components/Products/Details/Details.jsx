@@ -5,12 +5,15 @@ import * as cakeService from "../../../services/cakeService";
 import styles from "../Details/Details.module.css";
 import { useForm } from "../../../hooks/useForm";
 
+
 export const Details = () => {
   const navigate = useNavigate();
   const { cakeId } = useParams();
   const { user } = useContext(AuthContext);
   const [buys,setBuys] = useState([])
   const [currentCake, setCurrentCake] = useState({});
+
+  
 
   const [selectedOptions, setSelectedOptions] = useState({});
 
@@ -36,10 +39,13 @@ export const Details = () => {
   }, [cakeId]);
 
   const submitHandler = (values) => {
-
+  
     cakeService.buyOneCake(values,user.accessToken)
     .then(result => {
+      
+      user.buys.push(result)
       setBuys(state => ({...state,buys: result}))
+
     },
     alert('You successfull buy this cake!'),
     navigate('/menu'))
@@ -48,22 +54,22 @@ export const Details = () => {
   }
 
  const onSelect = (ev) => {
-  
+ 
     if(ev.target.name === 'typeCream1') {
       setCream1(ev.target.value)
-      setSelectedOptions(state => ({...state, cream1:ev.target.value}))
+      setSelectedOptions(state => ({...state, cream1:ev.target.value, price:currentCake.price}))
     }
     if(ev.target.name === 'typeCream2') {
       setCream2(ev.target.value)
-      setSelectedOptions(state => ({...state, cream2:ev.target.value}))
+      setSelectedOptions(state => ({...state, cream2:ev.target.value, price:currentCake.price}))
     }
     if(ev.target.name === 'pieces') {
       setPieces(ev.target.value)
-      setSelectedOptions(state => ({...state, pieces:ev.target.value}))
+      setSelectedOptions(state => ({...state, pieces:ev.target.value, price:currentCake.price}))
     }
 
  }
-
+ 
   const { values, onChange, onSubmit } = useForm(submitHandler,
     selectedOptions
   );
@@ -72,8 +78,9 @@ export const Details = () => {
     navigate('/menu')
   }
 
-  
+
   return (
+
     <div className="container mt-5 mb-5 d-flex justify-content-center align-items-center">
       <div className="card">
         <div className="inner-card">
@@ -94,7 +101,7 @@ export const Details = () => {
               </div>
               <div className="px-2">
                 <p>цена на парче</p>
-                {/* <h3 value ={values.price}>4.50лв.</h3>  */}
+                <h3 value ={currentCake.price}>{currentCake.price}</h3> 
                 {/* Цената да идва от базата!!!!! */}
               </div>
               <div className={styles.inputs}>

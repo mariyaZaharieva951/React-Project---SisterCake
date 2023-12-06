@@ -15,13 +15,14 @@ const baseUrl = 'http://localhost:3030/users';
 export const register = async (name,email,password) => {
     
     try{
+        debugger
     const response = await fetch(`${baseUrl}/register`, {
         method: 'POST',
         headers: {
             ...headers,
             "Content-type": "application/json"
         },
-        body: JSON.stringify({name,email,password})
+        body: JSON.stringify({name,email,password,buys:[]})
     });
 
     if(response.status === 204) {
@@ -92,11 +93,14 @@ export const login = async (email,password) => {
 
 export const logout = async(accessToken) => {
     try {
+        debugger
         const response = await fetch(`${baseUrl}/logout`, {
             headers: {
                 'X-Authorization': accessToken
             }
         });
+        
+        localStorage.removeItem('auth')
         return response;
     } catch(error) {
         console.log(error)
