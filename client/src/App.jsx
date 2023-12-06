@@ -44,7 +44,7 @@ function App() {
                 <Route path='/createComment' element={<CreateComment/>}/>
                 <Route path='/comments/:commentId' element={<DetailsComment/>}/>
                 <Route path='/comment/edit/:commentId' element={<EditComment/>}/>
-                <Route path='/:cakeId' element={<Details/>}/>
+                <Route path='/menu/:cakeId' element={<Details/>}/>
             </Route>
 
             <Route element={<GuestGuard/>}>

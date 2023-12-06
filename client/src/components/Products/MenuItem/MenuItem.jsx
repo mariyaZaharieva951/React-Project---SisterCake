@@ -17,7 +17,7 @@ export const MenuItem = ({ _id, imgUrl }) => {
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit
                       </p> */}
             <div className={styles.btnItem}>
-              <Link to={`/${_id}`}>Детайли</Link>
+              <Link to={`${_id}`}>Детайли</Link>
             </div>
           </div>
         </div>
