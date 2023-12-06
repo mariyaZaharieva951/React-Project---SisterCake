@@ -32,6 +32,7 @@ export const EditComment = () => {
   }, [commentId]);
 
   const submitHandler = (values) => {
+    debugger
     commentService
       .editComment(commentId, user.accessToken, values)
       .then((result) => {
@@ -39,9 +40,10 @@ export const EditComment = () => {
           state.map((comment) => (comment._id === commentId ? result : comment))
         );
         setCurrentComment((state) => ({ ...state, result }));
-        navigate("/comments").catch((err) => {
-          console.log(err);
-        });
+        navigate("/comments") 
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 

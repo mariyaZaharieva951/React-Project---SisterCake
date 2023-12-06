@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export const useLocalStorage = (key,defaultValue) => {
+    debugger
     const [value,setValue] = useState(() => {
         const storedData = localStorage.getItem(key);
 

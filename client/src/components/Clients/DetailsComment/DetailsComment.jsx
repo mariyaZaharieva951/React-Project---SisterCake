@@ -19,11 +19,15 @@ export const DetailsComment = () => {
         setCurrentComment(result);
       })
       .catch((err) => console.log(err));
-    
-
-    likeService.getAllLikes(commentId).then((result) => {
+   
+   
+    likeService.getAllLikes(commentId).then((result) => 
+    { if(result.length === 0) {
+        return
+      }
       setCurrentComment((state) => ({ ...state, likes: result }));
     });
+  
   }, [commentId]);
 
   const onDelete = (ev) => {

@@ -1348,63 +1348,78 @@
               },
               "883b9fef-83f9-4ed9-9aa7-a560f3be2b40": {
                 "_id": "883b9fef-83f9-4ed9-9aa7-a560f3be2b40",
+                "price": "4.50",
                 "imgUrl": "/img/birthday/bd2.png"  
               },
               "e45f25dd-3a1f-4fc9-b946-5136e862e206": {
                 "_id": "e45f25dd-3a1f-4fc9-b946-5136e862e206",
+                "price": "4.30",
                 "imgUrl": "/img/birthday/bd3.png" 
               },
               "a27bec14-407b-49ff-bc4c-a74a1e694520": {
                 "_id": "a27bec14-407b-49ff-bc4c-a74a1e694520",
+                "price": "4.50",
                 "imgUrl": "/img/birthday/bd16.png" 
               },
               "2173eaec-d7af-40f4-9c97-b6793733713d": {
                 "_id": "2173eaec-d7af-40f4-9c97-b6793733713d",
+                "price": "4.20",
                 "imgUrl": "/img/birthday/bd5.png"  
               },
               "40701aa1-8a89-419b-a72e-ab640b08afe4": {
                 "_id": "40701aa1-8a89-419b-a72e-ab640b08afe4",
+                "price": "4.30",
                 "imgUrl": "/img/birthday/bd6.png"  
               },
               "cba36e6f-7700-40a4-bfc4-05e704f2bdf7": {
                 "_id": "cba36e6f-7700-40a4-bfc4-05e704f2bdf7",
+                "price": "4.30",
                 "imgUrl": "/img/birthday/bd7.png"  
               },
               "8794ac00-466c-4365-a356-95ddf828a790": {
                 "_id": "8794ac00-466c-4365-a356-95ddf828a790",
+                "price": "4.00",
                 "imgUrl": "/img/birthday/bd8.png"  
               },
               "05d1668e-a998-448b-b726-91d9854f1d93": {
                 "_id": "05d1668e-a998-448b-b726-91d9854f1d93",
+                "price": "4.30",
                 "imgUrl": "/img/birthday/bd9.png"  
               },
               "b073b443-a00a-491b-9114-e3680e76a2cf": {
                 "_id": "b073b443-a00a-491b-9114-e3680e76a2cf",
+                "price": "4.20",
                 "imgUrl": "/img/birthday/bd4.png"  
               },
               "def3b89d-ca77-4d13-a504-816fd81a287f": {
                 "_id": "def3b89d-ca77-4d13-a504-816fd81a287f",
+                "price": "4.00",
                 "imgUrl": "/img/birthday/bd11.png"  
               },
               "6329946e-5973-4fbb-8284-71b785555678": {
                 "_id": "6329946e-5973-4fbb-8284-71b785555678",
+                "price": "4.00",
                 "imgUrl": "/img/birthday/bd12.png"  
               },
               "23d3781f-4112-4a1a-9f45-a50371b3e399": {
                 "_id": "23d3781f-4112-4a1a-9f45-a50371b3e399",
+                "price": "4.30",
                 "imgUrl": "/img/birthday/bd13.png"  
               },
               "9deb84df-1036-41c1-b512-c5c260ed904d": {
                 "_id": "9deb84df-1036-41c1-b512-c5c260ed904d",
+                "price": "4.30",
                 "imgUrl": "/img/birthday/bd14.png"  
               },
               "b49088de-5606-477c-b173-5189d0039a87": {
                 "_id": "b49088de-5606-477c-b173-5189d0039a87",
+                "price": "4.00",
                 "imgUrl": "/img/birthday/bd15.png"  
               },
               "77ce2354-d30b-42e3-8080-c7699c022924": {
                 "_id": "77ce2354-d30b-42e3-8080-c7699c022924",
-                "imgUrl": "/img/birthday/bd1.png"  
+                "price": "4.00",
+                "imgUrl": "/img/birthday/bd10.png"  
               }
               
         },

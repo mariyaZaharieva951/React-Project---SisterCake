@@ -1,5 +1,9 @@
 const baseUrl = 'http://localhost:3030/users';
 
+export const register = async (name,email,password) => {
+    
+    try{
+
         const authData = localStorage.getItem('auth');
         let auth = '';
         if(authData) {
@@ -10,12 +14,7 @@ const baseUrl = 'http://localhost:3030/users';
         if(auth.accessToken) {
              headers['X-Authorization'] = auth.accessToken;
         }
-
-
-export const register = async (name,email,password) => {
-    
-    try{
-        debugger
+        
     const response = await fetch(`${baseUrl}/register`, {
         method: 'POST',
         headers: {
@@ -52,8 +51,18 @@ export const register = async (name,email,password) => {
 
 
 export const login = async (email,password) => {
-    
+ 
     try{
+        const authData = localStorage.getItem('auth');
+        let auth = '';
+        if(authData) {
+            auth = JSON.parse(authData);
+        }
+
+        let headers = {};
+        if(auth.accessToken) {
+             headers['X-Authorization'] = auth.accessToken;
+        }
     
     const response = await fetch(`${baseUrl}/login`, {
         method: 'POST',
@@ -93,7 +102,7 @@ export const login = async (email,password) => {
 
 export const logout = async(accessToken) => {
     try {
-        debugger
+        
         const response = await fetch(`${baseUrl}/logout`, {
             headers: {
                 'X-Authorization': accessToken
