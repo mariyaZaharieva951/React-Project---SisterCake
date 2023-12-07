@@ -64,7 +64,7 @@ export const DetailsComment = () => {
   } else {
     btnLike = `${styles.inactiveLike}`;
   }
-
+  
   return (
     <div className="container">
       <div className={styles.detailsBox}>
@@ -103,6 +103,8 @@ export const DetailsComment = () => {
                 </div>
               ) 
               : (
+                <div className={styles.info}>
+                <p className={styles.infoMail}>{currentComment.user}</p>
                 <div className={btnLike}>
                   <Link
                     href=""
@@ -114,7 +116,7 @@ export const DetailsComment = () => {
                   </Link>
                   
                 </div>
-                
+                </div>
               )}
             </div>
           </div>

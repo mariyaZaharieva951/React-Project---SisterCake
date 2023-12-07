@@ -12,7 +12,7 @@ export const CreateComment = () => {
   const navigate = useNavigate();
  
   const [comments,setComments] = useState([]);
-  const [formValues, setFormValues] = useState({imageUrl: "",cream: "",description: "",});
+  const [formValues, setFormValues] = useState({imageUrl: "",cream: "",description: "", user:`${user.email}`});
  
 
   const resetFormHandler = () => {
@@ -34,7 +34,7 @@ export const CreateComment = () => {
     
         commentService.createComment(values, user.accessToken)
             .then((result) => {
-    
+              
                 setComments((state) => ([ ...state, result ]))
                 },
                  navigate("/comments"))

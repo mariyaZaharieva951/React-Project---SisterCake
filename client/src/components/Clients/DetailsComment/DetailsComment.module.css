@@ -41,9 +41,19 @@
 }
 
 .inactiveLike a, .activeLike a {
-
     border:1px solid #E59DA6;
-    
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.infoMail {
+    margin-bottom: 0;
+    text-decoration: underline;
+    color: #E59DA6;
 }
 
 

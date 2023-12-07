@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "../Comment/Comment.module.css";
 
-export const Comment = ({ imageUrl, description, _createdOn, user, _id }) => {
+export const Comment = ({ imageUrl, cream, _createdOn, user, _id }) => {
   return (
     <div className="col-lg-4 mb-4">
       <div className="card">
@@ -9,10 +9,7 @@ export const Comment = ({ imageUrl, description, _createdOn, user, _id }) => {
           <img src={imageUrl} alt="..." className={styles.imgComment} />
         </div>
         <div className="card-body">
-          <p className="card-text">{description}</p>
-          {/* <Link to={`${_id}`} className="text-dark">
-                Детайли
-              </Link> */}
+          <p className="card-text">С вкус на {cream}</p>
           <div className={styles.btnComment}>
             
               <Link
