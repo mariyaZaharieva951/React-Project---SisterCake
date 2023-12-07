@@ -1423,6 +1423,254 @@
               }
               
         },
+        kidsCakes: {
+            "2c1a399f-a28b-427c-a80f-2c624baaae14": {
+                "_id": "2c1a399f-a28b-427c-a80f-2c624baaae14",
+                "price": "4.50",
+                "imgUrl": "/img/kids/kid1.png" 
+              },
+              "7f7590b4-a71e-4d02-8c23-fc49192dd5ec": {
+                "_id": "7f7590b4-a71e-4d02-8c23-fc49192dd5ec",
+                "price": "4.50",
+                "imgUrl": "/img/kids/kid2.png" 
+              },
+              "3ec261a7-8078-454e-827d-f24a95903c1f": {
+                "_id": "3ec261a7-8078-454e-827d-f24a95903c1f",
+                "price": "4.50",
+                "imgUrl": "/img/kids/kid3.png" 
+              },
+              "a4bc3b1b-da45-4967-9fd5-787ab8df8c40": {
+                "_id": "a4bc3b1b-da45-4967-9fd5-787ab8df8c40",
+                "price": "4.00",
+                "imgUrl": "/img/kids/kid4.png" 
+              },
+              "2ea2f373-5e3b-41c2-87c5-598e2b6ab3ce": {
+                "_id": "2ea2f373-5e3b-41c2-87c5-598e2b6ab3ce",
+                "price": "4.50",
+                "imgUrl": "/img/kids/kid5.png" 
+              },
+              "4d8cb9e1-90de-415c-a79e-cf12deca737e": {
+                "_id": "4d8cb9e1-90de-415c-a79e-cf12deca737e",
+                "price": "4.30",
+                "imgUrl": "/img/kids/kid6.png" 
+              },
+              "55ef7cce-a0f2-431f-ab5c-8153c3adca1c": {
+                "_id": "55ef7cce-a0f2-431f-ab5c-8153c3adca1c",
+                "price": "4.50",
+                "imgUrl": "/img/kids/kid7.png" 
+              },
+              "6e70108d-2d38-4f51-855b-78a375824f3c": {
+                "_id": "6e70108d-2d38-4f51-855b-78a375824f3c",
+                "price": "4.50",
+                "imgUrl": "/img/kids/kid8.png" 
+              },
+              "ca62320f-507c-4429-93e0-52bf9ab6626f": {
+                "_id": "ca62320f-507c-4429-93e0-52bf9ab6626f",
+                "price": "4.30",
+                "imgUrl": "/img/kids/kid9.png" 
+              },
+              "4279e121-6c9c-4e91-b250-b06c994ecf79": {
+                "_id": "4279e121-6c9c-4e91-b250-b06c994ecf79",
+                "price": "4.50",
+                "imgUrl": "/img/kids/kid10.png" 
+              },
+              "aefa3ca3-1a39-4720-8599-1cfbbf2dadce": {
+                "_id": "aefa3ca3-1a39-4720-8599-1cfbbf2dadce",
+                "price": "4.20",
+                "imgUrl": "/img/kids/kid11.png" 
+              },
+              "2076b947-e577-43af-8586-93aa7c5b8010": {
+                "_id": "2076b947-e577-43af-8586-93aa7c5b8010",
+                "price": "4.50",
+                "imgUrl": "/img/kids/kid12.png" 
+              },
+              "66372542-a815-43bb-b0e4-ccabee7898b5": {
+                "_id": "66372542-a815-43bb-b0e4-ccabee7898b5",
+                "price": "4.30",
+                "imgUrl": "/img/kids/kid13.png" 
+              },
+              "d1adb7cc-c0f2-4693-95ff-19a290043c02": {
+                "_id": "d1adb7cc-c0f2-4693-95ff-19a290043c02",
+                "price": "4.50",
+                "imgUrl": "/img/kids/kid14.png" 
+              },
+              "ff710536-1304-42d4-83c6-8518519a9532": {
+                "_id": "ff710536-1304-42d4-83c6-8518519a9532",
+                "price": "4.20",
+                "imgUrl": "/img/kids/kid15.png" 
+              },
+              "31e85700-fe9b-4bbe-8422-df1ecd3e3022": {
+                "_id": "31e85700-fe9b-4bbe-8422-df1ecd3e3022",
+                "price": "4.50",
+                "imgUrl": "/img/kids/kid16.png" 
+              },
+
+        },
+        weddingCakes: {
+            "e85056e4-cce6-4bf8-880d-4073c8b7cd50": {
+                "_id": "e85056e4-cce6-4bf8-880d-4073c8b7cd50",
+                "price": "4.50",
+                "imgUrl": "/img/wedding/wed1.png" 
+              },
+              "230d1ff8-bd7e-4de1-a75b-6239b0165b2f": {
+                "_id": "230d1ff8-bd7e-4de1-a75b-6239b0165b2f",
+                "price": "4.50",
+                "imgUrl": "/img/wedding/wed2.png" 
+              },
+              "1862f20c-5a56-42f3-b5f0-0587ae2b3d34": {
+                "_id": "1862f20c-5a56-42f3-b5f0-0587ae2b3d34",
+                "price": "4.60",
+                "imgUrl": "/img/wedding/wed3.png" 
+              },
+              "dcda230c-236c-485a-9584-ed6fc6331115": {
+                "_id": "dcda230c-236c-485a-9584-ed6fc6331115",
+                "price": "4.70",
+                "imgUrl": "/img/wedding/wed4.png" 
+              },
+              "dcf45338-6392-4d5f-adc0-6ae867ec402d": {
+                "_id": "dcf45338-6392-4d5f-adc0-6ae867ec402d",
+                "price": "4.50",
+                "imgUrl": "/img/wedding/wed5.png" 
+              },
+              "2c1a399f-a28b-427c-a80f-2c624baaae14": {
+                "_id": "2c1a399f-a28b-427c-a80f-2c624baaae14",
+                "price": "4.70",
+                "imgUrl": "/img/wedding/wed6.png" 
+              },
+              "25bcacad-4b22-4458-b42b-cc70bf078edd": {
+                "_id": "25bcacad-4b22-4458-b42b-cc70bf078edd",
+                "price": "4.50",
+                "imgUrl": "/img/wedding/wed7.png" 
+              },
+              "7ffc6cdb-cdd6-404d-966a-b372332023c6": {
+                "_id": "7ffc6cdb-cdd6-404d-966a-b372332023c6",
+                "price": "4.50",
+                "imgUrl": "/img/wedding/wed8.png" 
+              },
+              "40ebf47e-d002-4abe-81a0-426791328a7f": {
+                "_id": "40ebf47e-d002-4abe-81a0-426791328a7f",
+                "price": "4.70",
+                "imgUrl": "/img/wedding/wed9.png" 
+              },
+              "680c703d-a3b0-4252-ae50-00f1f2444515": {
+                "_id": "680c703d-a3b0-4252-ae50-00f1f2444515",
+                "price": "4.50",
+                "imgUrl": "/img/wedding/wed10.png" 
+              },
+              "e7f076d8-6d7f-4266-915a-f54c486ad156": {
+                "_id": "e7f076d8-6d7f-4266-915a-f54c486ad156",
+                "price": "4.60",
+                "imgUrl": "/img/wedding/wed11.png" 
+              },
+              "d878baac-675b-4f27-8072-929edd61ea5c": {
+                "_id": "d878baac-675b-4f27-8072-929edd61ea5c",
+                "price": "4.50",
+                "imgUrl": "/img/wedding/wed12.png" 
+              },
+              "d0a98280-dcd3-479d-9651-3ff8b8cd8623": {
+                "_id": "d0a98280-dcd3-479d-9651-3ff8b8cd8623",
+                "price": "4.50",
+                "imgUrl": "/img/wedding/wed13.png" 
+              },
+              "9e803950-cdab-4792-9603-aa476e791119": {
+                "_id": "9e803950-cdab-4792-9603-aa476e791119",
+                "price": "4.70",
+                "imgUrl": "/img/wedding/wed14.png" 
+              },
+              "f2fb844d-5d79-43e8-b934-9be81e0f96f8": {
+                "_id": "f2fb844d-5d79-43e8-b934-9be81e0f96f8",
+                "price": "4.50",
+                "imgUrl": "/img/wedding/wed15.png" 
+              },
+              "7807d322-516f-4caf-aa25-d47c3b9ce8c9": {
+                "_id": "7807d322-516f-4caf-aa25-d47c3b9ce8c9",
+                "price": "4.70",
+                "imgUrl": "/img/wedding/wed16.png" 
+              },
+        }, 
+        individualCakes: {
+            "8b9c9d55-5ce6-4c07-87fb-fa0517c6f25e": {
+                "_id": "8b9c9d55-5ce6-4c07-87fb-fa0517c6f25e",
+                "price": "4.70",
+                "imgUrl": "/img/individual/ind1.png" 
+              },
+              "ce2a9506-52bd-4cfe-8bc7-50c8fa62856e": {
+                "_id": "ce2a9506-52bd-4cfe-8bc7-50c8fa62856e",
+                "price": "4.20",
+                "imgUrl": "/img/individual/ind2.png" 
+              },
+              "9c714e38-8c73-4714-9eb1-0b903aae0e20": {
+                "_id": "9c714e38-8c73-4714-9eb1-0b903aae0e20",
+                "price": "4.30",
+                "imgUrl": "/img/individual/ind3.png" 
+              },
+              "a484419b-0512-4692-9e82-683fbf03465b": {
+                "_id": "a484419b-0512-4692-9e82-683fbf03465b",
+                "price": "4.30",
+                "imgUrl": "/img/individual/ind4.png" 
+              },
+              "6fc0b955-5150-4e1b-9209-fee3508f8b84": {
+                "_id": "6fc0b955-5150-4e1b-9209-fee3508f8b84",
+                "price": "4.50",
+                "imgUrl": "/img/individual/ind5.png" 
+              },
+              "ca305b8e-1613-40d7-9994-fb548c1b648d": {
+                "_id": "ca305b8e-1613-40d7-9994-fb548c1b648d",
+                "price": "4.70",
+                "imgUrl": "/img/individual/ind6.png" 
+              },
+              "694289cc-9c06-4cde-9302-510d052b6aa7": {
+                "_id": "694289cc-9c06-4cde-9302-510d052b6aa7",
+                "price": "4.20",
+                "imgUrl": "/img/individual/ind7.png" 
+              },
+              "0cb68200-2736-4705-a63c-a0009ab195fd": {
+                "_id": "0cb68200-2736-4705-a63c-a0009ab195fd",
+                "price": "4.30",
+                "imgUrl": "/img/individual/ind8.png" 
+              },
+              "f385cc2a-deba-4957-ad53-e189a437acd4": {
+                "_id": "f385cc2a-deba-4957-ad53-e189a437acd4",
+                "price": "4.20",
+                "imgUrl": "/img/individual/ind9.png" 
+              },
+              "c34af479-6acc-4104-aa9f-d6d035a9f966": {
+                "_id": "c34af479-6acc-4104-aa9f-d6d035a9f966",
+                "price": "4.30",
+                "imgUrl": "/img/individual/ind10.png" 
+              },
+              "d49f8a88-0525-42ac-a762-193116ce75f0": {
+                "_id": "d49f8a88-0525-42ac-a762-193116ce75f0",
+                "price": "4.70",
+                "imgUrl": "/img/individual/ind11.png" 
+              },
+              "2bc8bec8-6452-4c38-a980-7f58a075fb3c": {
+                "_id": "2bc8bec8-6452-4c38-a980-7f58a075fb3c",
+                "price": "4.30",
+                "imgUrl": "/img/individual/ind12.png" 
+              },
+              "3e9f5421-6acc-4fc1-9b45-8ed14e66990a": {
+                "_id": "3e9f5421-6acc-4fc1-9b45-8ed14e66990a",
+                "price": "4.20",
+                "imgUrl": "/img/individual/ind13.png" 
+              },
+              "54cc11f1-c20a-4f49-90b7-1112829a12c8": {
+                "_id": "54cc11f1-c20a-4f49-90b7-1112829a12c8",
+                "price": "4.70",
+                "imgUrl": "/img/individual/ind14.png" 
+              },
+              "4a4c2dd9-9813-4cc7-8d55-2d733d18d50d": {
+                "_id": "4a4c2dd9-9813-4cc7-8d55-2d733d18d50d",
+                "price": "4.50",
+                "imgUrl": "/img/individual/ind15.png" 
+              },
+              "fb9cb13e-5a92-4aa5-86b9-29552b8e1a88": {
+                "_id": "fb9cb13e-5a92-4aa5-86b9-29552b8e1a88",
+                "price": "4.20",
+                "imgUrl": "/img/individual/ind16.png" 
+              },
+
+        },
         cakes: {
             "6939edc2-cd75-4000-8671-771f49defb9a": {
                 "_id": "6939edc2-cd75-4000-8671-771f49defb9a",
