@@ -7,13 +7,19 @@
 .btnItem {
     text-decoration: none;
     border: 1px solid #E59DA6;
+    background-color: #E59DA6;
+    color: white;
     max-width: 50%;
     padding: 0.5rem 1rem;
     border-radius: 30px;
-     
 }
 
-.btnItem>a:hover, h5>a:hover {
+.btnItem a {
+    color: white;
+}
+
+.btnItem a:hover,.btnItem:hover {
     text-decoration: none;
-    color: #c4737c;
+    color: #E59DA6;
+    background-color: white;
 }

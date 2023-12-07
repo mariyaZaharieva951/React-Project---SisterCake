@@ -6,7 +6,9 @@ export const Comment = ({ imageUrl, cream, _createdOn, user, _id }) => {
     <div className="col-lg-4 mb-4">
       <div className="card">
         <div className={styles.cardComment}>
+        <Link to={`${_id}`}>
           <img src={imageUrl} alt="..." className={styles.imgComment} />
+          </Link>
         </div>
         <div className="card-body">
           <p className="card-text">С вкус на {cream}</p>

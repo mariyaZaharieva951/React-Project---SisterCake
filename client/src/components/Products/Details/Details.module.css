@@ -1,6 +1,28 @@
+.detailsBox{
+    margin: 2rem;
+    padding: 2rem;
+    border:none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F1E3E6;
+    border-radius: 6px;
+} 
+
 .item {
     display: flex;
     align-items: center;
+}
+
+.onePrice {
+    display: flex;
+    gap: 1rem;
+    align-content: flex-end;
+    align-items: flex-end;
+}
+
+.onePrice p {
+    margin-bottom: 0.3rem;
 }
 
 

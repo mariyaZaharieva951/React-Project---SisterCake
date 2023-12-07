@@ -44,10 +44,6 @@ export const Gallery = () => {
                     
                     }
                    
-                    
-                
-               
-                
                 </div>
             </div>
         </div>
