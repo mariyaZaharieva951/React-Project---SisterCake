@@ -25,6 +25,7 @@ import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
 
 
+
 function App() {
 
   return (
@@ -46,7 +47,7 @@ function App() {
                 <Route path='/createComment' element={<CreateComment/>}/>
                 <Route path='/comments/:commentId' element={<DetailsComment/>}/>
                 <Route path='/comment/edit/:commentId' element={<EditComment/>}/>
-                <Route path='/menu/:cakeId' element={<Details/>}/>
+                <Route path='/menu/:menuId/:cakeId' element={<Details/>}/>
             </Route>
 
             <Route element={<GuestGuard/>}>

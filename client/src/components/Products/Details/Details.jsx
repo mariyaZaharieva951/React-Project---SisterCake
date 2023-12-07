@@ -5,9 +5,13 @@ import * as cakeService from "../../../services/cakeService";
 import styles from "../Details/Details.module.css";
 import { useForm } from "../../../hooks/useForm";
 
+
+
 export const Details = () => {
+  
   const navigate = useNavigate();
-  const { cakeId } = useParams();
+  const { menuId,cakeId } = useParams();
+
   const { user } = useContext(AuthContext);
   const [buys, setBuys] = useState([]);
   const [currentCake, setCurrentCake] = useState({});
@@ -18,14 +22,31 @@ export const Details = () => {
   const [cream2, setCream2] = useState("");
   const [pieces, setPieces] = useState("");
 
+
   useEffect(() => {
+  
     cakeService.getAllBuys().then((result) => {
       setBuys(result);
     });
 
-    cakeService.getOneBdCake(cakeId).then((result) => {
-      setCurrentCake(result);
-    });
+    if(menuId === 'birthday') {
+      cakeService.getOneBdCake(cakeId).then((result) => {
+          setCurrentCake(result);
+      });
+    } else if(menuId === 'wedding') {
+      cakeService.getOneWeddingCake(cakeId).then((result) => {
+          setCurrentCake(result);
+      });
+    } else if(menuId === 'kids') {
+      cakeService.getOneKidsCake(cakeId).then((result) => {
+          setCurrentCake(result); 
+      });
+    } else if(menuId === 'individual') {
+      cakeService.getOneIndividualCake(cakeId).then((result) => {
+          setCurrentCake(result);
+      });
+    }
+    
   }, [cakeId]);
 
   const submitHandler = (values) => {
@@ -34,7 +55,7 @@ export const Details = () => {
         user.buys.push(result);
         setBuys((state) => ({ ...state, buys: result }));
       },
-      alert("You successfull buy this cake!"),
+      alert("Вашата поръчка е успешна!"),
       navigate("/menu")
     );
   };

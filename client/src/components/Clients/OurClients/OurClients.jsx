@@ -11,8 +11,9 @@ export const OurClients = () => {
     commentService
       .getLatesComments()
       .then((result) => {
+        if(result){
         setComments(result);
-      })
+      }})
       .catch((error) => {
         console.log(error);
       });
@@ -30,7 +31,7 @@ export const OurClients = () => {
       <div className="row">
         {comments.length > 0 
         ? (comments.map((comment) => <Comment key={comment._id} {...comment} />))
-        : (<p className={styles.noComments}>No added comments</p>)}
+        : (<p className={styles.noComments}>Няма добавени коментари</p>)}
       </div>
       <div className={styles.btnCreate}>
         <Link

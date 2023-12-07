@@ -34,7 +34,6 @@ export const CreateComment = () => {
     
         commentService.createComment(values, user.accessToken)
             .then((result) => {
-              
                 setComments((state) => ([ ...state, result ]))
                 },
                  navigate("/comments"))
