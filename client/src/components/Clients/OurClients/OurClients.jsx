@@ -3,9 +3,12 @@ import { Comment } from "../Comment/Comment";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import * as commentService from "../../../services/commentService";
+import { Loading } from "../../Loading/Loading";
 
 export const OurClients = () => {
   const [comments, setComments] = useState([]);
+  
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     commentService
@@ -16,9 +19,10 @@ export const OurClients = () => {
       }})
       .catch((error) => {
         console.log(error);
-      });
+      })
+      .finally(() => setIsLoading(false));
   }, []);
-
+console.log(isLoading)
   return (
     <div className="container">
       <div
@@ -29,6 +33,7 @@ export const OurClients = () => {
       </div>
 
       <div className="row">
+        {isLoading && <Loading/>}
         {comments.length > 0 
         ? (comments.map((comment) => <Comment key={comment._id} {...comment} />))
         : (<p className={styles.noComments}>Няма добавени коментари</p>)}

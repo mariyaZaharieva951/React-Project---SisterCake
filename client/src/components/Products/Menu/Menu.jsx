@@ -2,13 +2,14 @@ import styles from "../Menu/Menu.module.css";
 import { useState, useEffect } from 'react'
 import * as cakeService from '../../../services/cakeService'
 import { MenuItem } from "../MenuItem/MenuItem";
+import { Loading } from "../../Loading/Loading";
 
 
 
 
 export const Menu = () => {
 
-  
+  const [isLoading, setIsLoading] = useState(false);
 
   const [birthdayCakes, setBirthdayCakes] = useState([]);
   const [weddingCakes, setWeddingCakes] = useState([]);
@@ -24,6 +25,7 @@ export const Menu = () => {
       
     })
     .catch(err => console.log(err))
+    .finally(() => setIsLoading(false));
 
 
     cakeService.getAllWeddingCake()
@@ -32,6 +34,7 @@ export const Menu = () => {
     
     })
     .catch(err => console.log(err))
+    .finally(() => setIsLoading(false));
 
 
     cakeService.getAllKidsCake()
@@ -40,6 +43,7 @@ export const Menu = () => {
     
     })
     .catch(err => console.log(err))
+    .finally(() => setIsLoading(false));
 
 
     cakeService.getAllIndividualCake()
@@ -48,6 +52,7 @@ export const Menu = () => {
   
     })
     .catch(err => console.log(err))
+    .finally(() => setIsLoading(false));
 
   },[])
 
@@ -107,7 +112,7 @@ export const Menu = () => {
           <div className="tab-content">
             <div id="tab-1" className="tab-pane fade show p-0 active">
               <div className="row g-3">
-              
+                {isLoading && <Loading/>}
                 {birthdayCakes?.length > 0 ?
                 birthdayCakes.map(cake => <MenuItem  key={cake._id} {...cake} menuId={'birthday'} />):
                 <div>Error</div> }     
@@ -115,6 +120,7 @@ export const Menu = () => {
             </div>
             <div id="tab-2" className="tab-pane fade show p-0">
               <div className="row g-3">
+              {isLoading && <Loading/>}
               {weddingCakes?.length > 0 ?
                 weddingCakes.map(cake => <MenuItem key={cake._id} {...cake} menuId={'wedding'}/>):
                 <div>Error</div> }  
@@ -122,6 +128,7 @@ export const Menu = () => {
             </div>
             <div id="tab-3" className="tab-pane fade show p-0">
             <div className="row g-3">
+            {isLoading && <Loading/>}
             {kidsCakes?.length > 0 ?
                 kidsCakes.map(cake => <MenuItem key={cake._id} {...cake} menuId={'kids'}/>):
                 <div>Error</div> 
@@ -130,6 +137,7 @@ export const Menu = () => {
             </div>
             <div id="tab-4" className="tab-pane fade show p-0">
               <div className="row g-3">
+              {isLoading && <Loading/>}
               {individualCakes?.length > 0 ?
                 individualCakes.map(cake => <MenuItem key={cake._id} {...cake} menuId={'individual'}/>):
                 <div>Error</div> }  
