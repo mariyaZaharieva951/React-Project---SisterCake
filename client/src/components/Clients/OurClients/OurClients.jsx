@@ -22,7 +22,8 @@ export const OurClients = () => {
       })
       .finally(() => setIsLoading(false));
   }, []);
-console.log(isLoading)
+
+  
   return (
     <div className="container">
       <div

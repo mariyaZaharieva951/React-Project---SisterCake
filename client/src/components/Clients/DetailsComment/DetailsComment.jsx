@@ -4,6 +4,7 @@ import { AuthContext } from "../../../contexts/authContex";
 import * as commentService from "../../../services/commentService";
 import * as likeService from "../../../services/likeService";
 import styles from "../DetailsComment/DetailsComment.module.css";
+import Toaster from "../../Toaster/Toaster";
 
 export const DetailsComment = () => {
   const navigate = useNavigate();
@@ -22,10 +23,10 @@ export const DetailsComment = () => {
    
    
     likeService.getAllLikes(commentId).then((result) => 
-    { if(result.length === 0) {
-        return
+    { if(result.length !== 0) {
+        setCurrentComment((state) => ({ ...state, likes: result }));
       }
-      setCurrentComment((state) => ({ ...state, likes: result }));
+      
     });
   
   }, [commentId]);
@@ -43,7 +44,7 @@ export const DetailsComment = () => {
 
   const onLike = () => {
     if (isLiker) {
-      return alert(`${user.email} already likes this comment`);
+    return alert('Вие вече сте харесали този коментар');
     }
 
     likeService
