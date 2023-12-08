@@ -124,15 +124,9 @@ export const Footer = () => {
           <p className="mb-0">
             ©{" "}
             <Link className="text-white border-bottom" href="#">
-              sistercake.com
+              sistercake.com   
             </Link>
-            . All Rights Reserved. Designed by{" "}
-            <Link
-              className="text-white border-bottom"
-              href="https://htmlcodex.com"
-            >
-              HTML Codex
-            </Link>
+            {" "}Мария Захариева. Всички права запазени.
           </p>
         </div>
       </div>

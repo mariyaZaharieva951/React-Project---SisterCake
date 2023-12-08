@@ -4,7 +4,7 @@ import { AuthContext } from "../../../contexts/authContex";
 import * as commentService from "../../../services/commentService";
 import * as likeService from "../../../services/likeService";
 import styles from "../DetailsComment/DetailsComment.module.css";
-import Toaster from "../../Toaster/Toaster";
+
 
 export const DetailsComment = () => {
   const navigate = useNavigate();

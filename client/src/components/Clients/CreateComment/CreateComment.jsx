@@ -31,7 +31,6 @@ export const CreateComment = () => {
   
 
   const submitHandler = (values) => {
-    
         commentService.createComment(values, user.accessToken)
             .then((result) => {
                 setComments((state) => ([ ...state, result ]))

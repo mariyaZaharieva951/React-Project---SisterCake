@@ -32,7 +32,7 @@ export const EditComment = () => {
   }, [commentId]);
 
   const submitHandler = (values) => {
-    debugger
+
     commentService
       .editComment(commentId, user.accessToken, values)
       .then((result) => {

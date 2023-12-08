@@ -33,10 +33,6 @@ export const useForm = (submitHandler,initialValues) => {
         values,
         onChange,
         onSubmit
-        // onLoginSubmit,
-        // onRegisterSubmit,
-        // onEditSubmit,
-        // onCreateSubmit
     }
 
 
