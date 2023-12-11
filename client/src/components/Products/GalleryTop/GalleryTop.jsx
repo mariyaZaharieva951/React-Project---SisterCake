@@ -40,7 +40,7 @@ export const GalleryTop = () => {
               <li data-target="#blogCarousel" data-slide-to={1} />
               <li data-target="#blogCarousel" data-slide-to={2} />
             </ol>
-            {/* Carousel items */}
+            
             <div className="carousel-inner">
               <div className="carousel-item active">
                 <div className="row">
@@ -59,7 +59,7 @@ export const GalleryTop = () => {
                 </div>
                 {/*.row*/}
               </div>
-              {/*.item*/}
+              
               <div className="carousel-item">
                 <div className="row">
                   {/* <div className="col-md-3"> */}
@@ -75,7 +75,7 @@ export const GalleryTop = () => {
                 </div>
                 {/*.row*/}
               </div>
-              {/*.item*/}
+              
               <div className="carousel-item">
                 <div className="row">
                   {/* <div className="col-md-3"> */}
@@ -91,11 +91,11 @@ export const GalleryTop = () => {
                 </div>
                 {/*.row*/}
               </div>
-              {/*.item*/}
+              
             </div>
-            {/*.carousel-inner*/}
+            
           </div>
-          {/*.Carousel*/}
+         
         </div>
       </div>
     </div>
