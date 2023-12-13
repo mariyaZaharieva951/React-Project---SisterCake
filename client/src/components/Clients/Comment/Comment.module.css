@@ -6,11 +6,6 @@
     
 }
 
-/* .btnLike a {
-    align-items: center;
-    background-color: #E59DA6;
-} */
-
 .btnLike i:hover,.btnLike a:hover, .btnLike:hover, .btnComment a:hover {
     background-color: white;
     color: #E59DA6;

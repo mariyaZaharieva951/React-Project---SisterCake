@@ -5,8 +5,6 @@ import { MenuItem } from "../MenuItem/MenuItem";
 import { Loading } from "../../Loading/Loading";
 
 
-
-
 export const Menu = () => {
 
   const [isLoading, setIsLoading] = useState(false);

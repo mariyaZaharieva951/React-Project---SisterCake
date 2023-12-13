@@ -34,54 +34,6 @@ export const Contact = () => {
             </div>
           </div>
         </div>
-        {/* <div className="row justify-content-center">
-          <div className="col-lg-6">
-            <form>
-              <div className="row g-3">
-                <div className="col-sm-6">
-                  <input
-                    type="text"
-                    className="form-control bg-light border-0 px-4"
-                    placeholder="Your Name"
-                    style={{ height: 55 }}
-                  />
-                </div>
-                <div className="col-sm-6">
-                  <input
-                    type="email"
-                    className="form-control bg-light border-0 px-4"
-                    placeholder="Your Email"
-                    style={{ height: 55 }}
-                  />
-                </div>
-                <div className="col-sm-12">
-                  <input
-                    type="text"
-                    className="form-control bg-light border-0 px-4"
-                    placeholder="Subject"
-                    style={{ height: 55 }}
-                  />
-                </div>
-                <div className="col-sm-12">
-                  <textarea
-                    className="form-control bg-light border-0 px-4 py-3"
-                    rows={4}
-                    placeholder="Message"
-                    defaultValue={""}
-                  />
-                </div>
-                <div className="col-sm-12">
-                  <button
-                    className="btn btn-primary border-inner w-100 py-3"
-                    type="submit"
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div> */}
       </div>
     </div>
   );
