@@ -105,6 +105,10 @@ export const Login = () => {
               {hasError && (<p className={styles.error}>{Object.values(serverErrors).map(err => err)}</p>)}
               </div>
 
+              <div>
+                 <Link className={styles.forgot} to="/register">Forgot password?</Link>
+              </div>
+
               <input type="submit" name="" defaultValue="Login" href="#" />
               {/* <div className="col-md-12">
                 <div className={styles.social_network}>
