@@ -186,6 +186,9 @@ export const Register = () => {
             {hasError && (<p className={styles.error}>{Object.values(serverErrors).map(err => err)}</p>)}
             </div>
             <input type="submit" name="" defaultValue="Login" href="#" />
+            <div>
+                <p>Do you have acount? <Link className={styles.loginNow} to="/login">Login Now</Link></p>
+            </div>
             <div className="col-md-12">
               <div className={styles.social_network}>
                 <ul className={styles.social_circle}>

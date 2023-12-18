@@ -1,7 +1,7 @@
 import { useState, useContext} from "react";
 import { useForm } from "../../../hooks/useForm";
 import { AuthContext } from "../../../contexts/authContex";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import * as authService from '../../../services/authService';
 import styles from "../Login/Login.module.css";
@@ -127,6 +127,10 @@ export const Login = () => {
                 </ul>
                 </div>
               </div> */}
+
+              <div>
+                <p>Not a Member? <Link className={styles.registerNow} to="/register">Register Now</Link></p>
+              </div>
             </form>
           </div>
         
