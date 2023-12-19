@@ -21,6 +21,7 @@ import { NotFound } from './components/NotFound/NotFound';
 import { AuthGuard } from './components/Guards/AuthGuard';
 import { GuestGuard } from './components/Guards/GuestGuard';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
+import { ForgotPassword } from './components/User/Forgot-Password/Forgot-Password';
 
 
 
@@ -53,6 +54,7 @@ function App() {
             <Route element={<GuestGuard/>}>
                 <Route path='/login' element={<Login/>}/>
                 <Route path='/register' element={<Register/>}/>
+                <Route path='/forgotPassword' element={<ForgotPassword/>}/>
             </Route>
             
             <Route path='*' element={<NotFound/>}/>

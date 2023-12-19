@@ -115,3 +115,35 @@ export const logout = async(accessToken) => {
         console.log(error)
     }
 }
+
+
+export const resetPass = async(email) => {
+    try { 
+        const authData = localStorage.getItem('auth');
+        let auth = '';
+        if(authData) {
+            auth = JSON.parse(authData);
+        }
+
+        let headers = {};
+        if(auth.accessToken) {
+             headers['X-Authorization'] = auth.accessToken;
+        }
+
+        const response = await fetch(`${baseUrl}/forgot`, {
+            method: 'POST',
+            headers: {
+                ...headers,
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify({email})
+
+        })
+        console.log(response)
+
+
+    } catch(error) {
+        console.log(error)
+    }
+
+}

@@ -106,7 +106,7 @@ export const Login = () => {
               </div>
 
               <div>
-                 <Link className={styles.forgot} to="/register">Forgot password?</Link>
+                 <Link className={styles.forgot} to="/forgotPassword">Forgot password?</Link>
               </div>
 
               <input type="submit" name="" defaultValue="Login" href="#" />
