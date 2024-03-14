@@ -20,33 +20,17 @@ export const GalleryItem = ({ img }) => {
             data-toggle="modal"
             data-target="#exampleModal"
           />
-          <Modal isOpen={show} onRequestClose={closeModal} className={styles.open}>
+          <Modal isOpen={show} onRequestClose={closeModal} className={`${styles.modal} ${show ? styles['open'] : styles['close']}`}>
+          <button onClick={closeModal} className={styles.close}>x</button>
           <img
             className="img-fluid"
             src={img}
             alt="cake"
           />
-          <button onClick={closeModal}>x</button>
+          
           </Modal>
         </div>
       </div>
-
-      {/* <div
-        className="modal fade"
-        id="exampleModal"
-        tabIndex="-1"
-        role="dialog"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-lg">
-          <div className="modal-content">
-            <div className="modal-body">
-              <img src={img} alt="Enlarged Image" className="img-fluid" />
-            </div>
-          </div>
-        </div>
-      </div> */}
     </>
   );
 };
