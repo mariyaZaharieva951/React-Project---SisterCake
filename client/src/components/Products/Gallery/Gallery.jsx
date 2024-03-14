@@ -5,7 +5,8 @@ import { GalleryItem } from '../GalleryItem/GalleryItem'
 
 export const Gallery = () => {
     const [cakes, setCakes ] = useState([]);
-
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 8;
     useEffect(() => {
         cakeService.getAll()
         .then(result => {
@@ -15,7 +16,13 @@ export const Gallery = () => {
         .catch(err => console.log(err))
     },[])
     
-    
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+       };
+      
+       const indexOfLastItem = currentPage * itemsPerPage;
+       const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+       const currentItems = cakes.slice(indexOfFirstItem,indexOfLastItem);
     return (
 
        
@@ -35,7 +42,7 @@ export const Gallery = () => {
                     {cakes.length > 0 
                         ? (
                             <>
-                            {cakes.map(cake => (
+                            {currentItems.map(cake => (
                                 <GalleryItem key={cake._id} img={cake.imgUrl} />
                             ))}
                             </>
@@ -46,6 +53,20 @@ export const Gallery = () => {
                    
                 </div>
             </div>
+        </div>
+
+        <div className={styles.pagination}>
+            <button className={styles.controls} onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}>
+                Назад
+            </button>
+            <span>
+         {currentPage} от {Math.ceil(cakes.length / itemsPerPage)}
+            </span>
+            <button className={styles.controls} onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === Math.ceil(cakes.length / itemsPerPage)}>
+                Напред
+            </button>
         </div>
     </div>
 
