@@ -9,3 +9,11 @@
     
 }
 
+.open {
+    width: 27%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 4em;
+    background-color: rgb(249, 231, 231);
+    border-radius: 5px;
+}

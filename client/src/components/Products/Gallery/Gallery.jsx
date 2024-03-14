@@ -6,7 +6,7 @@ import { GalleryItem } from '../GalleryItem/GalleryItem'
 export const Gallery = () => {
     const [cakes, setCakes ] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 8;
+    const itemsPerPage = 6;
     useEffect(() => {
         cakeService.getAll()
         .then(result => {
