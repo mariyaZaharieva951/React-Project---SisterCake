@@ -13,7 +13,21 @@ export const Menu = () => {
   const [weddingCakes, setWeddingCakes] = useState([]);
   const [kidsCakes, setKidsCakes] = useState([]);
   const [individualCakes, setIndividualCakes] = useState([]);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8; 
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
  
+  const currentBirthDay = birthdayCakes.slice(indexOfFirstItem, indexOfLastItem);
+  const currentWedding = weddingCakes.slice(indexOfFirstItem, indexOfLastItem);
+  const currentKids = kidsCakes.slice(indexOfFirstItem, indexOfLastItem);
+  const currentIndividual = individualCakes.slice(indexOfFirstItem, indexOfLastItem);
 
   useEffect(() => {
     cakeService.getAllBirthdayCake()
@@ -111,24 +125,24 @@ export const Menu = () => {
             <div id="tab-1" className="tab-pane fade show p-0 active">
               <div className="row g-3">
                 {isLoading && <Loading/>}
-                {birthdayCakes?.length > 0 ?
-                birthdayCakes.map(cake => <MenuItem  key={cake._id} {...cake} menuId={'birthday'} />):
+                {currentBirthDay?.length > 0 ?
+                currentBirthDay.map(cake => <MenuItem  key={cake._id} {...cake} menuId={'birthday'} />):
                 <div>Error</div> }     
               </div>
             </div>
             <div id="tab-2" className="tab-pane fade show p-0">
               <div className="row g-3">
               {isLoading && <Loading/>}
-              {weddingCakes?.length > 0 ?
-                weddingCakes.map(cake => <MenuItem key={cake._id} {...cake} menuId={'wedding'}/>):
+              {currentWedding?.length > 0 ?
+                currentWedding.map(cake => <MenuItem key={cake._id} {...cake} menuId={'wedding'}/>):
                 <div>Error</div> }  
               </div>
             </div>
             <div id="tab-3" className="tab-pane fade show p-0">
             <div className="row g-3">
             {isLoading && <Loading/>}
-            {kidsCakes?.length > 0 ?
-                kidsCakes.map(cake => <MenuItem key={cake._id} {...cake} menuId={'kids'}/>):
+            {currentKids?.length > 0 ?
+                currentKids.map(cake => <MenuItem key={cake._id} {...cake} menuId={'kids'}/>):
                 <div>Error</div> 
                 } 
             </div>
@@ -136,11 +150,28 @@ export const Menu = () => {
             <div id="tab-4" className="tab-pane fade show p-0">
               <div className="row g-3">
               {isLoading && <Loading/>}
-              {individualCakes?.length > 0 ?
-                individualCakes.map(cake => <MenuItem key={cake._id} {...cake} menuId={'individual'}/>):
+              {currentIndividual?.length > 0 ?
+                currentIndividual.map(cake => <MenuItem key={cake._id} {...cake} menuId={'individual'}/>):
                 <div>Error</div> }  
               </div>
             </div>
+            <div className="pagination">
+        <button
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          Назад
+        </button>
+        <span>
+          {currentPage} от {Math.ceil(birthdayCakes.length / itemsPerPage)}
+        </span>
+        <button
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === Math.ceil(birthdayCakes.length / itemsPerPage)}
+        >
+          Напред
+        </button>
+      </div>
           </div>
         </div>
       </div>
