@@ -24,3 +24,18 @@
     bottom: 4px;
     margin-left: -90px;
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-bottom: 2em;
+}
+
+.controls {
+    background-color: none;
+    /* color: white; */
+    border: none;
+    border-radius: 2px;
+    width: 100px;
+}

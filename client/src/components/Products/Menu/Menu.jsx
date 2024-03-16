@@ -155,21 +155,21 @@ export const Menu = () => {
                 <div>Error</div> }  
               </div>
             </div>
-            <div className="pagination">
-        <button
+            <div className={styles.pagination}>
+        <button className={styles.controls}
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
         >
-          Назад
+           &lt;&lt;&lt;
         </button>
         <span>
           {currentPage} от {Math.ceil(birthdayCakes.length / itemsPerPage)}
         </span>
-        <button
+        <button className={styles.controls}
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === Math.ceil(birthdayCakes.length / itemsPerPage)}
         >
-          Напред
+          &gt;&gt;&gt;
         </button>
       </div>
           </div>
