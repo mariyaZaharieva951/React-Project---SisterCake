@@ -6,22 +6,21 @@
 }
 
 
-/* .lightbox-gallery h2{
-    font-weight:bold;
-    margin-bottom:40px;
-    padding-top:40px;
-    color:#fff} */
-    
-    /* @media (max-width:767px){
-        .lightbox-gallery h2{
-            margin-bottom:25px;
-            padding-top:25px;
-            font-size:24px}
-        } */
 
-.lightbox_gallery.photos {
+.lightbox_gallery.row {
     padding-bottom:20px
 }
+
+.noLoaded  {
+    opacity: 1; 
+    transform: translateX(-50%); 
+  transition: opacity 0.5s ease transform 0.5s ease;
+  }
+  
+.loaded   {
+    opacity: 1; 
+    transform: translateX(0);
+  }
 
 
 .pagination {
@@ -37,4 +36,5 @@
     border: none;
     border-radius: 2px;
     width: 100px;
+    cursor: pointer;
 }

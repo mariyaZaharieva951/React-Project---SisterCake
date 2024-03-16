@@ -6,12 +6,15 @@ import { GalleryItem } from '../GalleryItem/GalleryItem'
 export const Gallery = () => {
     const [cakes, setCakes ] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
+    const [cakesLoaded, setCakesLoaded] = useState(false);
     const itemsPerPage = 6;
+
     useEffect(() => {
         cakeService.getAll()
         .then(result => {
            
             setCakes(result)
+            setCakesLoaded(true);
             })
         .catch(err => console.log(err))
     },[])
@@ -23,10 +26,10 @@ export const Gallery = () => {
        const indexOfLastItem = currentPage * itemsPerPage;
        const indexOfFirstItem = indexOfLastItem - itemsPerPage;
        const currentItems = cakes.slice(indexOfFirstItem,indexOfLastItem);
+    
+    
     return (
 
-       
-      
     <div className={styles.lightbox_gallery}>
         <div className="container">
             <div
@@ -36,8 +39,8 @@ export const Gallery = () => {
                 <h2 className="text-primary font-secondary">Галерия</h2>
             {/* <h1 className="display-4 text-uppercase">Разгледайте нашите предложения</h1> */}
             </div>
-            <div className={styles.lightbox_gallery.photos}>
-                <div className="row photos">
+            <div className={`${cakesLoaded ? 'styles.loaded' : 'styles.noLoaded'}`}>
+                <div className="row">
 
                     {cakes.length > 0 
                         ? (
