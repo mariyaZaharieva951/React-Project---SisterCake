@@ -39,7 +39,7 @@ export const Gallery = () => {
                 <h2 className="text-primary font-secondary">Галерия</h2>
             {/* <h1 className="display-4 text-uppercase">Разгледайте нашите предложения</h1> */}
             </div>
-            <div className={`${cakesLoaded ? 'styles.loaded' : 'styles.noLoaded'}`}>
+            <div className={`${cakesLoaded ? styles.loaded : styles.noLoaded}`}>
                 <div className="row">
 
                     {cakes.length > 0 
