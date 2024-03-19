@@ -1,11 +1,22 @@
+import { useEffect, useState } from "react";
 import styles from "../Contact/Contact.module.css";
 
 export const Contact = () => {
+
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsExpanded(true);
+    }, 500);
+
+    return() => clearTimeout(timeout)
+  }, []);
   return (
     <div className={styles.contact}>
       <div className="container">
         <div className="row g-5 mb-5">
-          <div className="col-lg-4 col-md-6">
+        <div className={`col-lg-4 col-md-6 ${isExpanded ? styles.expanded : styles.noExpanded}`}>
             <div className={styles.border}>
               <div className={styles.card}>
                 <i className="bi bi-geo-alt fs-1 text-white top" />
@@ -15,7 +26,7 @@ export const Contact = () => {
             </div>
           </div>
 
-          <div className="col-lg-4 col-md-6">
+          <div className={`col-lg-4 col-md-6 ${isExpanded ? styles.expanded : styles.noExpanded}`}>
             <div className={styles.border}>
               <div className={styles.card}>
                 <i className="bi bi-envelope-open fs-1 text-white" />
@@ -24,7 +35,7 @@ export const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4 col-md-6">
+          <div className={`col-lg-4 col-md-6 ${isExpanded ? styles.expanded : styles.noExpanded}`}>
             <div className={styles.border}>
               <div className={styles.card}>
                 <i className="bi bi-phone-vibrate fs-1 text-white" />
