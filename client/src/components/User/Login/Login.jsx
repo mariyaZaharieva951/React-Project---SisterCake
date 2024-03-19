@@ -106,7 +106,7 @@ export const Login = () => {
               </div>
 
               <div>
-                 <Link className={styles.forgot} to="/forgotPassword">Forgot password?</Link>
+                 <Link className={styles.forgot} to="/forgotPassword">Забравена парола?</Link>
               </div>
 
               <input type="submit" name="" defaultValue="Login" href="#" />
@@ -133,7 +133,7 @@ export const Login = () => {
               </div> */}
 
               <div>
-                <p>Not a Member? <Link className={styles.registerNow} to="/register">Register Now</Link></p>
+                <p>Нямате регистрация? <Link className={styles.registerNow} to="/register">Регистрация</Link></p>
               </div>
             </form>
           </div>
