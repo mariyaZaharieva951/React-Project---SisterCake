@@ -3,7 +3,7 @@ import styles from "../Comment/Comment.module.css";
 
 export const Comment = ({ imageUrl, cream, _createdOn, user, _id }) => {
   return (
-    <div className="col-lg-4 mb-4">
+    <div className="col-lg-3 mb-4">
       <div className="card">
         <div className={styles.cardComment}>
         <Link to={`${_id}`}>
