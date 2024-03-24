@@ -4,6 +4,7 @@ import { AuthContext } from "../../../contexts/authContex";
 import * as commentService from "../../../services/commentService";
 import * as likeService from "../../../services/likeService";
 import styles from "../DetailsComment/DetailsComment.module.css";
+import { toast } from 'react-toastify';
 
 
 export const DetailsComment = () => {
@@ -44,7 +45,7 @@ export const DetailsComment = () => {
 
   const onLike = () => {
     if (isLiker) {
-    return alert('Вие вече сте харесали този коментар');
+    toast.success('Вие вече сте харесали този коментар')
     }
 
     likeService
