@@ -104,6 +104,10 @@
     background-color: #6eefcf;
 }
 
+.bg-hover:hover {
+    background-color: #E59DA6;
+}
+
 
 @media (max-width: 991.98px) {
     .navbar-dark .navbar-nav .nav-link  {

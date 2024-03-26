@@ -92,11 +92,11 @@ export const Header = () => {
                   >
                     Профил
                   </Link>
-                  <div className="dropdown-menu m-0">
-                    <Link to="/login" className="dropdown-item">
+                  <div className="dropdown-menu m-0 bg-dark">
+                    <Link to="/login" className="dropdown-item text-light bg-dark text-uppercase" style={{ fontFamily: 'Oswald' }}>
                       Вход
                     </Link>
-                    <Link to="/register" className="dropdown-item">
+                    <Link to="/register" className="dropdown-item text-light bg-dark text-uppercase" style={{ fontFamily: 'Oswald' }}>
                       Регистрация
                     </Link>
                   </div>
